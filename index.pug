@@ -1,0 +1,86 @@
+
+doctype html
+html(lang="en")
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1')
+    link(rel='stylesheet' href='src/style/main.scss')
+
+  body.flex-wrapper
+    //- include ./src/components/header/header.pug
+    main.flex-grow
+      .h1 Откройте для себя<br> ремонт с новой стороны
+      .h2 Откройте для себя<br> ремонт с новой стороны
+      .h3 Откройте для себя <br> ремонт с новой стороны
+      .h2-bold Откройте для <br> себя ремонт с новой стороны
+      .h2-140 Откройте для <br> себя ремонт с новой стороны
+      .body-l 3 этажа экспозиций мебельных компаний
+      .body-l-long  3 этажа экспозиций мебельных компаний
+      .body-m 3 этажа экспозиций мебельных компаний
+      .desc  3 этажа экспозиций мебельных компаний
+      br
+      .h1 TABS
+      .tabs-pagination-container 
+        a(href="#").tabs-item normal
+        a(href="#").tabs-item.disabled disable
+        a(href="#").tabs-item.active active
+      br
+      .h1 arrows
+      .tabs-pagination-container   
+        .arrow-ui-container  
+          .arrow-btn
+            include ./public/images/uiIcon/arrowL.svg
+          .arrow-btn
+            include ./public/images/uiIcon/arrowR.svg
+        .arrow-ui-container  
+          .arrow-btn.disabled
+            include ./public/images/uiIcon/arrowL.svg
+          .arrow-btn.disabled
+            include ./public/images/uiIcon/arrowR.svg    
+      br
+      .h1 Zoom 
+      .tabs-pagination-container 
+        .zoom-btn 
+          include ./public/images/uiIcon/plusIcon.svg 
+        .zoom-btn.disabled 
+          include ./public/images/uiIcon/plusIcon.svg   
+      br
+      .h1 BTN 
+      .zoom-pagination-container 
+        button.button NORMAL 
+        button.button.button__subded  NORMAL
+        button.button.disabled DISABLED 
+        button.button.button__subded.disabled  DISABLED        
+      br
+      .h1 ON COLOR 
+        .zoom-pagination-container.green-bg
+          button.button.on-bg NORMAL 
+          button.button.on-bg.disabled NORMAL 
+          .arrow-ui-container  
+            .arrow-btn.on-color
+              include ./public/images/uiIcon/arrowL.svg
+            .arrow-btn.on-color
+              include ./public/images/uiIcon/arrowR.svg
+          .arrow-ui-container  
+            .arrow-btn.on-color.disabled
+              include ./public/images/uiIcon/arrowL.svg
+            .arrow-btn.on-color.disabled  
+              include ./public/images/uiIcon/arrowR.svg    
+      br
+      .h1 Input 
+      .tabs-pagination-container    
+      .input-wrap 
+        .input-container.error
+          input.input-field(type="text" name="text" placeholder="" required)
+          label.input-label(for="text") Название компании
+        .msg-required поле обязательно для заполнения
+        .msg-error  поле обязательно для заполнения
+      .input-wrap 
+        .input-container
+          input.input-field(type="text" name="text" placeholder="" required)
+          label.input-label(for="text") Название компании
+        .msg-required поле обязательно для заполнения
+        .msg-error  поле обязательно для заполнения       
+
+    footer.footer
+    script(type='module' src='/main.ts')

@@ -1,0 +1,381 @@
+.h1 {
+  font-weight: 700;
+  font-size: 3.375rem;
+  line-height: 120%;
+  letter-spacing: -1%;
+}
+.h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.h2-bold {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 120%;
+  letter-spacing: -1%;
+}
+.h2-140 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 140%;
+  letter-spacing: -1%;
+}
+.h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+.body-l {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 135%;
+  letter-spacing: 0%;
+}
+
+.body-l-long {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 155%;
+  letter-spacing: 0%;
+}
+.body-m {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+.desc {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+}
+
+.tabs-pagination-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+}
+.tabs-item {
+  padding: 1rem;
+  max-width: 9.375rem;
+  width: 100%;
+  border-radius: 6.25rem;
+  background-color: $grayColor;
+  @include smooth-transition(background-color);
+  @include flex-center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $grayHover;
+  }
+  &.disabled {
+    background-color: $grayDisabled;
+    color: $grayHover;
+    cursor: not-allowed;
+    &:hover {
+      background-color: $grayDisabled;
+      color: $grayHover;
+    }
+  }
+  &.active {
+    background-color: $greenActive;
+    color: $white;
+    &:hover {
+      background-color: $greenActive;
+      color: $white;
+    }
+  }
+}
+.arrow-ui-container {
+  display: flex;
+  gap: 0.625rem;
+}
+.arrow-btn {
+  width: 3.75rem;
+  height: 3.75rem;
+  cursor: pointer;
+  @include flex-center;
+  border-radius: 100%;
+  box-shadow: 0rem 0.5rem 1.25rem -0.5rem rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  svg {
+    display: flex;
+    path {
+      @include smooth-transition(stroke);
+    }
+  }
+  &:hover {
+    svg {
+      path {
+        stroke: $greenActive;
+      }
+    }
+  }
+  &.disabled {
+    box-shadow: 0rem 0.5rem 1.25rem -0.5rem rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+    svg {
+      path {
+        stroke: $disabledArrow;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: $disabledArrow;
+        }
+      }
+    }
+  }
+  &.on-color {
+    background-color: rgba(51, 51, 51, 0.2);
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+    @include smooth-transition(background-color);
+    &:hover {
+      background-color: $white;
+      svg {
+        path {
+          stroke: $greenActive;
+        }
+      }
+    }
+    &.disabled {
+      background-color: $disabledArrow;
+      svg {
+        path {
+          stroke: $whiteDisabled;
+        }
+      }
+      &:hover {
+        background-color: $disabledArrow;
+        svg {
+          path {
+            stroke: $whiteDisabled;
+          }
+        }
+      }
+    }
+  }
+}
+.zoom-btn {
+  background-color: $white;
+  box-shadow: 0rem 0.5rem 1.25rem -0.5rem rgba(0, 0, 0, 0.2);
+  width: 3.75rem;
+  height: 3.75rem;
+  @include flex-center;
+  border-radius: 0.5rem;
+  svg {
+    display: flex;
+    path {
+      @include smooth-transition(stroke);
+    }
+  }
+  &:hover {
+    svg {
+      path {
+        stroke: $greenActive;
+      }
+    }
+  }
+  &.disabled {
+    box-shadow: 0rem 0.5rem 1.25rem -0.5rem rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+    svg {
+      path {
+        stroke: $disabledArrow;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          stroke: $disabledArrow;
+        }
+      }
+    }
+  }
+}
+.zoom-pagination-container {
+  @include card-grid(2, 1.25rem);
+  max-width: 37.5rem;
+  width: 100%;
+  min-width: 12.5rem;
+  &.green-bg {
+    background-color: $greenActive;
+    padding: 2.5rem;
+  }
+}
+.button {
+  background-color: $greenActive;
+  @include smooth-transition(background-color);
+  color: $white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  max-width: 12.5rem;
+  &:hover {
+    background-color: $greenAccent;
+  }
+  &__subded {
+    background-color: $greyBtn;
+    color: $textColor;
+    &:hover {
+      background-color: $grayHover;
+    }
+  }
+  &.disabled {
+    background-color: $grayDisabled;
+    color: $grayHover;
+    cursor: not-allowed;
+  }
+  &.on-bg {
+    background-color: $white;
+    color: $textColor;
+    &:hover {
+      background-color: $whiteHover;
+    }
+    &.disabled {
+      background-color: $whiteDisabled;
+      color: $grayHover;
+
+      &:hover {
+        background-color: $whiteDisabled;
+        color: $grayHover;
+      }
+    }
+  }
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 1.25rem;
+  border-radius: 0.5rem;
+  height: 4.25rem;
+  position: relative;
+  cursor: pointer;
+  border: 0.0625rem solid $grayHover;
+  transition:
+    border 0.3s,
+    background-color 0.3s;
+  &:hover {
+    border: 0.0625rem solid $inputBorderHover;
+  }
+
+  &:focus-within {
+    border: 0.0625rem solid $greenActive;
+  }
+
+  .input-icon {
+    svg {
+      min-width: 1.75rem;
+    }
+  }
+
+  .input-field {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding-top: 1.625rem;
+    padding-bottom: 0.25rem;
+    transition: padding 0.2s ease;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: 0%;
+    &:focus + .input-label,
+    &:not(:placeholder-shown) + .input-label {
+      transform: translateY(-1.25rem);
+      font-size: 0.75rem;
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      letter-spacing: 0%;
+    }
+
+    &:focus {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .input-label {
+    position: absolute;
+    top: 50%;
+    font-size: 1.1875rem;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.03em;
+    transform: translateY(-50%);
+    transition:
+      transform 0.2s ease,
+      font-size 0.2s ease,
+      color 0.2s ease;
+    pointer-events: none;
+    color: $inputBorderHover;
+  }
+
+  .input-field:focus {
+    ~ .input-label {
+      transform: translateY(-1.25rem);
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.input-wrap {
+  max-width: 26.875rem;
+  .msg-required,
+  .msg-error {
+    display: none;
+  }
+
+  &:has(.required) {
+    .input-container {
+      border-color: red;
+    }
+
+    .msg-required {
+      display: flex;
+      padding: 0.3125rem 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 1.66;
+    }
+  }
+
+  &:has(.error) {
+    .input-container {
+      border: 0.0625rem solid $errorColor;
+    }
+
+    .msg-error {
+      display: flex;
+      padding-top: 0.25rem;
+      color: $errorColor;
+      font-weight: 400;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      letter-spacing: 0%;
+    }
+  }
+}

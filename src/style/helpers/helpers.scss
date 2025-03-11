@@ -1,0 +1,25 @@
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 480;
+  font-size: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 480px) / #{$maxWidth})
+  );
+
+  @media (min-width: 1920px) {
+    font-size: $pcSize;
+  }
+}
+
+@mixin card-grid($columns: 2, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+@mixin smooth-transition($property, $time: 0.3s, $ease: ease-in-out) {
+  transition: $property $time $ease;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
