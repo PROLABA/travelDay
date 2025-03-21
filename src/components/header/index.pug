@@ -1,0 +1,19 @@
+header.header 
+    .header__container 
+        .header__container-right  
+            a(href="/")
+                include ./logo.svg 
+        .header__container-center 
+            .button.button__subded 
+                .icon 
+                    span 
+                    span 
+                    span         
+                p Меню    
+            .input-search 
+                .icon     
+                    include ./search.svg
+                input(type="text" placeholder='Куда отправимся сегодня?' name="search") 
+        .header__container-left 
+            a(href="/").header-btn  
+                include ./shop.svg    

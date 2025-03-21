@@ -1,0 +1,55 @@
+- 
+    var footerLeft = [ 'Санкт-Петербург','Казань','Москва', 'Нижний Новгород',]
+    var footerCenter =[ 'О компании', 'Скидки и акции',  'Контакты', ]
+footer.footer  
+    .container  
+        .footer-container 
+            .footer-container-left 
+                ul 
+                    each item in footerLeft
+                        li 
+                            a(href="#") 
+                                p.h4= item
+                                .icon 
+                                    include ./right.svg
+            .footer-container-center 
+                .footer-container-center-title 
+                    p.body-s-1 Навигация
+                ul 
+                    each item in footerCenter
+                        li 
+                            a(href="#").body-l-3
+                                p= item
+            .footer-container-right 
+                .footer-container-right-top 
+                    .body-s-1    Ежедневно, с 9:00 до 1:00
+                    .number-block
+                        .number 
+                            a(href="tel:")
+                                .number-item.btn-l-3  8 800 500-13-99
+                                .number-text.body-s-1 Вся Россия, бесплатно
+                            a(href="tel:")
+                                .number-item.btn-l-3  8 812 334-18-48
+                                .number-text.body-s-1 Санкт-Петербург    
+                    .mess-links 
+                        a(href="http://").btn-l-3 
+                            .icon 
+                                include ./wa.svg
+                            .text WhatsApp
+                        a(href="http://").btn-l-3 
+                            .icon 
+                                include ./tg.svg
+                            .text  Telegram    
+                .footer-container-right-line 
+                .footer-container-right-bottom  
+                    .body-s-1 Наши соц-сети
+                    .social-links 
+                        a(href="http://").btn-l-3
+                            .icon 
+                                include ./vk.svg
+                            .text  ВКонтакте
+                        a(href="http://").btn-l-3
+                            .icon 
+                                include ./tg.svg
+                            .text  Канал в Telegram    
+        .footer-bottom-item 

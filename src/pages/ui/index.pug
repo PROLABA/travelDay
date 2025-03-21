@@ -1,0 +1,42 @@
+extends ../../layout/index.pug
+block content
+    .ui-page 
+        .btn-container-ui
+            .button.button__primary  Кнопка
+            .button.button__primary.disabled  Кнопка
+            .button.button__secondary Кнопка
+            .button.button__secondary.disabled Кнопка
+            .button.button__subded Кнопка
+            .button.button__subded.disabled  Кнопка
+            .color-bg
+                .button.button__on-color Кнопка
+                .button.button__on-color.disabled  Кнопка
+        .h1 Pagination
+            .pagination-container 
+                .button-pagination.prev
+                    include ../../../public/images/uiIcon/arrowPrev.svg
+                .pagination-number 1
+                .button-pagination.prev.disabled   
+                    include ../../../public/images/uiIcon/arrowPrev.svg      
+        .h1 check togle 
+            .item
+                .toggle-pill-dark
+                    input#pill4(type='checkbox' name='check')
+                    label(for='pill4')
+            label.checkbox
+                input(type="checkbox")
+                span
+        .h1 h1 
+        .h2 h2 
+        .h3 h3 
+        .h4 h4 
+        .body-xl-3  body/xl-3   
+        .body-l-3 body/l-3
+        .body-m-1 body/m-1
+        .body-m-1-pharagraph body/m-1-pharagraph
+        .body-m-3 body/m-3
+        .body-s-1  body/s-1
+        .body-s-2 body/s-2
+        .body-s-3 body/s-3
+        .body-caption-s-1 body/caption/s-1
+        .body-caption-m-1 body/caption/m-1
