@@ -56,6 +56,7 @@
         align-items: center;
         position: absolute;
         right: 0px;
+        display: none;
         .clear-search {
           cursor: pointer;
           svg {
@@ -82,6 +83,7 @@
         width: 100%;
         top: 5.125rem;
         z-index: 100;
+        display: none;
         .tabs-items {
           display: flex;
           gap: 0.5rem;
@@ -98,6 +100,7 @@
           }
         }
         .input-search-content-step2 {
+          display: none;
           .search-result-container {
             display: flex;
             flex-direction: column;
@@ -198,4 +201,5 @@
   backdrop-filter: blur(0.1875rem);
   z-index: 1;
   cursor: pointer;
+  display: none;
 }
