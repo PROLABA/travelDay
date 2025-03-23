@@ -1,7 +1,7 @@
 .footer {
   background-color: $gray50;
   .footer-container {
-    padding: 2.5rem 0 2rem 0;
+    padding: 2.5rem 0 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr 30.0625rem;
     .footer-container-left {
@@ -90,6 +90,39 @@
             align-items: center;
             gap: 0.375rem;
           }
+        }
+      }
+    }
+  }
+  .footer-bottom-item {
+    display: grid;
+    grid-template-columns: 1fr 1.24fr 1fr;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    .footer-bottom-item-right {
+      .body-s-1 {
+        color: $gray300;
+      }
+    }
+    .footer-bottom-item-center {
+      display: flex;
+      gap: 1.5rem;
+      .body-s-1 {
+        color: $gray500;
+      }
+    }
+    .footer-bottom-item-left {
+      .banc-partners {
+        display: flex;
+        gap: 0.375rem;
+        justify-content: end;
+        .banc-partners-item {
+          background-color: $white;
+          border-radius: 2.3125rem;
+          @include flex-center;
+          width: 4.25rem;
+          height: 2rem;
         }
       }
     }

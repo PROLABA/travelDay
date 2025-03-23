@@ -9,11 +9,22 @@ header.header
                     span 
                     span 
                     span         
-                p Меню    
-            .input-search 
-                .icon     
-                    include ./search.svg
-                input(type="text" placeholder='Куда отправимся сегодня?' name="search") 
+                p Меню
+            .input-search-container         
+                .input-search 
+                    .icon     
+                        include ./search.svg
+                    input(type="text" placeholder='Куда отправимся сегодня?' name="search") 
+                    .search-item 
+                        .clear-search 
+                            include ./clear.svg
+                        .search-btn 
+                            .button.button__primary   Найти 
+                .input-search-content 
+                    include ./step1.pug
+                    include ./step2.pug
+
         .header__container-left 
             a(href="/").header-btn  
                 include ./shop.svg    
+.overlay-search                     

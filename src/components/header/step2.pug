@@ -1,0 +1,26 @@
+- 
+    var search = [
+        {title: "Муромская старина и купеческие традиции", city: "Муром", img: "/public/images/headerSearch/search1.png" },
+        {title: "Муром – город Ильи Муромца и Петра с Февронией", city: "Муром", img: "/public/images/headerSearch/search2.png" },
+        {title: "Муромские просторы: путешествие по Оке и древним монастырям", city: "Муром", img: "/public/images/headerSearch/search3.png" },
+        {title: "Муромский уезд: от древних легенд до современной истории", city: "Муром", img: "/public/images/headerSearch/search4.png" },
+        {title: "Муромские дороги, ведущие к истории: паломническое, природное и культурное наследие региона", city: "Муром", img: "/public/images/headerSearch/search5.png" },
+    ]
+
+.input-search-content-step2
+    .search-result-container 
+        a(href="#").search-result-item 
+            .left 
+                .body-m-3  Муром
+                .body-s-1 Город
+            .right 
+                .search-result-item-img
+                    include ./location.svg
+        each element in search       
+            a(href="#").search-result-item 
+                .left 
+                    .body-m-3=element.title
+                    .body-s-1=element.city 
+                .right 
+                    .search-result-item-img
+                        img(src=element.img, alt="" srcset="")
