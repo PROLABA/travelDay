@@ -4,27 +4,29 @@ header.header
             a(href="/")
                 include ./logo.svg 
         .header__container-center 
-            .button.button__subded 
-                .icon 
-                    span 
-                    span 
-                    span         
-                p Меню
-            .input-search-container         
-                .input-search 
-                    .icon     
-                        include ./search.svg
-                    input(type="text" placeholder='Куда отправимся сегодня?' name="search") 
-                    .search-item 
-                        .clear-search 
-                            include ./clear.svg
-                        .search-btn 
-                            .button.button__primary   Найти 
-                .input-search-content 
-                    include ./step1.pug
-                    include ./step2.pug
-
+            .header__container-center-inputs
+                .button.button__subded 
+                    .icon 
+                        span 
+                        span 
+                        span         
+                    p Меню
+                .input-search-container         
+                    .input-search 
+                        .icon     
+                            include ./search.svg
+                        input(type="text" placeholder='Куда отправимся сегодня?' name="search") 
+                        .search-item 
+                            .clear-search 
+                                include ./clear.svg
+                            .search-btn 
+                                .button.button__primary.getSearch   Найти 
+                    .input-search-content 
+                        include ./step1.pug
+                        include ./step2.pug
+            include ./search-modal.pug
         .header__container-left 
             a(href="/").header-btn  
                 include ./shop.svg    
 .overlay-search                     
+.search-content-container-overlay

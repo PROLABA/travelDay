@@ -4,32 +4,35 @@ export const searchAction = (): void => {
   const inputContainer = document.querySelector(
     ".input-search-container"
   ) as HTMLElement | null;
-
   const searchContainer = document.querySelector(
     ".input-search-content"
   ) as HTMLElement | null;
-
   const searchOverlay = document.querySelector(
     ".overlay-search"
   ) as HTMLElement | null;
-
   const input = inputContainer?.querySelector(
     "input"
   ) as HTMLInputElement | null;
   const step1 = document.querySelector(
     ".input-search-content-step1"
   ) as HTMLElement | null;
-
   const step2 = document.querySelector(
     ".input-search-content-step2"
   ) as HTMLElement | null;
-
   const searchItem = inputContainer?.querySelector(
     ".search-item"
   ) as HTMLElement | null;
-
   const clearInputBtn = searchItem?.querySelector(".clear-search");
-
+  const openSearchResult = searchItem?.querySelector(".getSearch");
+  const searchContentOverlay = document.querySelector(
+    ".search-content-container-overlay"
+  ) as HTMLElement | null;
+  const searchContent = document.querySelector(
+    ".search-content-container"
+  ) as HTMLElement | null;
+  const closeSearchResult = document.querySelector(
+    ".get-back"
+  ) as HTMLElement | null;
   if (
     !inputContainer ||
     !searchContainer ||
@@ -37,18 +40,20 @@ export const searchAction = (): void => {
     !step1 ||
     !step2 ||
     !input ||
-    !searchItem
+    !searchItem ||
+    !openSearchResult ||
+    !searchContentOverlay ||
+    !searchContent
   )
     return;
 
-  let isOpen = false; // Флаг для отслеживания состояния
-  let isStep2Visible = false; // Флаг для отслеживания текущего шага
+  let isOpen = false;
+  let isStep2Visible = false;
+  let searchResult = false;
 
-  // Функция для показа элементов
   const showSearch = (): void => {
     if (isOpen) return;
     isOpen = true;
-
     searchContainer.style.display = "block";
     searchOverlay.style.display = "block";
 
@@ -60,7 +65,6 @@ export const searchAction = (): void => {
     });
   };
 
-  // Функция для скрытия элементов
   const hideSearch = (): void => {
     if (!isOpen) return;
     isOpen = false;
@@ -77,7 +81,6 @@ export const searchAction = (): void => {
     });
   };
 
-  // Функция для переключения step1/step2 с анимацией (только один раз)
   const toggleSteps = (): void => {
     const hasText = input.value.trim() !== "";
 
@@ -94,6 +97,7 @@ export const searchAction = (): void => {
           step1.style.display = "none";
           step2.style.display = "block";
           searchItem.style.display = "flex";
+
           anime({
             targets: step2,
             opacity: [0, 1],
@@ -128,13 +132,68 @@ export const searchAction = (): void => {
       });
     }
   };
+
   const clearInput = (): void => {
     input.value = "";
     toggleSteps();
   };
+
+  const searchResultOpen = (): void => {
+    if (searchResult) return;
+    searchResult = true;
+    searchContent.style.display = "flex";
+    searchContentOverlay.style.display = "flex";
+
+    anime({
+      targets: [searchContent, searchContentOverlay],
+      opacity: [0, 1],
+      duration: 300,
+      easing: "easeInQuad",
+    });
+  };
+
+  const searchResultClose = (): void => {
+    if (!searchResult) return;
+    searchResult = false;
+
+    anime({
+      targets: [searchContent, searchContentOverlay],
+      opacity: [1, 0], // Исправлено направление анимации
+      duration: 500,
+      easing: "easeInQuad",
+      complete: () => {
+        searchContent.style.display = "none";
+        searchContentOverlay.style.display = "none";
+      },
+    });
+  };
+
   // Слушатели событий
-  clearInputBtn?.addEventListener("click", clearInput);
-  inputContainer.addEventListener("click", showSearch);
-  searchOverlay.addEventListener("click", hideSearch);
-  input.addEventListener("input", toggleSteps); // При вводе текста переключаем шаги
+  clearInputBtn?.addEventListener("click", () => {
+    clearInput();
+    searchResultClose();
+  });
+  inputContainer.addEventListener("click", () => {
+    showSearch();
+  });
+  searchOverlay.addEventListener("click", () => {
+    hideSearch();
+    clearInput();
+  });
+  input.addEventListener("input", () => {
+    searchResultClose();
+    toggleSteps();
+  });
+  openSearchResult.addEventListener("click", () => {
+    if (!searchResult) {
+      searchResultOpen();
+      clearInput();
+    } else {
+      searchResultClose();
+    }
+  });
+
+  // Закрытие результатов поиска при клике вне них
+  searchContentOverlay.addEventListener("click", searchResultClose);
+  closeSearchResult?.addEventListener("click", searchResultClose);
 };

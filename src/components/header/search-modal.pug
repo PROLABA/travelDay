@@ -1,0 +1,42 @@
+- 
+    var searchContent = [ 
+        {title: "Петербург Достоевского по следам великих романов", desc: "Санкт-Петербург", img: '/public/images/headerSearch/seacrhContent.png'},
+        {title: "Тайны кремля загадки Казанской крепости", desc: "Казань", img: '/public/images/headerSearch/seacrhContent2.png'},
+        {title: "Самарская Лука встреча с Жигулевскими горами", desc: "Самара", img: '/public/images/headerSearch/seacrhContent3.png'},
+        {title: "Мистический Нижний легенды старого города", desc: "Нижний Новгород", img: '/public/images/headerSearch/seacrhContent2.png'},
+        {title: "Мистический Нижний легенды старого города", desc: "Нижний Новгород", img: '/public/images/headerSearch/seacrhContent5.png'},
+    ]
+
+.search-content-container
+    .search-content-container__title  
+        .h1  Результаты поиска по запросу «Мур»
+        .search-result Найден 31 результат
+    .get-back 
+        .icon 
+            include ./getBack.svg 
+        .body-m-2  Назад
+    .search-content-container__items 
+        a(href="#").search-content-container__item 
+            .search-content-container__item-left 
+                .title.h4 Муром
+                .description.body-s-1 город
+            .search-content-container__item-right 
+                include ./locationBig.svg
+        a(href="#").search-content-container__item 
+            .search-content-container__item-left 
+                .title.h4 Мурманск
+                .description.body-s-1 город
+            .search-content-container__item-right 
+                include ./locationBig.svg        
+        each element in  searchContent 
+            a(href="#").search-content-container__item 
+                .search-content-container__item-left 
+                    .title.h4=element.title
+                    .description.body-s-1=element.desc 
+                .search-content-container__item-right 
+                    img(src=element.img, alt="" srcset="")     
+    //- тут элемент скрыть через display:none, для показа можно накинуть flex
+    .search-content-container__items-not-fonded  
+        .icon 
+            include ./notFonded.svg
+        .body-m-3 По запросу «Мур» ничего не найдено, попробуйте изменить запрос 
