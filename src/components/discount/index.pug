@@ -1,0 +1,24 @@
+- 
+    var discountItem = [ 
+        {title: "Скидка 5% за подписку на рассылку", img:"/public/images/discountSlider/swiperDiscount.png"},
+        {title: "Для ребенка до 12 лет — бесплатно", img:"/public/images/discountSlider/swiperDiscount2.png"},
+        {title: "Приведи друга — получи бонус", img:"/public/images/discountSlider/swiperDiscount3.png"},
+    ]
+
+.discount
+    .discount-container 
+        .title 
+            .h4 Акции и скидки
+        .check-all 
+            .btn-m-2 Смотреть все
+            .icon 
+                include ./right.svg
+    .swiper-discount
+        .swiper-wrapper
+            each item in discountItem
+                .swiper-slide 
+                    .swiper-slide-discount
+                        .swiper-slide-discount-img 
+                            img(src=item.img, alt="" srcset="")
+                        .swiper-slide-discount-title 
+                            .h4=item.title        

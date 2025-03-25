@@ -1,3 +1,6 @@
+- 
+    var footerLeft = [ 'Санкт-Петербург','Казань','Москва', 'Нижний Новгород',]
+    var footerCenter =[ 'О компании', 'Скидки и акции',  'Контакты', ]
 header.header 
     .header__container 
         .header__container-right  
@@ -5,7 +8,7 @@ header.header
                 include ./logo.svg 
         .header__container-center 
             .header__container-center-inputs
-                .button.button__subded 
+                .button.button__subded.openMenu
                     .icon 
                         span 
                         span 
@@ -28,5 +31,7 @@ header.header
         .header__container-left 
             a(href="/").header-btn  
                 include ./shop.svg    
+include ./hedaerMenuModal.pug 
+.header-menu-container-overlay 
 .overlay-search                     
 .search-content-container-overlay

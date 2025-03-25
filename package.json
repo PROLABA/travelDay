@@ -29,7 +29,7 @@
     "imask": "^7.6.1",
     "prettier": "^3.3.3",
     "pug": "^3.0.3",
-    "swiper": "^11.1.14",
+    "swiper": "^11.2.6",
     "vite-plugin-pug-transformer": "^1.0.5"
   }
 }
