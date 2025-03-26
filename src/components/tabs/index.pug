@@ -1,0 +1,10 @@
+- 
+    var city = ['Санкт-Петербург', "Казань ", "Москва ","Нижний Новгород","Ярославль"]
+.tabs-links 
+    .container 
+        .tabs-links-container 
+            each item in city 
+                a(href="#").city-tabs 
+                    .h4=item
+                    .icon 
+                        include ./arrow.svg            

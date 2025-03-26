@@ -1,0 +1,34 @@
+.tabs-links {
+    padding-top: 48px;
+
+    .tabs-links-container {
+        @include card-grid(3, 24px);
+
+        .city-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: .0625rem solid $gray150;
+            padding: 1.5rem 1.25rem;
+            border-radius: 1.25rem;
+
+            &:hover {
+                .h4 {
+                    color: $gray700;
+                }
+            }
+
+            .h4 {
+                @include smooth-transition(color);
+            }
+
+            .icon {
+                width: 2rem;
+                height: 2rem;
+                background-color: $gray50;
+                border-radius: 50%;
+                @include flex-center();
+            }
+        }
+    }
+}

@@ -1,0 +1,171 @@
+.main-slider {
+    padding-top: 7.875rem;
+    width: 100%;
+
+    .main-slider__container {
+        width: 100%;
+        position: relative;
+
+
+
+        .main-swiper {
+            overflow: hidden;
+
+            &:hover {
+
+                .main-swiper-button-prev,
+                .main-swiper-button-next {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            top: 2.75rem;
+            left: 3.5rem;
+            right: auto;
+            width: fit-content;
+
+            .swiper-pagination-bullet {
+                margin: 0 .1875rem;
+                width: 6px;
+                height: 6px;
+                background: rgba(255, 255, 255, 0.4);
+
+                &.swiper-pagination-bullet-active {
+                    background-color: $white;
+                }
+            }
+        }
+
+        .main-swiper-button-contaiener {
+            width: 100%;
+            align-items: center;
+            position: absolute;
+            z-index: 2;
+            top: 49%;
+            z-index: 20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .main-swiper-button-prev {
+                position: absolute;
+                left: -1.75rem;
+                opacity: 0;
+            }
+
+            .main-swiper-button-next {
+                position: absolute;
+                right: -1.75rem;
+                opacity: 0;
+
+            }
+
+            .btn {
+                background-color: $white;
+                width: 56px;
+                height: 56px;
+                cursor: pointer;
+                @include smooth-transition(opacity);
+                border-radius: 16px;
+                @include flex-center;
+                box-shadow: 0rem .25rem 1rem 0rem rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        .swiper-slide-content {
+            display: grid;
+            grid-template-columns: auto 40.125rem;
+            gap: 32px;
+            grid-template-rows: 27.5rem;
+            border-radius: 40px;
+            align-items: center;
+            overflow: hidden;
+
+            &.violet {
+                background-color: $violet;
+                color: $white;
+            }
+
+            &.pink {
+                background-color: $pink;
+                color: $white;
+            }
+
+            .slider-blur-element {
+                position: absolute;
+                width: 664px;
+                height: 664px;
+                left: -235px;
+                top: 235px;
+                background: #FFFFFF;
+                opacity: 0.25;
+                filter: blur(162px);
+                pointer-events: none;
+            }
+
+            .swiper-slide-content-left {
+                padding-left: 56px;
+                display: flex;
+                flex-direction: column;
+                gap: 65px;
+
+                .swiper-slide-content-left-text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    padding-top: 40px;
+
+                    .swiper-slide-content-left-text__title {
+                        max-width: 34.625rem;
+                    }
+
+                    .swiper-slide-content-left-text__description {
+                        max-width: 27.1875rem;
+
+                        .body-m-1 {
+                            font-weight: 400;
+                            font-size: 1rem;
+                            line-height: 1.2;
+                            letter-spacing: -1%;
+                        }
+                    }
+                }
+            }
+
+            .swiper-slide-content-right {
+                width: 100%;
+                height: 100%;
+                border-radius: 2.5rem;
+                box-shadow: 0rem .2319rem 12.2731rem 0rem rgba(0, 0, 0, 0.15);
+                overflow: hidden;
+                position: relative;
+
+                .swiper-slide-content-right-img {
+                    position: relative;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+
+                    img {
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        aspect-ratio: 642/383;
+                    }
+
+                    .bals-icon {
+                        position: absolute;
+                        right: 3rem;
+                        z-index: 1;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

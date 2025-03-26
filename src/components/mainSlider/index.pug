@@ -1,0 +1,39 @@
+- 
+    var mainSlider=  [  
+        {theme:"violet", title: "Экскурсии<br> в Санкт-Петербурге", description: "TravelDay — обзорные автобусные, водные<br> и пешеходные экскурсии по Санкт-Петербургу", img:"/public/images/mainBanner/saintP.png" },
+        {theme:"pink", title: "Экскурсии<br> в Санкт-Петербурге", description: "TravelDay — обзорные автобусные, водные<br> и пешеходные экскурсии по Санкт-Петербургу", img:"/public/images/mainBanner/saintP.png" },
+        {theme:"violet", title: "Пример заголовка в несколько строчек в баннере на главной", description: "TravelDay — обзорные автобусные, водные<br> и пешеходные экскурсии по Санкт-Петербургу", img:"/public/images/mainBanner/saintP.png" }
+
+    ]
+
+.main-slider 
+    .main-slider__container.container
+        .main-swiper 
+            .swiper-pagination
+            .swiper-wrapper
+                each item in mainSlider
+                    .swiper-slide 
+                        .swiper-slide-content(class=item.theme)  
+                            .slider-blur-element
+                            .swiper-slide-content-left
+                                .swiper-slide-content-left-text 
+                                    .swiper-slide-content-left-text__title 
+                                        .h1!=item.title
+                                    .swiper-slide-content-left-text__description 
+                                        .body-m-1!=item.description   
+                                .swiper-slide-content-left__button
+                                    if item.theme == "violet"  
+                                        button.button.button__secondary  Узнать больше
+                                    else if item.theme == "pink"
+                                        button.button.button__primary  Узнать больше    
+                            .swiper-slide-content-right
+                                .swiper-slide-content-right-img 
+                                    img(src=item.img, alt="" srcset="")
+                                    .bals-icon 
+                                        include ./bals.svg
+            .main-swiper-button-contaiener
+                .main-swiper-button-prev.btn
+                    include ./prev.svg
+                .main-swiper-button-next.btn
+                    include ./next.svg
+
