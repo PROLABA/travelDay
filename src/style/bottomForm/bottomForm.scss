@@ -1,0 +1,83 @@
+.bottom-form {
+    padding: 5rem 0 2.5rem 0;
+
+    .bottom-form__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.5625rem;
+        padding: 2.5rem;
+        background-color: $violet;
+        border-radius: 2.5rem;
+        color: $white;
+
+        .bottom-form__container-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+
+            .bottom-form__container-left-title {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+            }
+
+            .form-inner {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                .form-item {
+                    display: flex;
+                    gap: .75rem;
+                    max-height: 4rem;
+
+                    .input-container {
+                        max-width: 28.75rem;
+                        width: 100%;
+
+                        input {
+                            width: 100%;
+                            padding: 1.4063rem 1rem;
+                            background-color: white;
+                            border-radius: 1rem;
+                            max-height: 4rem;
+                            color: $black;
+
+                            &::placeholder {
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 1.2;
+                                letter-spacing: -1%;
+                                color: $gray300;
+                            }
+                        }
+
+
+                    }
+
+                    .button {
+                        padding: 1.4063rem 2rem;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 120%;
+                        letter-spacing: -2%;
+                        max-height: 4rem;
+                    }
+                }
+
+                .form-descripion {
+                    display: flex;
+
+                    .body-caption-m-1 {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+
+        }
+    }
+}

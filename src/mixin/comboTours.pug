@@ -1,0 +1,27 @@
+mixin comboTurs(label, title, img, excursionTitle, iSdiscount, price, oldPrice)
+    .combo-tours
+        .combo-tours__label
+            .icon 
+                include ./percent.svg
+            p= label    
+        .combo-tours__title 
+            h3.body-xl-3= title
+        .combo-tours__content 
+            .combo-tours__images-titles
+                each val, index in img
+                    .combo-tours__item
+                        img(src=val, alt="Изображение тура")
+                        p.body-s-2= excursionTitle[index] 
+        .card__bottom 
+            .card__price-container   
+                if iSdiscount == true
+                    .card__price
+                        span.card__current-price.body-xl-3(class=iSdiscount ? "violet" : ''  )= price
+                        span.card__old-price.body-l-3= oldPrice
+                    p.card__price-desc.body-caption-s-1 за взрослого  ·  есть льготы    
+                else 
+                    .card__price 
+                        span.card__current-price.body-xl-3= price
+                    p.card__price-desc.body-caption-s-1 за взрослого  ·  есть льготы    
+
+            button.button.button__primary В корзину                

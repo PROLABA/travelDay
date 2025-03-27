@@ -1,0 +1,143 @@
+.card {
+    overflow: hidden;
+    position: relative;
+    border-radius: 1.25rem;
+
+    &.card--bordered {
+        border: .25rem solid $violet;
+    }
+
+    .swiper-card {
+        position: relative;
+    }
+
+    .swiper-pagination {
+        bottom: .75rem !important;
+
+        .swiper-pagination-bullet {
+            margin: 0 .3125rem !important;
+            width: .375rem;
+            height: .375rem;
+            background: rgba(255, 255, 255, 0.6);
+            opacity: 1;
+
+            &.swiper-pagination-bullet-active {
+                background-color: $white !important;
+            }
+        }
+    }
+
+    .card__label {
+        position: absolute;
+        top: .75rem;
+        left: .75rem;
+        z-index: 2;
+        padding: .2706rem .75rem .2706rem .3956rem;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        gap: .2706rem;
+        font-weight: 600;
+        font-size: .875rem;
+        line-height: 1.2;
+        letter-spacing: -2%;
+        border-radius: 1.5rem;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .swiper-slide {
+        border-radius: 0.75rem;
+        overflow: hidden;
+
+        .card__image {
+            aspect-ratio: 412/224;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+
+    .card__text {
+        padding: .75rem 1rem 2rem 1rem;
+
+        .card__text-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .card__excursion {
+                display: flex;
+                gap: .4375rem;
+                color: $textBaseGray;
+            }
+
+            .card__time {
+                display: flex;
+                gap: .1875rem;
+                align-items: center;
+
+                p {
+                    color: $textBaseGray;
+                }
+            }
+        }
+
+        .card__title {
+            padding-top: .375rem;
+            max-width: 23.75rem;
+        }
+
+        .card__variants {
+            padding-top: .75rem;
+            display: flex;
+            gap: .25rem;
+            cursor: pointer;
+
+            .card__variant {
+                background-color: $gray50;
+                padding: .4688rem .75rem;
+                border-radius: 2rem;
+                color: $gray500;
+            }
+        }
+
+
+    }
+}
+
+.card__bottom {
+    padding-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card__price {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        .card__current-price {
+            &.violet {
+                color: $violet;
+            }
+        }
+
+        .card__old-price {
+            color: $textBaseGray;
+            position: relative;
+            text-decoration: line-through;
+            text-decoration-color: rgba(112, 112, 112, 1);
+        }
+
+    }
+
+    .card__price-desc {
+        color: $textBaseGray ;
+    }
+}

@@ -1,0 +1,48 @@
+mixin card(isBordered, label, img, excursion, time, title, productVirable, iSdiscount, price, oldPrice)
+    a(href="#").card(class=isBordered ? 'card--bordered' : '')
+        if label
+            .card__label 
+                .icon
+                    include ./labelIcon.svg
+                p= label
+        if img
+            .card__slider 
+                .swiper-container
+                    .swiper-card(data-mousemove-swipe)
+                        .swiper-wrapper
+                            each itemImg in img
+                                .swiper-slide(data)
+                                    img.card__image(src=itemImg, alt=title)
+                        .swiper-pagination        
+        .card__text
+            .card__text-top            
+                if excursion
+                    .card__excursion.body-s-1
+                        each item, index in excursion
+                            span.card__excursion-item= item
+                            if index < excursion.length - 1
+                                span.card__excursion-separator &middot;
+                if time
+                    .card__time
+                        .icon 
+                            include ./clockIcon.svg
+                        p.body-s-1= time
+            .card__content
+                h3.card__title.h4= title
+                if productVirable
+                    .card__variants
+                        each variant in productVirable
+                            span.card__variant.body-s-2= variant
+            .card__bottom 
+                .card__price-container   
+                    if iSdiscount == true
+                        .card__price
+                            span.card__current-price.body-xl-3(class=iSdiscount ? "violet" : ''  )= price
+                            span.card__old-price.body-l-3= oldPrice
+                        p.card__price-desc.body-caption-s-1 за взрослого  ·  есть льготы    
+                    else 
+                        .card__price 
+                            span.card__current-price.body-xl-3= price
+                        p.card__price-desc.body-caption-s-1 за взрослого  ·  есть льготы    
+    
+                button.button.button__primary В корзину

@@ -1,0 +1,51 @@
+.combo-tours {
+    background-color: $gray50;
+    padding: 1.5rem 1.0625rem 1rem 1rem;
+    border-radius: 1.75rem;
+
+    .combo-tours__label {
+        display: flex;
+        background-color: $white;
+        align-items: center;
+        width: fit-content;
+        padding: .5069rem .75rem .5069rem .6319rem;
+        border-radius: 1.5rem;
+        gap: .5075rem;
+
+        p {
+            font-weight: 600;
+            font-size: .875rem;
+            line-height: 120%;
+            letter-spacing: -2%;
+        }
+    }
+
+    .combo-tours__title {
+        padding-top: .75rem;
+
+        .body-xl-3 {
+            font-size: 1.375rem;
+        }
+    }
+
+    .combo-tours__content {
+        .combo-tours__images-titles {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+            justify-content: space-between;
+        }
+
+        max-height: 15.75rem;
+        padding-top: 1rem;
+
+        .combo-tours__item {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            background-color: $white;
+            border-radius: 1rem;
+            padding: .5rem 1.75rem .5rem .5rem;
+        }
+    }
+}

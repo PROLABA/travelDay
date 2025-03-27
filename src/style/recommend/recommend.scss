@@ -1,0 +1,20 @@
+.recommend {
+    padding-top: 64px;
+
+    .recommend-content {
+        @include card-grid(3, 1.5rem);
+        padding-top: 2.5rem;
+    }
+
+    .get-more-btn {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+
+        .button {
+            max-width: 19.9375rem;
+            width: 100%;
+            padding: 1.4063rem .7rem;
+        }
+    }
+}

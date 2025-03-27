@@ -1,0 +1,43 @@
+.main-discont {
+    padding-top: 5rem;
+
+    .discount-container {
+        .check-all {
+            display: none;
+        }
+
+        .title {
+            .h4 {
+                font-weight: 600;
+                @include adaptive-font(44, 22);
+                line-height: 120%;
+                letter-spacing: -1%;
+
+                @media (max-width: $s540) {
+                    font-weight: 600;
+                    font-size: 1.375rem;
+                }
+            }
+
+            .swiper-discount {
+                padding-top: 2.5rem;
+            }
+        }
+    }
+
+    .swiper-discount {
+        padding-top: 2.5rem;
+    }
+
+    .get--more-btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+
+        .button {
+            max-width: 19.9375rem;
+            width: 100%;
+            padding: 1.4063rem 0.7rem;
+        }
+    }
+}
