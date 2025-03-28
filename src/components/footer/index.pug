@@ -5,6 +5,9 @@ footer.footer
     .container  
         .footer-container 
             .footer-container-left 
+                .icon-mobile 
+                    a(href="/") 
+                        include ./mobileIcon.svg
                 ul 
                     each item in footerLeft
                         li 
@@ -22,7 +25,8 @@ footer.footer
                                 p= item
             .footer-container-right 
                 .footer-container-right-top 
-                    .body-s-1    Ежедневно, с 9:00 до 1:00
+                    .title
+                        .body-s-1    Ежедневно, с 9:00 до 1:00
                     .number-block
                         .number 
                             a(href="tel:")
@@ -42,7 +46,8 @@ footer.footer
                             .text  Telegram    
                 .footer-container-right-line 
                 .footer-container-right-bottom  
-                    .body-s-1 Наши соц-сети
+                    .title
+                        .body-s-1 Наши соц-сети
                     .social-links 
                         a(href="http://").btn-l-3
                             .icon 

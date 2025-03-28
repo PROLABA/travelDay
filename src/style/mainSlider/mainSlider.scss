@@ -6,10 +6,13 @@
         width: 100%;
         position: relative;
 
-
+        @media (max-width:37.5rem) {
+            padding: 0 .25rem;
+        }
 
         .main-swiper {
             overflow: hidden;
+            position: relative;
 
             &:hover {
 
@@ -27,10 +30,18 @@
             right: auto;
             width: fit-content;
 
+            @media(max-width:68.75rem) {
+                width: 100%;
+                top: auto;
+                bottom: .75rem;
+                left: auto;
+                margin: 0 auto;
+            }
+
             .swiper-pagination-bullet {
                 margin: 0 .1875rem;
-                width: 6px;
-                height: 6px;
+                width: .375rem;
+                height: .375rem;
                 background: rgba(255, 255, 255, 0.4);
 
                 &.swiper-pagination-bullet-active {
@@ -50,10 +61,18 @@
             justify-content: space-between;
             align-items: center;
 
+            @media (max-width:68.75rem) {
+                display: none;
+            }
+
             .main-swiper-button-prev {
                 position: absolute;
                 left: -1.75rem;
                 opacity: 0;
+
+                @media (max-width:83.75rem) {
+                    left: 0;
+                }
             }
 
             .main-swiper-button-next {
@@ -61,15 +80,22 @@
                 right: -1.75rem;
                 opacity: 0;
 
+                @media (max-width:83.75rem) {
+                    right: 0;
+                }
+
+                @media (max-width:68.75rem) {
+                    display: none;
+                }
             }
 
             .btn {
                 background-color: $white;
-                width: 56px;
-                height: 56px;
+                width: 3.5rem;
+                height: 3.5rem;
                 cursor: pointer;
                 @include smooth-transition(opacity);
-                border-radius: 16px;
+                border-radius: 1rem;
                 @include flex-center;
                 box-shadow: 0rem .25rem 1rem 0rem rgba(0, 0, 0, 0.12);
             }
@@ -78,11 +104,17 @@
         .swiper-slide-content {
             display: grid;
             grid-template-columns: auto 40.125rem;
-            gap: 32px;
+            gap: 2rem;
             grid-template-rows: 27.5rem;
-            border-radius: 40px;
+            border-radius: 2.5rem;
             align-items: center;
             overflow: hidden;
+
+            @media (max-width:68.75rem) {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
 
             &.violet {
                 background-color: $violet;
@@ -96,27 +128,31 @@
 
             .slider-blur-element {
                 position: absolute;
-                width: 664px;
-                height: 664px;
-                left: -235px;
-                top: 235px;
+                width: 41.5rem;
+                height: 41.5rem;
+                left: -14.6875rem;
+                top: 14.6875rem;
                 background: #FFFFFF;
                 opacity: 0.25;
-                filter: blur(162px);
+                filter: blur(10.125rem);
                 pointer-events: none;
             }
 
             .swiper-slide-content-left {
-                padding-left: 56px;
+                padding-left: 3.5rem;
                 display: flex;
                 flex-direction: column;
-                gap: 65px;
+                gap: 4.0625rem;
+
+                @media (max-width:68.75rem) {
+                    padding: 1.25rem 0 1.5rem 1rem;
+                }
 
                 .swiper-slide-content-left-text {
                     display: flex;
                     flex-direction: column;
-                    gap: 12px;
-                    padding-top: 40px;
+                    gap: .75rem;
+                    padding-top: 2.5rem;
 
                     .swiper-slide-content-left-text__title {
                         max-width: 34.625rem;
@@ -143,12 +179,21 @@
                 overflow: hidden;
                 position: relative;
 
+                @media (max-width:68.75rem) {
+                    position: initial;
+                    border-radius: 0;
+                    overflow: auto;
+                }
+
                 .swiper-slide-content-right-img {
                     position: relative;
                     position: relative;
                     width: 100%;
                     height: 100%;
 
+                    @media (max-width:68.75rem) {
+                        position: initial;
+                    }
 
                     img {
                         position: absolute;
@@ -156,6 +201,10 @@
                         width: 100%;
                         height: 100%;
                         aspect-ratio: 642/383;
+
+                        @media (max-width:68.75rem) {
+                            position: initial;
+                        }
                     }
 
                     .bals-icon {
@@ -163,6 +212,10 @@
                         right: 3rem;
                         z-index: 1;
                         top: 0;
+
+                        @media (max-width:68.75rem) {
+                            top: 0;
+                        }
                     }
                 }
             }

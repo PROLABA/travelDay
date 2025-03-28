@@ -1,8 +1,23 @@
 .tabs-links {
-    padding-top: 48px;
+    padding-top: 3rem;
+
+    @media (max-width:37.5rem) {
+        padding-top: .25rem;
+    }
 
     .tabs-links-container {
-        @include card-grid(3, 24px);
+        @include card-grid(3, 1.5rem);
+
+        @media (max-width:75rem) {
+            @include card-grid(2, 1rem);
+        }
+
+        @media (max-width:37.5rem) {
+            @include card-grid(1, 0);
+            margin-right: .5rem;
+            margin-left: -0.5rem;
+            width: calc(100% + 1.0625rem);
+        }
 
         .city-tabs {
             display: flex;
@@ -12,6 +27,13 @@
             padding: 1.5rem 1.25rem;
             border-radius: 1.25rem;
 
+            @media (max-width:37.5rem) {
+                padding: 1rem;
+                border: 0;
+                border-radius: 0;
+                border-bottom: .0625rem solid $gray150 ;
+            }
+
             &:hover {
                 .h4 {
                     color: $gray700;
@@ -20,6 +42,12 @@
 
             .h4 {
                 @include smooth-transition(color);
+
+                @media (max-width:37.5rem) {
+                    font-size: 1rem;
+                    line-height: 1.2;
+                    letter-spacing: -1%;
+                }
             }
 
             .icon {
@@ -28,6 +56,12 @@
                 background-color: $gray50;
                 border-radius: 50%;
                 @include flex-center();
+
+                @media (max-width:37.5rem) {
+                    width: 1.5rem;
+                    height: 1.5rem;
+
+                }
             }
         }
     }
