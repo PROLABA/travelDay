@@ -375,3 +375,21 @@
   letter-spacing: -1%;
   vertical-align: middle;
 }
+
+.tabs-items {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 1.25rem;
+  flex-wrap: wrap;
+  .tab-item {
+    padding: 1.2188rem 0.875rem;
+    border-radius: 1rem;
+    border: 0.0625rem solid $gray150;
+    @include smooth-transition(border-color);
+    cursor: pointer;
+
+    &:hover {
+      border-color: $gray300;
+    }
+  }
+}

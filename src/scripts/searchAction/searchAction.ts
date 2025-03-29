@@ -45,7 +45,7 @@ export const searchAction = (): void => {
     ".get-back"
   ) as HTMLElement | null;
 
-  const openMenu = document.querySelector(".openMenu") as HTMLElement | null;
+  const openMenu = document.querySelectorAll(".openMenu");
 
   const overlay = document.querySelector(
     ".header-menu-container-overlay "
@@ -186,24 +186,22 @@ export const searchAction = (): void => {
 
     anime({
       targets: [searchContent, searchContentOverlay],
-      opacity: [1, 0], // Исправлено направление анимации
+      opacity: [1, 0],
       duration: 500,
       easing: "easeInQuad",
       complete: () => {
         searchContent.style.display = "none";
         searchContentOverlay.style.display = "none";
         html.style.overflow = "none";
-
       },
     });
   };
 
-  //открытие меню
   const openMenuHandler = () => {
     if (isOpenMenu) return;
     isOpenMenu = true;
     menu.style.display = "block";
-    openMenu.classList.add("active");
+    openMenu.forEach(button => button.classList.add("active"));
     overlay.style.display = "block";
     html.style.overflow = "hidden";
     anime({
@@ -213,7 +211,7 @@ export const searchAction = (): void => {
       easing: "easeOutQuad",
     });
   };
-  // закрытие меню
+
   const closeMenuHandler = () => {
     if (!isOpenMenu) return;
     isOpenMenu = false;
@@ -227,19 +225,20 @@ export const searchAction = (): void => {
         menu.style.display = "none";
         overlay.style.display = "none";
         html.style.overflow = "auto";
-        openMenu.classList.remove("active");
+        openMenu.forEach(button => button.classList.remove("active"));
       },
     });
   };
 
-  // Слушатели событий
-  openMenu.addEventListener("click", () => {
-    if (isOpenMenu) {
-      closeMenuHandler();
-    } else {
-      openMenuHandler();
-      hideSearch();
-    }
+  openMenu.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (isOpenMenu) {
+        closeMenuHandler();
+      } else {
+        openMenuHandler();
+        hideSearch();
+      }
+    });
   });
   overlay.addEventListener("click", closeMenuHandler);
   document.addEventListener("keydown", (event) => {
@@ -253,7 +252,7 @@ export const searchAction = (): void => {
   });
   inputContainer.addEventListener("click", () => {
     showSearch();
-    closeMenuHandler()
+    closeMenuHandler();
   });
   searchOverlay.addEventListener("click", () => {
     hideSearch();
@@ -272,7 +271,6 @@ export const searchAction = (): void => {
     }
   });
 
-  // Закрытие результатов поиска при клике вне них
   searchContentOverlay.addEventListener("click", searchResultClose);
   closeSearchResult?.addEventListener("click", searchResultClose);
 };

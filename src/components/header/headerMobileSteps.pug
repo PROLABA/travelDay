@@ -1,0 +1,34 @@
+.header-mobile-search 
+    .header-mobile-search-top 
+        .close-search-menu 
+            .icon 
+                include ./arrowLeft.svg
+            .h1    Поиск 
+        .input-container-mobile 
+            .icon 
+                include ./search.svg 
+            input(type="text").get-search-input        
+    .header-mobile-search-step1 
+        h4.title.h4 Куда отправимся сегодня?
+        .tabs-items 
+            .tab-item(data-city='SPB').body-s-2 Санкт-Петербург
+            .tab-item(data-city='MSK').body-s-2 Москва
+            .tab-item(data-city='KZN').body-s-2 Казань
+            .tab-item(data-city='NN').body-s-2 Нижний Новгород  
+    .header-mobile-search-step2
+        .search-result-container 
+            a(href="#").search-result-item 
+                .left 
+                    .body-m-3  Муром
+                    .body-s-1 Город
+                .right 
+                    .search-result-item-img
+                        include ./location.svg
+            each element in search       
+                a(href="#").search-result-item 
+                    .left 
+                        .body-m-3=element.title
+                        .body-s-1=element.city 
+                    .right 
+                        .search-result-item-img
+                            img(src=element.img, alt="" srcset="")            

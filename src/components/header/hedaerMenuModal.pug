@@ -18,7 +18,8 @@
                             p= item
         .header-menu-right     
             .header-container-right-top 
-                .body-s-1    Ежедневно, с 9:00 до 1:00
+                .title
+                    .body-s-1    Ежедневно, с 9:00 до 1:00
                 .number-block
                     .number 
                         a(href="tel:")
@@ -36,17 +37,22 @@
                         .icon 
                             include ./tg.svg
                         .text  Telegram    
-                .header-container-right-line 
-                .header-container-right-bottom  
+            .header-container-right-line 
+            .header-container-right-bottom  
+                .title 
                     .body-s-1 Наши соц-сети
-                    .social-links 
-                        a(href="http://").btn-l-3
-                            .icon 
-                                include ./vk.svg
-                            .text  ВКонтакте
-                        a(href="http://").btn-l-3
-                            .icon 
-                                include ./tg.svg
-                            .text  Канал в Telegram 
+                .social-links 
+                    a(href="http://").btn-l-3
+                        .icon 
+                            include ./vk.svg
+                        .text  ВКонтакте
+                    a(href="http://").btn-l-3
+                        .icon 
+                            include ./tg.svg
+                        .text  Канал в Telegram 
     .header-menu-discount 
         include ../discount/index.pug                        
+        a(href="/").get-all-mobile 
+            p.btn-m-2  Смотреть все
+            .icon
+                include ./right.svg

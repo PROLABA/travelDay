@@ -1,7 +1,9 @@
 .main-slider {
     padding-top: 7.875rem;
     width: 100%;
-
+    @media (max-width:1000px) {
+        padding-top: 4.5rem;
+    }
     .main-slider__container {
         width: 100%;
         position: relative;

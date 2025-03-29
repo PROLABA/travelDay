@@ -32,6 +32,23 @@ header.header
             a(href="/").header-btn  
                 include ./shop.svg    
 include ./hedaerMenuModal.pug 
+.header__mobile 
+    .container 
+        .header__mobile-container 
+            .header__mobile-container-left
+                button.openMenu
+                    .icon 
+                        span 
+                        span 
+                        span 
+                a(href="/").logo-link
+                    include ./logo.svg         
+            .header__mobile-container-right
+                .get-search
+                    include ./mobileSearch.svg
+                a(href="#").get-shop 
+                    include ./shopMobile.svg 
+include ./headerMobileSteps.pug
 .header-menu-container-overlay 
 .overlay-search                     
 .search-content-container-overlay
