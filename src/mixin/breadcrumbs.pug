@@ -1,0 +1,6 @@
+mixin breadcrumbs(link = '#', linkText = 'Главная', title = 'Контактная информация')
+  .breadcrumbs
+    a.breadcrumbs-link(href=link)
+      include ./arrow.svg
+      | #{linkText}
+    h2.h1= title

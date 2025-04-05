@@ -3,6 +3,7 @@ import { mainSwiper } from "./scripts/mainSwiper";
 import { mobileSearchAction } from "./scripts/mobileSearchAction";
 import { searchAction } from "./scripts/searchAction/searchAction";
 import { swiperDiscount } from "./scripts/swiperDiscount/swiperDiscount";
+import { ContactForm } from "./scripts/contactsForm";
 
 document.addEventListener("DOMContentLoaded", () => {
   searchAction();
@@ -10,4 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
   mainSwiper();
   sliderCard();
   mobileSearchAction();
+  new ContactForm();
 });

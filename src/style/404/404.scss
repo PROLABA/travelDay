@@ -18,19 +18,20 @@
   }
   .body-m-1-pharagraph {
     text-align: center;
-    color: $gray500;
+    color: $gray500 !important; 
     max-width: 33.4375rem;
     margin-top: 1rem;
     color: inherit;
   }
-  .button.button__primary {
+  a.button.button__primary {
     margin-top: 3rem;
     padding: 1.4063rem 2rem;
-  }
-  .button.button__primary:visited {
     color: $white;
+    &:visited {
+      color: $white;
+    }
   }
-  @media (max-width: 53.125rem) {
+  @media (max-width: $s1000) {
     .body-m-1-pharagraph {
       margin-top: 0.75rem;
     }
