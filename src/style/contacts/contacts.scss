@@ -85,15 +85,35 @@
             width: 100%;
           }
           textarea {
+            resize: none;
+            outline: none;
+            width: 100%;
+            padding-right: 16px;
+            height: 100%;
+            &::-webkit-scrollbar {
+              width: 3px;               
+              height: 49px;              
+            }
+            &::-webkit-scrollbar-track {
+              background: #fff;       
+              border-radius: 6px;        
+            }
+          
+            &::-webkit-scrollbar-thumb {
+              background: rgba(204, 204, 204, 1);         
+              border-radius: 6px;       
+          
+              &:hover {
+                background: $gray300;      
+                cursor: auto;
+              }
+            }
+          }
+          .form__textarea {
             background-color: $white;
             border-radius: 1rem;
             min-height: 10.4375rem;
             padding: 1.0625rem 1rem;
-            resize: none;
-            outline: none;
-            width: 100%;
-          }
-          .form__textarea {
             grid-column: span 2 / span 2;
           }
           .form__input::placeholder,
