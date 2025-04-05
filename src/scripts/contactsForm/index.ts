@@ -5,11 +5,13 @@ export class ContactForm {
     private notification: HTMLElement;
     private notificationContent: HTMLElement;
     private formContainer: HTMLElement;
+    private messageInputClass: HTMLElement;
 
     constructor() {
         this.form = document.querySelector('.form') as HTMLFormElement;
         this.emailInput = this.form.querySelector('input[type="email"]') as HTMLInputElement;
         this.messageInput = this.form.querySelector('textarea') as HTMLTextAreaElement;
+        this.messageInputClass = document.querySelector('.form__textarea') as HTMLElement;
         this.notification = document.querySelector('.notification') as HTMLElement;
         this.notificationContent = document.querySelector('.notification__content') as HTMLElement;
         this.formContainer = document.querySelector('.form') as HTMLElement;
@@ -57,7 +59,7 @@ export class ContactForm {
         wrapper?.querySelector('.error-message')?.remove();
 
         if (!this.messageInput.value.trim()) {
-            this.messageInput.classList.add('error');
+            this.messageInputClass.classList.add('error');
             const error = document.createElement('label');
             error.className = 'error-message';
             error.textContent = 'Заполните поле';
@@ -66,7 +68,7 @@ export class ContactForm {
             return false;
         }
         
-        this.messageInput.classList.remove('error');
+        this.messageInputClass.classList.remove('error');
         return true;
     }
 
