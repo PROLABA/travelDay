@@ -1,0 +1,146 @@
+.company-banner {
+    background-image: url(../../../public/images/aboutCompanyBanner/KazanSobor.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 22rem;
+    margin: 24px 0 80px;
+    
+    border-radius: 2rem;
+    @media (max-width: 768px) {
+      border-radius: 1.25rem;
+    }
+  
+    .h1 {
+      color: #fff;
+      max-width: 587px;
+      padding: 15% 0 0 4%;
+      
+      @media (max-width: 576px) {
+        max-width: 90%;
+        padding-top: 20%;
+      }
+    }
+}
+
+.contacts {
+    padding-top: 7.5rem;
+    &-blocks {
+      display: grid;
+      // grid-template-columns: repeat(2, 1fr);
+      // grid-template-rows: repeat(2, 1fr);
+      gap: 1.5rem;
+      &__item {
+        padding: 1.75rem;
+        background-color: rgba(245, 245, 245, 1);
+        border-radius: 2rem;
+        &:last-child {
+          grid-column: span 2 / span 2;
+          grid-row-start: 2;
+        }
+      }
+      &__title {
+        @include adaptive-font(28, 22);
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+      }
+      &__subtitle {
+        margin-top: 0.5rem;
+        @include adaptive-font(16, 13);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: $gray700;
+      }
+      &__link {
+        display: block;
+        width: fit-content;
+        letter-spacing: -0.01em;
+        margin-top: 1rem;
+        &:link,
+        &:visited {
+          color: $violet;
+        }
+      }
+      &__description {
+        letter-spacing: -0.02em;
+        color: $gray500;
+        margin-top: 0.25rem;
+        @media (max-width: $s850) {
+          color: $gray700;
+        }
+      }
+      &__links {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        svg {
+          width: 1.125rem;
+          height: 1.125rem;
+        }
+      }
+      &__social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5625rem;
+        padding: 1.125rem 1.25rem;
+        border-radius: 1rem;
+        background-color: $white;
+      }
+      .notification {
+        display: none;
+      }
+    }
+}
+
+.about-company {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.body-m-1-pharagraph {
+    margin-bottom: 12px;
+    margin-top: 16px;
+
+}
+
+img {
+    border-radius: 2.5rem;
+    max-width: 100%;
+
+    @media(max-width: 600px){
+        border-radius: 30px;
+    }
+    @media(max-width: 400px) {
+        border-radius: 20px;
+    }
+}
+
+.company-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 133px;
+  position: relative; // Добавляем относительное позиционирование для контейнера
+
+  @media(max-width: 1284px) {
+    grid-template-columns: 1fr;
+  } 
+
+  .contact {
+    position: sticky;
+    top: 90px; // Отступ от верха, можно регулировать
+    align-self: start; // Важно для правильного выравнивания
+    height: fit-content;
+    max-height: calc(100vh - 140px); // Ограничиваем высоту
+    overflow-y: auto; // Добавляем скролл при необходимости
+
+    @media (max-width: 1284px) {
+      position: static;
+      order: 2; // Переносим контакты вниз на мобильных
+      margin-top: 40px;
+    }
+  }
+}

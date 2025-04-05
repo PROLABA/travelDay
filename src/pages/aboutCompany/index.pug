@@ -1,0 +1,47 @@
+extends ../../layout/index.pug
+block content
+    .container.main-slider 
+        .h1 О компании
+        .company-banner
+            .h1 TravelDay – проводник к главной сути городов
+        .company-info
+            .about-company
+                .h2 Кто мы
+                    .body-m-1-pharagraph Привет, путешественники! Мы TravelDay — ваш помощник в выборе экскурсий на каждый день. Если вам нужен продуманный до мелочей маршрут, вы хотите погрузиться в атмосферу города с головой, прочувствовать его душу и узнать больше о ключевых достопримечательностях — вы обратились по адресу! Мы позаботимся о том, чтобы вы наслаждались каждой минутой в пути.
+                .h2 Что мы предлагаем
+                    .body-m-1-pharagraph Более 500 экскурсий! Наш каталог включает в себя водные прогулки, пешие и автобусные экскурсии по городам России: Санкт-Петербургу, Москве, Казани, Нижнему Новгороду и Ярославлю. Путешествуя с TravelDay, вы увидите лучшие шедевры архитектуры, объекты Всемирного наследия ЮНЕСКО, красивые природные заповедники, посетите знаменитые музеи, роскошные дворцы и храмы, старинные замки и крепости.
+                .h2 Почему нам доверяют
+                    .body-m-1-pharagraph Мы предлагаем популярные направления по выгодным ценам, удобный и безопасный транспорт, нескучные экскурсионные маршруты с опытными гидами, а главное — внимание к каждому клиенту
+                .h2 Как купить билет 
+                    .body-m-1-pharagraph Вы можете купить билеты не выходя из дома на сайте travelday.ru. Бронирование займёт всего несколько минут. Мы отправим билет вам на электронную почту сразу после оплаты. Покупайте без комиссии удобным способом: банковской картой любого банка, а также с помощью быстрых мобильных платежей SberPay.
+                    .body-m-1-pharagraph Если у вас есть вопросы, специалисты нашего колл-центра профессионально проконсультируют вас и помогут определиться с выбором, учитывая ваши индивидуальные предпочтения.
+                    .body-m-1-pharagraph Путешествуйте сегодня вместе с TravelDay!
+                img(src="../../../public/images/aboutCompanyBanner/video.png" alt="видео")
+            .contact
+                .contacts-blocks
+                    .contacts-blocks__item
+                        h3.contacts-blocks__title Звоните или пишите по любым вопросам
+                        .contacts-blocks__subtitle Мы на связи ежедневно, с 9 утра до 1 ночи
+                        a.contacts-blocks__link.body-xl-3(href="tel:78123341848") 8 812 334-18-48
+                        .contacts-blocks__description.body-s-1 Санкт-Петербург
+                        a.contacts-blocks__link.body-xl-3(href="tel:88005001399") 8 800 500-13-99
+                        .contacts-blocks__description.body-s-1 Вся Россия, бесплатно
+                        a.contacts-blocks__link.body-xl-3(href="mailto:hello@travelday.ru") hello@travelday.ru
+                        .contacts-blocks__description.body-s-1 Электронная почта
+                        .contacts-blocks__links
+                            a.contacts-blocks__social-link(href="#")
+                                include ./wa.svg
+                                | WhatsApp
+                            a.contacts-blocks__social-link(href="#")
+                                include ./tg.svg
+                                | Telegram
+                .contacts-blocks
+                    .contacts-blocks__item
+                        .h3 Новости, акции и скидки
+                        .body-m-1 В наших социальных сетях
+                        .contacts-blocks__links
+                            a.contacts-blocks__social-link(href="#")
+                                include ./tg.svg
+                            a.contacts-blocks__social-link(href="#")
+                                include ./vk.svg
+        include ../../components/bottomForm/bottomForm.pug
