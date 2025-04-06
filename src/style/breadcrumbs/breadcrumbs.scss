@@ -1,0 +1,16 @@
+.breadcrumbs {
+  margin-bottom: 2.9375rem;
+  a {
+    display: flex;
+    color: $gray500;
+    gap: 0.375rem;
+    max-width: fit-content;
+    @include adaptive-font(16, 14);
+    @media (max-width: $s1000) {
+      gap: 0.0625rem;
+    }
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+}
