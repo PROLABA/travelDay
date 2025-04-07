@@ -4,6 +4,7 @@
   import { searchAction } from "./scripts/searchAction/searchAction";
   import { swiperDiscount } from "./scripts/swiperDiscount/swiperDiscount";
   import { faqAccordion } from "./scripts/faqAccordion";
+  import { ContactForm } from "./scripts/contactsForm";
 
   document.addEventListener("DOMContentLoaded", () => {
     searchAction();
@@ -12,4 +13,5 @@
     sliderCard();
     mobileSearchAction();
     faqAccordion();
+    new ContactForm();
   });

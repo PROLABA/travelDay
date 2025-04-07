@@ -1,5 +1,5 @@
 .faq {
-  width: 848px;
+  // max-width: 848px;
   margin: 0 auto;
 
   &__item {
@@ -10,6 +10,10 @@
     transition: all 0.3s ease;
     transform: translateZ(0);
     backface-visibility: hidden;
+
+    @media(max-width: 550px) {
+      border-radius: 20px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -116,7 +120,7 @@
   }
 
   &__show-more {
-    width: 848px;
+    max-width: 848px;
     height: 56px;
     margin: 16px auto 0;
     background-color: rgba(245, 245, 245, 1);
@@ -126,6 +130,10 @@
     justify-content: center;
     position: relative;
     transition: all 0.3s ease;
+
+    @media(max-width: 550px) {
+      width: 80%;
+    }
   }
 
   &__show-more-btn {
@@ -157,6 +165,10 @@
     top: auto;
     left: auto;
     transform: none;
+
+    @media(max-width: 550px) {
+      display: none;
+    }
   }
 
   &__show-more-text {

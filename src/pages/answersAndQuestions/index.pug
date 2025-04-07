@@ -1,8 +1,10 @@
 extends ../../layout/index.pug
-include ../../mixin/faqAccordeon.pug 
+include ../../mixin/faqAccordeon.pug
+include ../../mixin/breadcrumbs.pug
 
 block content
     .container.main-slider
+        +breadcrumbs()
         .h1 Вопросы и ответы
         .company-info
             .faq-block
@@ -94,4 +96,5 @@ block content
                                 include ../aboutCompany/tg.svg
                             a.contacts-blocks__social-link(href="#")
                                 include ../aboutCompany/vk.svg
+        include ../../components/contacts/index.pug
     include ../../components/bottomForm/bottomForm.pug

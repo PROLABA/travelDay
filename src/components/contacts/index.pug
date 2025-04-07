@@ -1,0 +1,21 @@
+.contacts-form-blocks__item
+    .form-container
+        form.form(novalidate)
+            h2.form__title.h3 Оставить заявку
+            .form__subtitle Оставьте ваш вопрос, мы свяжемся вами в течение рабочего дня
+            .form__content
+                .form__input
+                    input(type="text" name="name" placeholder="Имя")
+                .form__input
+                    input#email(type="email" name="email" placeholder="E-mail*")
+                .form__textarea
+                    textarea#message(name="message" placeholder="Ваше сообщение*")
+            .form__bottom
+                button.button.button__primary.form__submit(type="submit") Отправить
+                .form__policy Оставляя свои персональные данные, вы соглашаетесь с 
+                    a(href="#") Политикой конфиденциальности
+        .notification
+            .notification__content
+                include ./successfulForm.svg
+                h3.h3 Заявка отправлена!
+                .notification__text Мы свяжемся вами в течение рабочего дня

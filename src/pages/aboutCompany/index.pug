@@ -1,6 +1,9 @@
 extends ../../layout/index.pug
+include ../../mixin/breadcrumbs.pug
+
 block content
-    .container.main-slider 
+    .container.main-slider
+        +breadcrumbs()
         .h1 О компании
         .company-banner
             .h1 TravelDay – проводник к главной сути городов
