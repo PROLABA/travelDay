@@ -105,6 +105,10 @@
         max-width: 20rem;
         width: 100%;
         height: 4rem;
+
+        @media(max-width: $s640) {
+            height: 3.25rem; 
+        }
     }
 
     &__container-3 {
@@ -123,5 +127,9 @@
 
     &__more-discounts {
         max-width: 80.25rem;
+    }
+
+    .swiper-discount.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+        padding: 0;
     }
 }
