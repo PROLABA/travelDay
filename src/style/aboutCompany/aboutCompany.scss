@@ -35,10 +35,11 @@
     padding-top: 120px;
     &-blocks {
       display: grid;
-      // grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       // grid-template-rows: repeat(2, 1fr);
       gap: 24px;
       &__item {
+        min-width: 412px;
         padding: 28px;
         background-color: rgba(245, 245, 245, 1);
         border-radius: 32px;
@@ -132,7 +133,7 @@ img {
 
 .company-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 8.3125rem;
   position: relative; // Добавляем относительное позиционирование для контейнера
 
