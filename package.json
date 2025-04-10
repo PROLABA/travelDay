@@ -16,10 +16,10 @@
     "@types/node": "^22.10.2",
     "sass": "^1.71.1",
     "typescript": "^5.7.2",
-    "vite": "^5.4.10",
+    "vite": "^6.2.4",
     "vite-plugin-inspect": "^0.8.3",
     "vite-plugin-pug": "^0.4.1",
-    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-svg-icons": "^0.1.0",
     "vituum": "^1.1.0"
   },
   "dependencies": {

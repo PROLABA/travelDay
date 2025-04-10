@@ -1,0 +1,23 @@
+mixin faq-accordion(items, sectionId)
+  .faq(data-faq-section=sectionId)
+    each item, index in items
+      .faq__item(
+        class=index >= 5 ? 'faq__item--hidden' : ''
+        data-faq-item=sectionId
+      )
+        .faq__question(data-faq-question=sectionId)
+          .h4.faq__question-text= item.question
+          .faq__toggle
+            svg.faq__icon.faq__icon-plus(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+            svg.faq__icon.faq__icon-minus(width="12" height="12" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(d="M1 1H11" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+        .faq__answer(data-faq-answer=sectionId)
+          .body-m-1.faq__answer-text= item.answer
+    
+    if items.length > 5
+      .faq__show-more
+        button.faq__show-more-btn(type="button" data-faq-show-more=sectionId)
+          svg.faq__show-more-icon(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+          span.faq__show-more-text Показать еще

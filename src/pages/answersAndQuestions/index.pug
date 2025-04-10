@@ -1,0 +1,100 @@
+extends ../../layout/index.pug
+include ../../mixin/faqAccordeon.pug
+include ../../mixin/breadcrumbs.pug
+
+block content
+    .container.main-slider
+        +breadcrumbs()
+        .h1 Вопросы и ответы
+        .company-info
+            .faq-block
+                .h3 Бронирование и оплата
+                .faq-section
+                    +faq-accordion([
+                        {
+                        question: "Как купить билеты?",
+                        answer: "Билеты можно приобрести онлайн и просто показать их с телефона"
+                        },
+                        {
+                        question: "Можно ли купить сразу несколько экскурсий?",
+                        answer: "Да, вы можете добавить несколько экскурсий в корзину и оплатить их одним заказом."
+                        },
+                        {
+                        question: "Что придет после оплаты?",
+                        answer: "После оплаты на ваш email придет электронный билет с QR-кодом."
+                        },
+                        {
+                        question: "Обязательно ли распечатывать электронный билет?",
+                        answer: "Нет, достаточно показать билет с экрана вашего смартфона."
+                        },
+                        {
+                        question: "Как купить билеты?",
+                        answer: "Билеты можно приобрести онлайн и просто показать их с телефона"
+                        },
+                        {
+                        question: "Можно ли купить сразу несколько экскурсий?",
+                        answer: "Да, вы можете добавить несколько экскурсий в корзину и оплатить их одним заказом."
+                        },
+                        {
+                        question: "Что придет после оплаты?",
+                        answer: "После оплаты на ваш email придет электронный билет с QR-кодом."
+                        }
+                    ], "section1")
+
+                .h3 Отмена и изменение заказа
+                .faq-section
+                    +faq-accordion([
+                        {
+                        question: "Как отменить заказ?",
+                        answer: "Как отменить заказ?Как отменить заказ?"
+                        },
+                        {
+                        question: "Как изменить заказ?",
+                        answer: "Как отменить заказ?Как отменить заказ?Как отменить заказ?"
+                        }
+                    ], "section2")
+                .h3 Индивидуальные экскурсии
+                .faq-section
+                    +faq-accordion([
+                        {
+                        question: "Можно ли заказать индивидуальную экскурсию?",
+                        answer: "Можно ли заказать индивидуальную экскурсию?Можно ли заказать индивидуальную экскурсию?"
+                        }
+                    ], "section3")
+                .h3 Безопасность персональных данных
+                .faq-section
+                    +faq-accordion([
+                        {
+                        question: "Конфиденциальность персональных данных",
+                        answer: "Конфиденциальность персональных данныхКонфиденциальность персональных данных"
+                        }
+                    ], "section4")
+            .contact
+                .contacts-blocks
+                    .contacts-blocks__item
+                        h3.contacts-blocks__title Звоните или пишите по любым вопросам
+                        .contacts-blocks__subtitle Мы на связи ежедневно, с 9 утра до 1 ночи
+                        a.contacts-blocks__link.body-xl-3(href="tel:78123341848") 8 812 334-18-48
+                        .contacts-blocks__description.body-s-1 Санкт-Петербург
+                        a.contacts-blocks__link.body-xl-3(href="tel:88005001399") 8 800 500-13-99
+                        .contacts-blocks__description.body-s-1 Вся Россия, бесплатно
+                        a.contacts-blocks__link.body-xl-3(href="mailto:hello@travelday.ru") hello@travelday.ru
+                        .contacts-blocks__description.body-s-1 Электронная почта
+                        .contacts-blocks__links
+                            a.contacts-blocks__social-link(href="#")
+                                include ../aboutCompany/wa.svg
+                                | WhatsApp
+                            a.contacts-blocks__social-link(href="#")
+                                include ../aboutCompany/tg.svg
+                                | Telegram
+                .contacts-blocks
+                    .contacts-blocks__item
+                        .h3 Новости, акции и скидки
+                        .body-m-1 В наших социальных сетях
+                        .contacts-blocks__links
+                            a.contacts-blocks__social-link(href="#")
+                                include ../aboutCompany/tg.svg
+                            a.contacts-blocks__social-link(href="#")
+                                include ../aboutCompany/vk.svg
+        include ../../components/contacts/index.pug
+    include ../../components/bottomForm/bottomForm.pug
