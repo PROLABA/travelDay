@@ -1,0 +1,32 @@
+extends ../../layout/index.pug
+include ../../mixin/discountCard.pug
+include ../../mixin/breadcrumbs.pug
+
+block content
+    .discounts.container
+        .discounts__container 
+            .discounts__title
+                +breadcrumbs('#','Главная', 'Для ребенка до 12 лет экскурсии — бесплатно')
+            .discounts__list-container 
+                +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
+                +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
+                +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
+                +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
+                +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
+                +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
+                +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
+                +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
+                +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
+            button.button.button__subded Загрузить еще
+            .pagination-container 
+                .button-pagination.prev
+                    include ../../../public/images/uiIcon/arrowPrev.svg
+                .pagination-number 1
+                .pagination-number 2
+                .pagination-number 3
+                .pagination-number 4
+                .pagination-number 5
+                .button-pagination.next  
+                    include ../../../public/images/uiIcon/arrowPrev.svg         
+    include ../../components/bottomForm/bottomForm.pug 
+        

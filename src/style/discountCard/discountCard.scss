@@ -1,0 +1,34 @@
+.discount-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 25.75rem;
+    transition: all 0.5s ease; 
+
+    @media(max-width: $s640) {
+        max-width: 100%;
+    }
+
+    &__image {
+        img {
+            width: 100%;
+            border-radius: 1.75rem;
+            transition: opacity 0.5s ease; 
+        }
+    }
+
+    &__title {
+        @include adaptive-font(20, 16);
+        transition: color 0.5s ease; 
+    }
+
+    &:hover {
+        .discount-card__image img {
+            opacity: 0.7;
+        }
+    
+        .discount-card__title {
+            color: $gray700;
+        }   
+    }
+}

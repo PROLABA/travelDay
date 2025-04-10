@@ -99,6 +99,9 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  @media(max-width: $s540) {
+    gap: 0;
+  }
   .button-pagination {
     background-color: $gray50;
     width: 4rem;
@@ -122,6 +125,13 @@
         background-color: $gray50;
       }
     }
+    &.next {
+      transform: scaleX(-1);
+    }
+    @media(max-width: $s540) {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
   }
   .pagination-number {
     font-weight: 600;
@@ -138,6 +148,10 @@
     @include smooth-transition(border);
     &:hover {
       border: 0.0625rem solid $grayBorder;
+    }
+    @media(max-width: $s540) {
+      width: 2.75rem;
+      height: 2.75rem;
     }
   }
 }

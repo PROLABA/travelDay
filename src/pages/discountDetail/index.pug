@@ -1,0 +1,48 @@
+extends ../../layout/index.pug
+include ../../mixin/card.pug
+include ../../mixin/discountCard.pug
+include ../../mixin/breadcrumbs.pug
+
+block content
+    .discount-detail.container
+        .discount-detail__container-1 
+            .discounts__title
+                +breadcrumbs('#','Акции', 'Для ребенка до 12 лет экскурсии — бесплатно')
+            .discount-detail__image
+                img(src="/public/images/discountDetail/discountDetail.png", alt="")
+            .discount-detail__description 
+                p.body-m-1-pharagraph Уважаемые путешественники!
+                p.body-m-1-pharagraph Мы рады сообщить, что теперь для ваших маленьких исследователей экскурсии стали еще доступнее! В рамках акции «Для ребенка до 12 лет — экскурсии бесплатно» вы можете взять с собой детей, не переживая за дополнительные расходы.
+                p.body-m-1-pharagraph Это выгодно, ведь ваш ребенок получит яркие впечатления, а вы заплатите только за свой билет. Наши экскурсии интересны и познавательны как для взрослых, так и для детей. Выбирайте из множества вариантов: исторические туры, приключенческие маршруты и многое другое.
+            .discount-detail__description-list 
+                .discount-detail__subtitle
+                    h3.h3 Заголовок 3 уровня
+                p.body-m-1-pharagraph Маркированный список:
+                ul.discount-detail__list 
+                    li.discount-detail__item Дети в возрасте до 12 лет включительно, сопровождаемые взрослым, оплатившим экскурсию
+                    li.discount-detail__item Акция действует с 1 октября 2023 года по 31 декабря 2023 года.
+                    li.discount-detail__item Акция распространяется на все автобусные, водные и пешеходные экскурсии, представленные на сайте.
+                    li.discount-detail__item Один взрослый может сопровождать до двух детей по акции.
+                    li.discount-detail__item Для участия в акции необходимо заранее забронировать экскурсию через сайт или по телефону, указав количество детей.
+                p.body-m-1-pharagraph Это выгодно, ведь ваш ребенок получит яркие впечатления, а вы заплатите только за свой билет. Наши экскурсии интересны и познавательны как для взрослых, так и для детей. Выбирайте из множества вариантов: исторические туры, приключенческие маршруты и многое другое.
+        .discount-detail__container-2 
+            .discount-detail__title 
+                h2.h2 Экскурсии, участвующие в акции
+            .discount-detail__participating
+                +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽" )
+                +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽" )
+                +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽" )
+                +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽" )
+                +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽" )
+                +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽" )
+            button.button.button__subded Показать еще  
+        .discount-detail__container-3 
+            .discount-detail__title
+                h2.h2 Еще акции и скидки
+            .discount-detail__more-discounts
+                include ../../components/discount/index.pug
+            button.button.button__subded Показать еще 
+    include ../../components/bottomForm/bottomForm.pug 
+
+            
+        
