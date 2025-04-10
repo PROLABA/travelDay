@@ -25,11 +25,14 @@ include ../../mixin/breadcrumbs.pug
                     .form__subtitle Оставьте ваш вопрос, мы свяжемся вами в течение рабочего дня
                     .form__content
                         .form__input
-                            input(type="text" name="name" placeholder="Имя")
+                            label.form__label(for="name") Имя
+                            input#name(type="text" name="name")
                         .form__input
-                            input#email(type="email" name="email" placeholder="E-mail*")
+                            label.form__label(for="email") E-mail
+                            input#email(type="email" name="email")
                         .form__textarea
-                            textarea#message(name="message" placeholder="Ваше сообщение*")
+                            label.form__label(for="message") Сообщение
+                            textarea#message(name="message")
                     .form__bottom
                         button.button.button__primary.form__submit(type="submit") Отправить
                         .form__policy Оставляя свои персональные данные, вы соглашаетесь с 

@@ -1,5 +1,6 @@
 export class ContactForm {
     private form: HTMLFormElement;
+    private nameInput: HTMLInputElement;
     private emailInput: HTMLInputElement;
     private messageInput: HTMLTextAreaElement;
     private notification: HTMLElement;
@@ -9,6 +10,7 @@ export class ContactForm {
 
     constructor() {
         this.form = document.querySelector('.form') as HTMLFormElement;
+        this.nameInput = this.form.querySelector('input[type="text"]') as HTMLInputElement;
         this.emailInput = this.form.querySelector('input[type="email"]') as HTMLInputElement;
         this.messageInput = this.form.querySelector('textarea') as HTMLTextAreaElement;
         this.messageInputClass = document.querySelector('.form__textarea') as HTMLElement;
@@ -21,6 +23,20 @@ export class ContactForm {
 
     private init(): void {
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        this.nameInput.addEventListener('input', (e) => this.handleInput(e));
+        this.emailInput.addEventListener('input', (e) => this.handleInput(e));
+        this.messageInput.addEventListener('input', (e) => this.handleInput(e));
+    }
+
+    private handleInput(e: Event): void {
+        const input = e.target as HTMLInputElement | HTMLTextAreaElement;
+        const parent = input.parentElement;
+        if (!parent) return;
+        
+        const label = parent.querySelector('.form__label');
+        if (label) {
+            label.style.display = input.value.trim() ? 'none' : 'block';
+        }
     }
 
     private handleSubmit(e: Event): void {
@@ -55,7 +71,6 @@ export class ContactForm {
 
     private validateMessage(): boolean {
         const wrapper = this.messageInput.parentElement;
-        
         wrapper?.querySelector('.error-message')?.remove();
 
         if (!this.messageInput.value.trim()) {
@@ -80,6 +95,9 @@ export class ContactForm {
 
     private resetForm(): void {
         this.form.reset();
+        document.querySelectorAll('.form__label').forEach(label => {
+            (label as HTMLElement).style.display = 'block';
+        });
         this.formContainer.style.display = 'block';
         this.notification.style.display = 'none';
         this.emailInput.classList.remove('error');
