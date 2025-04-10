@@ -1,21 +1,53 @@
-.contacts-form-blocks__item
-    .form-container
-        form.form(novalidate)
-            h2.form__title.h3 Оставить заявку
-            .form__subtitle Оставьте ваш вопрос, мы свяжемся вами в течение рабочего дня
-            .form__content
-                .form__input
-                    input(type="text" name="name" placeholder="Имя")
-                .form__input
-                    input#email(type="email" name="email" placeholder="E-mail*")
-                .form__textarea
-                    textarea#message(name="message" placeholder="Ваше сообщение*")
-            .form__bottom
-                button.button.button__primary.form__submit(type="submit") Отправить
-                .form__policy Оставляя свои персональные данные, вы соглашаетесь с 
-                    a(href="#") Политикой конфиденциальности
-        .notification
-            .notification__content
-                include ./successfulForm.svg
-                h3.h3 Заявка отправлена!
-                .notification__text Мы свяжемся вами в течение рабочего дня
+include ../../mixin/breadcrumbs.pug
+.contacts.container 
+    +breadcrumbs()
+    .contacts-blocks
+        .contacts-blocks__item.contact-info
+                h3.contacts-blocks__title Звоните или пишите по любым вопросам
+                .contacts-blocks__subtitle Мы на связи ежедневно, с 9 утра до 1 ночи
+                a.contacts-blocks__link.body-xl-3(href="tel:78123341848") 8 812 334-18-48
+                .contacts-blocks__description.body-s-1 Санкт-Петербург
+                a.contacts-blocks__link.body-xl-3(href="tel:88005001399") 8 800 500-13-99
+                .contacts-blocks__description.body-s-1 Вся Россия, бесплатно
+                a.contacts-blocks__link.body-xl-3(href="mailto:hello@travelday.ru") hello@travelday.ru
+                .contacts-blocks__description.body-s-1 Электронная почта
+                .contacts-blocks__links
+                    a.contacts-blocks__social-link(href="#")
+                        include ./wa.svg
+                        | WhatsApp
+                    a.contacts-blocks__social-link(href="#")
+                        include ./tg.svg
+                        | Telegram
+        .contacts-blocks__item
+            .form-container
+                form.form(novalidate)
+                    h2.form__title.h3 Оставить заявку
+                    .form__subtitle Оставьте ваш вопрос, мы свяжемся вами в течение рабочего дня
+                    .form__content
+                        .form__input
+                            input(type="text" name="name" placeholder="Имя")
+                        .form__input
+                            input#email(type="email" name="email" placeholder="E-mail*")
+                        .form__textarea
+                            textarea#message(name="message" placeholder="Ваше сообщение*")
+                    .form__bottom
+                        button.button.button__primary.form__submit(type="submit") Отправить
+                        .form__policy Оставляя свои персональные данные, вы соглашаетесь с 
+                            a(href="#") Политикой конфиденциальности
+                .notification
+                    .notification__content
+                        include ./successfulForm.svg
+                        h3.h3 Заявка отправлена!
+                        .notification__text Мы свяжемся вами в течение рабочего дня
+        .contacts-blocks__item
+            .social-promo
+                .contacts-blocks--flexer
+                    h3.h3 Новости, акции и скидки
+                    .body-s-1 В наших социальных сетях
+                .contacts-blocks__links
+                    a.contacts-blocks__social-link(href="#")
+                        include ./vk.svg
+                        | ВКонтакте
+                    a.contacts-blocks__social-link(href="#")
+                        include ./tg.svg
+                        | Telegram–канал
