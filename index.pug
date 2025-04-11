@@ -1,12 +1,11 @@
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1,maximum-scale=1')
+        link(rel='stylesheet', href='src/style/main.scss')
 
-html(lang="en")
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1')
-    link(rel='stylesheet' href='src/style/main.scss')
-
-  body.flex-wrapper
-    //- include ./src/components/header/header.pug
-    main.flex-grow index page
-    footer.footer
-    script(type='module' src='src/main.ts')
+    body.flex-wrapper
+        //- include ./src/components/header/header.pug
+        main.flex-grow index page
+        footer.footer footer
+        script(type='module', src='src/main.ts')

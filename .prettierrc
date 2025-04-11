@@ -1,14 +1,14 @@
 {
-  "tabWidth": 2,
+  "tabWidth": 4,
   "useTabs": false,
   "printWidth": 120,
   "semi": true,
-  "singleQuote": false,
+  "singleQuote": true,
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "trailingComma": "none",
   "plugins": ["@prettier/plugin-pug"],
   "pugPrintWidth": 120,
   "pugSingleQuote": "true",
-  "pugTabWidth": 2
+  "pugTabWidth": 4
 }
