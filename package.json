@@ -7,13 +7,16 @@
     "dev": "vite --base=./",
     "build": "vite build --base=./",
     "build-watch": "vite build --base=./ --watch",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write ."
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^3.3.0",
     "@types/animejs": "^3.1.12",
     "@types/aos": "^3.0.7",
     "@types/body-scroll-lock": "^3.1.2",
     "@types/node": "^22.10.2",
+    "prettier": "^3.5.3",
     "sass": "^1.71.1",
     "typescript": "^5.7.2",
     "vite": "^6.2.4",
@@ -27,7 +30,6 @@
     "aos": "^2.3.4",
     "body-scroll-lock": "^4.0.0-beta.0",
     "imask": "^7.6.1",
-    "prettier": "^3.3.3",
     "pug": "^3.0.3",
     "swiper": "^11.2.6",
     "vite-plugin-pug-transformer": "^1.0.5"
