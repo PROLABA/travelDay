@@ -31,7 +31,63 @@
     }
 }
 
-.contacts {
+.about-company {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    img {
+      border-radius: 40px;
+      max-width: 100%;
+  
+      @media(max-width: 37.5rem){
+          border-radius: 1.875rem;
+      }
+      @media(max-width: 25rem) {
+          border-radius: 1.25rem;
+      }
+  }
+  
+      @media(max-width: 37.5rem){
+          border-radius: 1.875rem;
+      }
+      @media(max-width: 25rem) {
+          border-radius: 1.25rem;
+      }
+  }
+
+.body-m-1-pharagraph {
+    margin-bottom: .75rem;
+    margin-top: 1rem;
+
+}
+
+.company-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8.3125rem;
+  position: relative; // Добавляем относительное позиционирование для контейнера
+
+  @media(max-width: 80.25rem) {
+    grid-template-columns: 1fr;
+  } 
+
+  .contact {
+    position: sticky;
+    top: 5.625rem; // Отступ от верха, можно регулировать
+    align-self: start; // Важно для правильного выравнивания
+    height: fit-content;
+    max-height: calc(100vh - 8.75rem); // Ограничиваем высоту
+    overflow-y: auto; // Добавляем скролл при необходимости
+
+    @media (max-width: 80.25rem) {
+      position: static;
+      order: 2; // Переносим контакты вниз на мобильных
+      margin-top: 2.5rem;
+    }
+  }
+
+  .contacts {
     padding-top: 120px;
     &-blocks {
       display: grid;
@@ -106,53 +162,4 @@
       }
     }
 }
-
-.about-company {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.body-m-1-pharagraph {
-    margin-bottom: .75rem;
-    margin-top: 1rem;
-
-}
-
-img {
-    border-radius: 40px;
-    max-width: 100%;
-
-    @media(max-width: 37.5rem){
-        border-radius: 1.875rem;
-    }
-    @media(max-width: 25rem) {
-        border-radius: 1.25rem;
-    }
-}
-
-.company-info {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 8.3125rem;
-  position: relative; // Добавляем относительное позиционирование для контейнера
-
-  @media(max-width: 80.25rem) {
-    grid-template-columns: 1fr;
-  } 
-
-  .contact {
-    position: sticky;
-    top: 5.625rem; // Отступ от верха, можно регулировать
-    align-self: start; // Важно для правильного выравнивания
-    height: fit-content;
-    max-height: calc(100vh - 8.75rem); // Ограничиваем высоту
-    overflow-y: auto; // Добавляем скролл при необходимости
-
-    @media (max-width: 80.25rem) {
-      position: static;
-      order: 2; // Переносим контакты вниз на мобильных
-      margin-top: 2.5rem;
-    }
-  }
 }

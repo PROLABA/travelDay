@@ -1,5 +1,5 @@
 mixin card(isBordered, label, img, excursion, time, title, productVirable, iSdiscount, price, oldPrice)
-    a(href="#").card(class=isBordered ? 'card--bordered' : '')
+    a(href="#", class=isBordered ? "card--bordered" : '').card
         if label
             .card__label 
                 .icon
