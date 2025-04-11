@@ -1,12 +1,13 @@
-  import { sliderCard } from "./scripts/cardSlider";
-  import { mainSwiper } from "./scripts/mainSwiper";
-  import { mobileSearchAction } from "./scripts/mobileSearchAction";
-  import { searchAction } from "./scripts/searchAction/searchAction";
-  import { swiperDiscount } from "./scripts/swiperDiscount/swiperDiscount";
-  import { faqAccordion } from "./scripts/faqAccordion";
-  import { ContactForm } from "./scripts/contactsForm";
+import 'virtual:svg-icons-register'
+import { sliderCard } from './scripts/cardSlider';
+import { mainSwiper } from './scripts/mainSwiper';
+import { mobileSearchAction } from './scripts/mobileSearchAction';
+import { searchAction } from './scripts/searchAction/searchAction';
+import { swiperDiscount } from './scripts/swiperDiscount/swiperDiscount';
+import { faqAccordion } from './scripts/faqAccordion';
+import { ContactForm } from './scripts/contactsForm';
 
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     searchAction();
     swiperDiscount();
     mainSwiper();
@@ -14,4 +15,4 @@
     mobileSearchAction();
     faqAccordion();
     new ContactForm();
-  });
+});

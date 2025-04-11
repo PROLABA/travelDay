@@ -1,0 +1,3 @@
+mixin useIcon(symbolId, color = 'currentColor')
+    svg(aria-hidden='true')
+        use(xlink:href=`#icon-${symbolId}`, fill=`${color}`)

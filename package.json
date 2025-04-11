@@ -24,7 +24,7 @@
         "vite": "^6.2.4",
         "vite-plugin-inspect": "^0.8.3",
         "vite-plugin-pug": "^0.4.1",
-        "vite-plugin-svg-icons": "^0.1.0",
+        "vite-plugin-svg-icons": "^2.0.1",
         "vituum": "^1.1.0"
     },
     "dependencies": {
