@@ -9,14 +9,14 @@ export class ContactForm {
     private messageInputClass: HTMLElement;
 
     constructor() {
-        this.form = document.querySelector('.form') as HTMLFormElement;
-        this.nameInput = this.form.querySelector('input[type="text"]') as HTMLInputElement;
-        this.emailInput = this.form.querySelector('input[type="email"]') as HTMLInputElement;
-        this.messageInput = this.form.querySelector('textarea') as HTMLTextAreaElement;
+        this.form = document.querySelector('.contacts_form') as HTMLFormElement;
+        this.nameInput = this.form.querySelector('.contacts_form__input--name') as HTMLInputElement;
+        this.emailInput = this.form.querySelector('.contacts_form__input--email') as HTMLInputElement;
+        this.messageInput = this.form.querySelector('.contacts_form__input--massage') as HTMLTextAreaElement;
         this.messageInputClass = document.querySelector('.form__textarea') as HTMLElement;
         this.notification = document.querySelector('.notification') as HTMLElement;
         this.notificationContent = document.querySelector('.notification__content') as HTMLElement;
-        this.formContainer = document.querySelector('.form') as HTMLElement;
+        this.formContainer = document.querySelector('.contacts_form') as HTMLElement;
 
         this.init();
     }

@@ -20,19 +20,19 @@ include ../../mixin/breadcrumbs.pug
                         | Telegram
         .contacts-blocks__item
             .form-container
-                form.form(novalidate)
+                form.form(novalidate).contacts_form
                     h2.form__title.h3 Оставить заявку
                     .form__subtitle Оставьте ваш вопрос, мы свяжемся вами в течение рабочего дня
                     .form__content
                         .form__input
                             label.form__label(for="name") Имя
-                            input#name(type="text" name="name")
+                            input.contacts_form__input--name#name(type="text" name="name")
                         .form__input
                             label.form__label(for="email") E-mail
-                            input#email(type="email" name="email")
+                            input.contacts_form__input--email#email(type="email" name="email")
                         .form__textarea
                             label.form__label(for="message") Сообщение
-                            textarea#message(name="message")
+                            textarea.contacts_form__input--massage#message(name="message")
                     .form__bottom
                         button.button.button__primary.form__submit(type="submit") Отправить
                         .form__policy Оставляя свои персональные данные, вы соглашаетесь с 
