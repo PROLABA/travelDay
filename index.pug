@@ -7,7 +7,15 @@ html(lang='en')
 
     body.flex-wrapper
         //- include ./src/components/header/header.pug
-        main.flex-grow index page
+        main.flex-grow
             +useIcon('logo')
+            .title
+                h1.h1 nav
+            ul(
+                style='list-style: none; padding: 0; margin-top: 50px; display: flex; flex-direction: column; gap: 20px'
+            )
+                each page in ['404', 'aboutCompany','answersAndQuestions', 'contact', 'discountDetail', 'discount', 'main', 'privacy-policy', 'ui']
+                    li
+                        a(href=`src/pages/${page}/index.html`) #{ page }
         footer.footer footer
         script(type='module', src='src/main.ts')
