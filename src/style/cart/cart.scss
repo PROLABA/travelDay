@@ -1,4 +1,7 @@
 .cart {
+    &-section {
+        padding-bottom: 80px;
+    }
     &-body {
         &__top {
             display: grid;
@@ -14,7 +17,7 @@
     }
     &-aside {
         position: sticky;
-        top: 0;
+        top: 110px;
         background-color: $gray50;
         border-radius: 32px;
         padding: 32px;
@@ -76,16 +79,10 @@
         }
         &__title {
             display: flex;
+            align-items: start;
             justify-content: space-between;
             width: 100%;
             gap: 8px;
-            .title {
-                // overflow: hidden;
-                // display: -webkit-box;
-                // -webkit-line-clamp: 1;
-                // -webkit-box-orient: vertical;
-                // line-height: 150%;
-            }
         }
         &__list {
             display: flex;
