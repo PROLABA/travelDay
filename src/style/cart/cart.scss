@@ -131,3 +131,23 @@ section.recommend {
         border-radius: 20px;
     }
 }
+
+.current-promos {
+    margin-top: 72px;
+    &__content {
+        margin-top: 32px;
+    }
+}
+.promo-card {
+    padding: 24px;
+    border-radius: 28px;
+    border: 1px dashed $violet;
+    &__button {
+        background-color: #7f56d921;
+        padding: 12px 16px;
+        border-radius: 20px;
+        color: $violet !important;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}

@@ -110,5 +110,18 @@ block content
                             span.h2 127 898 ₽
                         .mt-20
                             button.button.button__primary.w-full К оформлению
-            include ../../components/recommendSecond/index.pug
-            //- include ../../components/recommend/index.pug
+        .current-promos
+            .current-promos__title
+                h3.h1 Текущие акции
+            .current-promos__content
+                .current-promos__swiper.swiper
+                    .swiper-wrapper
+                        each item in [1, 2, 3, 4]
+                            .swiper-slide.current-promos__card
+                                .promo-card
+                                    h5.h4 Скидка 50% на 3 экскурсию
+                                    p.mt-8.body-s-1.text-gray При покупке 3-х четвертая экскурсия по Казани со скидкой 50%
+                                    .mt-20
+                                        a(href='javascript:void(0)').promo-card__button Применить
+
+        include ../../components/recommendSecond/index.pug
