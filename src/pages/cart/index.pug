@@ -1,0 +1,26 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+
+block content
+    section.container.mt-page.cart-section
+        .cart-body
+            .cart-body__top
+                .cart-body__top-left
+                    .cart-title
+                        a.arrow-back(href='#')
+                            +useIcon('arrow-circle')
+                            span Назад
+                        .cart-title__text-block
+                            h1.h1.cart-title__text Корзина
+                                span.badge 2
+                            a(href='javascript:void(0)')
+                                span.body-s-1.text-gray Удалить все
+                    .cart-body__content
+                        .cart-gift
+                            +useIcon('cart-gift')
+                            span При покупке получите подарок
+                        ul.cart-list
+                            li.cart-list__item
+                .cart-body__top-right
+                    aside.cart-aside zakaz
+                        button.button.button__primary.w-full К оформлению

@@ -1,0 +1,25 @@
+.text-gray {
+    color: $textBaseGray;
+}
+.c-flex {
+    display: flex;
+}
+.c-flex-center {
+    align-items: center;
+}
+.c-flex-column {
+    flex-direction: column;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+.mt-8 {
+    margin-top: 8px;
+}
+.mt-24 {
+    margin-top: 24px;
+}
+.w-full {
+    width: 100%;
+}

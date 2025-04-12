@@ -3,7 +3,7 @@ import vitePugPlugin from 'vite-plugin-pug-transformer';
 import pugPlugin from 'vite-plugin-pug';
 // import { ViteSvgIconsPlugin } from 'vite-plugin-svg-icons';
 // import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path, { resolve } from 'path';
 
 const root = resolve(__dirname, 'src');
@@ -15,7 +15,8 @@ export default defineConfig({
     },
     build: {
         emptyOutDir: true,
-        outDir: '../local/templates/otevetto/dist',
+        // outDir: '../local/templates/otevetto/dist',
+        outDir: './dist',
         rollupOptions: {
             input: {
                 index: resolve('index.html'),
@@ -79,8 +80,8 @@ export default defineConfig({
             }
         } as any),
         createSvgIconsPlugin({
-          iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-          symbolId: 'icon-[dir]-[name]',
+            iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+            symbolId: 'icon-[dir]-[name]'
         })
     ]
 });

@@ -1,409 +1,431 @@
 .btn-container-ui {
-  @include card-grid(2, 2rem);
+    @include card-grid(2, 2rem);
 }
 .ui-page {
-  max-width: 85rem;
-  margin: 0 auto;
-  padding: 2.5rem;
+    max-width: 85rem;
+    margin: 0 auto;
+    padding: 2.5rem;
 }
 .color-bg {
-  background-color: $gray50;
-  width: 100%;
-  padding: 2.5rem 0;
-  display: flex;
-  justify-content: space-between;
+    background-color: $gray50;
+    width: 100%;
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
 }
 .button {
-  padding: 1.0625rem 1.875rem;
-  border-radius: 1rem;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  line-height: 120%;
-  letter-spacing: -2%;
-  cursor: pointer;
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease;
-  &__primary {
-    background-color: $violet;
-    text-align: center;
-    width: fit-content;
-    color: $white;
-    &:hover {
-      background-color: $violetHover;
+    padding: 1.0625rem 1.875rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    line-height: 120%;
+    letter-spacing: -2%;
+    cursor: pointer;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+    &__primary {
+        background-color: $violet;
+        text-align: center;
+        width: fit-content;
+        color: $white;
+        &:hover {
+            background-color: $violetHover;
+        }
+        &.disabled {
+            background-color: $gray300;
+            cursor: not-allowed;
+            &:hover {
+                background-color: $gray300;
+            }
+        }
     }
-    &.disabled {
-      background-color: $gray300;
-      cursor: not-allowed;
-      &:hover {
-        background-color: $gray300;
-      }
+    &__secondary {
+        background-color: $pink;
+        text-align: center;
+        width: fit-content;
+        color: $white;
+        &:hover {
+            background-color: $pinkHover;
+        }
+        &.disabled {
+            background-color: $gray300;
+            cursor: not-allowed;
+            &:hover {
+                background-color: $gray300;
+            }
+        }
     }
-  }
-  &__secondary {
-    background-color: $pink;
-    text-align: center;
-    width: fit-content;
-    color: $white;
-    &:hover {
-      background-color: $pinkHover;
-    }
-    &.disabled {
-      background-color: $gray300;
-      cursor: not-allowed;
-      &:hover {
-        background-color: $gray300;
-      }
-    }
-  }
-  &__subded {
-    background-color: $gray50;
-    text-align: center;
-    width: fit-content;
-    color: $black;
-    &:hover {
-      background-color: $gray150;
-      color: $violet;
-    }
-    &.disabled {
-      background-color: $gray50;
-      cursor: not-allowed;
-      color: $textBaseGray;
-
-      &:hover {
+    &__subded {
         background-color: $gray50;
-        color: $textBaseGray;
-      }
+        text-align: center;
+        width: fit-content;
+        color: $black;
+        &:hover {
+            background-color: $gray150;
+            color: $violet;
+        }
+        &.disabled {
+            background-color: $gray50;
+            cursor: not-allowed;
+            color: $textBaseGray;
+
+            &:hover {
+                background-color: $gray50;
+                color: $textBaseGray;
+            }
+        }
     }
-  }
-  &__on-color {
-    background-color: $white;
-    text-align: center;
-    width: fit-content;
-    color: $black;
-    &:hover {
-      color: $violet;
+    &__on-color {
+        background-color: $white;
+        text-align: center;
+        width: fit-content;
+        color: $black;
+        &:hover {
+            color: $violet;
+        }
+        &.disabled {
+            background-color: $white70;
+            color: $textBaseGray;
+            cursor: not-allowed;
+            &:hover {
+                background-color: $white70;
+                color: $textBaseGray;
+            }
+        }
     }
-    &.disabled {
-      background-color: $white70;
-      color: $textBaseGray;
-      cursor: not-allowed;
-      &:hover {
-        background-color: $white70;
-        color: $textBaseGray;
-      }
-    }
-  }
 }
 .pagination-container {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  @media(max-width: $s540) {
-    gap: 0;
-  }
-  .button-pagination {
-    background-color: $gray50;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 1rem;
-    @include flex-center;
-    cursor: pointer;
-    @include smooth-transition(background-color);
-    &:hover {
-      background-color: $gray150;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    @media (max-width: $s540) {
+        gap: 0;
     }
-    &.disabled {
-      background-color: $gray50;
-      cursor: not-allowed;
-      svg {
-        path {
-          stroke: $gray300;
-        }
-      }
-      &:hover {
+    .button-pagination {
         background-color: $gray50;
-      }
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1rem;
+        @include flex-center;
+        cursor: pointer;
+        @include smooth-transition(background-color);
+        &:hover {
+            background-color: $gray150;
+        }
+        &.disabled {
+            background-color: $gray50;
+            cursor: not-allowed;
+            svg {
+                path {
+                    stroke: $gray300;
+                }
+            }
+            &:hover {
+                background-color: $gray50;
+            }
+        }
+        &.next {
+            transform: scaleX(-1);
+        }
+        @media (max-width: $s540) {
+            width: 3.25rem;
+            height: 3.25rem;
+        }
     }
-    &.next {
-      transform: scaleX(-1);
+    .pagination-number {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 120%;
+        letter-spacing: -1%;
+        text-align: center;
+        border-radius: 1rem;
+        border: 0.0625rem solid transparent;
+        width: 3.25rem;
+        height: 3.25rem;
+        cursor: pointer;
+        @include flex-center;
+        @include smooth-transition(border);
+        &:hover {
+            border: 0.0625rem solid $grayBorder;
+        }
+        @media (max-width: $s540) {
+            width: 2.75rem;
+            height: 2.75rem;
+        }
     }
-    @media(max-width: $s540) {
-      width: 3.25rem;
-      height: 3.25rem;
-    }
-  }
-  .pagination-number {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 120%;
-    letter-spacing: -1%;
-    text-align: center;
-    border-radius: 1rem;
-    border: 0.0625rem solid transparent;
-    width: 3.25rem;
-    height: 3.25rem;
-    cursor: pointer;
-    @include flex-center;
-    @include smooth-transition(border);
-    &:hover {
-      border: 0.0625rem solid $grayBorder;
-    }
-    @media(max-width: $s540) {
-      width: 2.75rem;
-      height: 2.75rem;
-    }
-  }
 }
 
 .toggle-pill-dark {
-  input[type="checkbox"] {
-    display: none;
+    input[type='checkbox'] {
+        display: none;
 
-    & + label {
-      display: block;
-      position: relative;
-      width: 3.125rem;
-      height: 1.75rem;
-      border-radius: 1em;
-      background: rgba(235, 235, 235, 1);
-      cursor: pointer;
-      user-select: none;
-      transition: background 0.1s ease-in-out;
+        & + label {
+            display: block;
+            position: relative;
+            width: 3.125rem;
+            height: 1.75rem;
+            border-radius: 1em;
+            background: rgba(235, 235, 235, 1);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.1s ease-in-out;
 
-      &:before {
-        content: "";
-        display: block;
-        width: 1.4375rem;
-        height: 1.4375rem;
-        border-radius: 1rem;
-        background: white;
-        position: absolute;
-        left: 0.1875rem;
-        top: 0.1563rem;
-        transition: all 0.2s ease-in-out;
-        transform: rotate(90deg);
-      }
+            &:before {
+                content: '';
+                display: block;
+                width: 1.4375rem;
+                height: 1.4375rem;
+                border-radius: 1rem;
+                background: white;
+                position: absolute;
+                left: 0.1875rem;
+                top: 0.1563rem;
+                transition: all 0.2s ease-in-out;
+                transform: rotate(90deg);
+            }
+        }
+
+        &:checked + label {
+            background-color: $violet;
+
+            &:before {
+                left: 1.5rem;
+                transform: rotate(295deg);
+            }
+        }
     }
-
-    &:checked + label {
-      background-color: $violet;
-
-      &:before {
-        left: 1.5rem;
-        transform: rotate(295deg);
-      }
-    }
-  }
 }
 .checkbox {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-
-  input {
-    display: none;
-
-    &:checked + span {
-      border-color: $violet;
-      background-color: $violet;
-
-      &::after {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  }
-
-  span {
-    width: 1.75rem;
-    height: 1.75rem;
-    border: 0.0625rem solid rgba(204, 204, 204, 1);
-    border-radius: 0.25rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease-in-out;
-    position: relative;
+    cursor: pointer;
+    user-select: none;
 
-    &::after {
-      content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 8L6 12L14 4' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3e%3c/svg%3e ");
-      color: #fff;
-      position: absolute;
-      opacity: 0;
-      transform: scale(0.5);
-      transition: all 0.2s ease-in-out;
+    input {
+        display: none;
+
+        &:checked + span {
+            border-color: $violet;
+            background-color: $violet;
+
+            &::after {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
-  }
+
+    span {
+        width: 1.75rem;
+        height: 1.75rem;
+        border: 0.0625rem solid rgba(204, 204, 204, 1);
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+
+        &::after {
+            content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 8L6 12L14 4' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3e%3c/svg%3e ");
+            color: #fff;
+            position: absolute;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s ease-in-out;
+        }
+    }
 }
 
 .h1 {
-  font-weight: 600;
-  @include adaptive-font(44, 22);
-  line-height: 120%;
-  letter-spacing: -1%;
-  @media (max-width: $s540) {
     font-weight: 600;
-    font-size: 1.375rem;
-  }
-}
-.h2 {
-  font-weight: 600;
-  @include adaptive-font(36, 22);
-  line-height: 120%;
-  letter-spacing: -1%;
-  @media (max-width: $s540) {
-    font-size: 1.375rem;
-  }
-}
-.h3 {
-  font-weight: 600;
-  @include adaptive-font(28, 22);
-  line-height: 120%;
-  letter-spacing: -1%;
-  @media (max-width: $s540) {
-    font-size: 1rem;
-  }
-}
-.h4 {
-  font-weight: 600;
-  @include adaptive-font(20, 16);
-  line-height: 120%;
-  letter-spacing: -1%;
-  @media (max-width: $s540) {
-    font-size: 1rem;
-  }
-}
-.body-xl-3 {
-  font-weight: 600;
-  @include adaptive-font(26, 22);
-  line-height: 120%;
-  letter-spacing: -1%;
-  vertical-align: middle;
-  @media (max-width: $s540) {
-    font-weight: 600;
-    font-size: 1.375rem;
+    @include adaptive-font(44, 22);
     line-height: 120%;
     letter-spacing: -1%;
-  }
+    @media (max-width: $s540) {
+        font-weight: 600;
+        font-size: 1.375rem;
+    }
+}
+.h2 {
+    font-weight: 600;
+    @include adaptive-font(36, 22);
+    line-height: 120%;
+    letter-spacing: -1%;
+    @media (max-width: $s540) {
+        font-size: 1.375rem;
+    }
+}
+.h3 {
+    font-weight: 600;
+    @include adaptive-font(28, 22);
+    line-height: 120%;
+    letter-spacing: -1%;
+    @media (max-width: $s540) {
+        font-size: 1rem;
+    }
+}
+.h4 {
+    font-weight: 600;
+    @include adaptive-font(20, 16);
+    line-height: 120%;
+    letter-spacing: -1%;
+    @media (max-width: $s540) {
+        font-size: 1rem;
+    }
+}
+.body-xl-3 {
+    font-weight: 600;
+    @include adaptive-font(26, 22);
+    line-height: 120%;
+    letter-spacing: -1%;
+    vertical-align: middle;
+    @media (max-width: $s540) {
+        font-weight: 600;
+        font-size: 1.375rem;
+        line-height: 120%;
+        letter-spacing: -1%;
+    }
 }
 .body-l-3 {
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 120%;
-  letter-spacing: -1%;
-  vertical-align: middle;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 120%;
+    letter-spacing: -1%;
+    vertical-align: middle;
 }
 .body-m-1 {
-  font-weight: 400;
-  @include adaptive-font(16, 15);
-  line-height: 120%;
-  letter-spacing: -1%;
-  vertical-align: middle;
-  @media (max-width: $s540) {
     font-weight: 400;
-    font-size: 0.9375rem;
+    @include adaptive-font(16, 15);
     line-height: 120%;
-  }
+    letter-spacing: -1%;
+    vertical-align: middle;
+    @media (max-width: $s540) {
+        font-weight: 400;
+        font-size: 0.9375rem;
+        line-height: 120%;
+    }
 }
 .body-m-1-pharagraph {
-  font-weight: 300;
-  @include adaptive-font(16, 15);
-  line-height: 150%;
-  letter-spacing: -2%;
-  vertical-align: middle;
-  @media (max-width: $s540) {
-    font-weight: 400;
-    font-size: 0.9375rem;
+    font-weight: 300;
+    @include adaptive-font(16, 15);
     line-height: 150%;
     letter-spacing: -2%;
     vertical-align: middle;
-  }
+    @media (max-width: $s540) {
+        font-weight: 400;
+        font-size: 0.9375rem;
+        line-height: 150%;
+        letter-spacing: -2%;
+        vertical-align: middle;
+    }
 }
 .body-m-3 {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 120%;
-  letter-spacing: -2%;
-  @media (max-width: $s540) {
-    font-size: 0.9375rem;
-    letter-spacing: -1%;
-  }
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 120%;
+    letter-spacing: -2%;
+    @media (max-width: $s540) {
+        font-size: 0.9375rem;
+        letter-spacing: -1%;
+    }
 }
 .body-s-1 {
-  font-weight: 400;
-  @include adaptive-font(14, 13);
-  line-height: 120%;
-  letter-spacing: -2%;
-  vertical-align: middle;
-  @media (max-width: $s540) {
-    font-size: 13px;
-  }
+    font-weight: 400;
+    @include adaptive-font(14, 13);
+    line-height: 120%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+    @media (max-width: $s540) {
+        font-size: 13px;
+    }
 }
 .body-s-2 {
-  font-weight: 500;
-  @include adaptive-font(14, 13);
-  line-height: 120%;
-  letter-spacing: -2%;
-  vertical-align: middle;
-  @media (max-width: $s540) {
-    font-size: 13px;
-  }
+    font-weight: 500;
+    @include adaptive-font(14, 13);
+    line-height: 120%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+    @media (max-width: $s540) {
+        font-size: 13px;
+    }
 }
 .body-s-3 {
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 110.00000000000001%;
-  letter-spacing: -2%;
-  vertical-align: middle;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 110.00000000000001%;
+    letter-spacing: -2%;
+    vertical-align: middle;
 }
 .body-caption-s-1 {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 120%;
-  letter-spacing: 0%;
-  vertical-align: middle;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    vertical-align: middle;
 }
 .body-caption-m-1 {
-  font-size: 14px;
-  @include adaptive-font(14, 13);
-  line-height: 120%;
-  vertical-align: middle;
-  @media (max-width: $s540) {
-    font-size: 12px;
-  }
+    font-size: 14px;
+    @include adaptive-font(14, 13);
+    line-height: 120%;
+    vertical-align: middle;
+    @media (max-width: $s540) {
+        font-size: 12px;
+    }
 }
 .icon {
-  svg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    svg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 .btn-l-3 {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 120%;
-  letter-spacing: -1%;
-  vertical-align: middle;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -1%;
+    vertical-align: middle;
 }
 
 .tabs-items {
-  display: flex;
-  gap: 0.5rem;
-  padding-top: 1.25rem;
-  flex-wrap: wrap;
-  .tab-item {
-    padding: 1.2188rem 0.875rem;
-    border-radius: 1rem;
-    border: 0.0625rem solid $gray150;
-    @include smooth-transition(border-color);
-    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    flex-wrap: wrap;
+    .tab-item {
+        padding: 1.2188rem 0.875rem;
+        border-radius: 1rem;
+        border: 0.0625rem solid $gray150;
+        @include smooth-transition(border-color);
+        cursor: pointer;
 
-    &:hover {
-      border-color: $gray300;
+        &:hover {
+            border-color: $gray300;
+        }
     }
-  }
+}
+.arrow-back {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    span {
+        color: $gray500;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.mt-page {
+    padding-top: 7.875rem;
+    width: 100%;
+    @media (max-width: 1000px) {
+        padding-top: 4.5rem;
+    }
 }
