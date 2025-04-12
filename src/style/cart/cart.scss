@@ -63,11 +63,6 @@
         gap: 12px;
     }
     &-card {
-        display: flex;
-        gap: 14px;
-        padding: 20px 20px 20px 16px;
-        border-radius: 32px;
-        background-color: $gray50;
         &__content {
             width: 100%;
         }
@@ -114,6 +109,44 @@
             color: $pink;
             font-weight: 500;
             font-size: 14px;
+        }
+        &__bg {
+            background-color: $gray50;
+            padding: 20px 20px 20px 16px;
+            border-radius: 32px;
+            display: flex;
+            gap: 14px;
+        }
+        &__update {
+            border-radius: 36px;
+            position: relative;
+            border: 4px solid $violet;
+            z-index: 2;
+            margin-bottom: 34px;
+            &::after {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                bottom: -36px;
+                left: -3px;
+                right: -3px;
+                height: 100px;
+                background-color: $violet;
+                text-align: center;
+                border-bottom-right-radius: 36px;
+                border-bottom-left-radius: 36px;
+            }
+            &::before {
+                content: 'Выберите параметры для экскурсии';
+                position: absolute;
+                bottom: -26px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: white;
+                font-weight: 500;
+                font-size: 14px;
+            }
         }
     }
 }

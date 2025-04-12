@@ -22,78 +22,121 @@ block content
                         ul.cart-list
                             li.cart-list__item
                                 article.cart-card
-                                    img.cart-card__img(
-                                        src='https://placehold.co/600x400',
-                                        alt='cart-item-img',
-                                        loading='lazy'
-                                    )
-                                    .cart-card__content
-                                        .cart-card__title
-                                            h3.body-m-3.title Экскурсия по Москве на красном двухэтажном автобусе
-                                            label.checkbox
-                                                input(type='checkbox')
-                                                span
-                                        ul.cart-card__list
-                                            li.cart-card__list-item
-                                                +useIcon('shedule')
-                                                span.body-s-1 Пятница, 21 марта 2025 г.
-                                            li.cart-card__list-item
-                                                +useIcon('shedule-time')
-                                                span.body-s-1 10:00
-                                            li.cart-card__list-item
-                                                +useIcon('group')
-                                                span.body-s-1 1 взрослый, 2 ребенка
-                                            li.cart-card__list-item
-                                                +useIcon('shedule-plus')
-                                                span.body-s-1 Обед 3 шт, доп. услуга
-                                        .cart-card__price
-                                            .card__price
-                                                span.card__current-price.body-xl-3.violet 123 400 ₽
-                                                span.card__old-price.body-s-2 165 200 ₽
-                                            .c-flex.c-flex-center.gap-8
-                                                button.button.button__on-color.remove-btn
-                                                    +useIcon('delete')
-                                                button.button.button__on-color
-                                                    span Изменить
+                                    .cart-card__bg
+                                        img.cart-card__img(
+                                            src='https://placehold.co/600x400',
+                                            alt='cart-item-img',
+                                            loading='lazy'
+                                        )
+                                        .cart-card__content
+                                            .cart-card__title
+                                                h3.body-m-3.title Экскурсия по Москве на красном двухэтажном автобусе
+                                                label.checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            ul.cart-card__list
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule')
+                                                    span.body-s-1 Пятница, 21 марта 2025 г.
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule-time')
+                                                    span.body-s-1 10:00
+                                                li.cart-card__list-item
+                                                    +useIcon('group')
+                                                    span.body-s-1 1 взрослый, 2 ребенка
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule-plus')
+                                                    span.body-s-1 Обед 3 шт, доп. услуга
+                                            .cart-card__price
+                                                .card__price
+                                                    span.card__current-price.body-xl-3.violet 123 400 ₽
+                                                    span.card__old-price.body-s-2 165 200 ₽
+                                                .c-flex.c-flex-center.gap-8
+                                                    button.button.button__on-color.remove-btn
+                                                        +useIcon('delete')
+                                                    button.button.button__on-color
+                                                        span Изменить
                             li.cart-list__item
                                 article.cart-card
-                                    img.cart-card__img(
-                                        src='https://placehold.co/600x400',
-                                        alt='cart-item-img',
-                                        loading='lazy'
-                                    )
-                                    .cart-card__content
-                                        .cart-card__title
-                                            h3.body-m-3.title Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum corrupti sapiente ea non beatae ipsum cumque suscipit distinctio veritatis mollitia earum nihil quis, possimus amet quos.
-                                            label.checkbox
-                                                input(type='checkbox')
-                                                span
-                                        ul.cart-card__list
-                                            li.cart-card__list-item
-                                                +useIcon('shedule')
-                                                span.body-s-1 Пятница, 21 марта 2025 г.
-                                            li.cart-card__list-item
-                                                +useIcon('shedule-time')
-                                                span.body-s-1 10:00
-                                            li.cart-card__list-item
-                                                +useIcon('group')
-                                                span.body-s-1 1 взрослый, 2 ребенка
-                                            li.cart-card__list-item
-                                                +useIcon('shedule-plus')
-                                                span.body-s-1 Обед 3 шт, доп. услуга
-                                            li.cart-card__list-item
-                                                +useIcon('seat')
-                                                span.body-s-1 Места 3, 4, 5
-                                        .cart-card__warning
-                                            span Билеты скоро закончатся
-                                        .cart-card__price
-                                            .card__price
-                                                span.card__current-price.body-xl-3 4400 ₽
-                                            .c-flex.c-flex-center.gap-8
-                                                button.button.button__on-color.remove-btn
-                                                    +useIcon('delete')
-                                                button.button.button__on-color
-                                                    span Изменить
+                                    .cart-card__bg
+                                        img.cart-card__img(
+                                            src='https://placehold.co/600x400',
+                                            alt='cart-item-img',
+                                            loading='lazy'
+                                        )
+                                        .cart-card__content
+                                            .cart-card__title
+                                                h3.body-m-3.title Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum corrupti sapiente ea non beatae ipsum cumque suscipit distinctio veritatis mollitia earum nihil quis, possimus amet quos.
+                                                label.checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            ul.cart-card__list
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule')
+                                                    span.body-s-1 Пятница, 21 марта 2025 г.
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule-time')
+                                                    span.body-s-1 10:00
+                                                li.cart-card__list-item
+                                                    +useIcon('group')
+                                                    span.body-s-1 1 взрослый, 2 ребенка
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule-plus')
+                                                    span.body-s-1 Обед 3 шт, доп. услуга
+                                                li.cart-card__list-item
+                                                    +useIcon('seat')
+                                                    span.body-s-1 Места 3, 4, 5
+                                            .cart-card__warning
+                                                span Билеты скоро закончатся
+                                            .cart-card__price
+                                                .card__price
+                                                    span.card__current-price.body-xl-3 4400 ₽
+                                                .c-flex.c-flex-center.gap-8
+                                                    button.button.button__on-color.remove-btn
+                                                        +useIcon('delete')
+                                                    button.button.button__on-color
+                                                        span Изменить
+                            li.cart-list__item
+                                //- .cart-card__update добавить класс для состояния обновления
+                                article.cart-card.cart-card__update
+                                    .cart-card__bg
+                                        img.cart-card__img(
+                                            src='https://placehold.co/600x400',
+                                            alt='cart-item-img',
+                                            loading='lazy'
+                                        )
+                                        .cart-card__content
+                                            .cart-card__title
+                                                h3.body-m-3.title Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum corrupti sapiente ea non beatae ipsum cumque suscipit distinctio veritatis mollitia earum nihil quis, possimus amet quos.
+                                                label.checkbox
+                                                    input(type='checkbox')
+                                                    span
+                                            ul.cart-card__list
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule')
+                                                    span.body-s-1 Пятница, 21 марта 2025 г.
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule-time')
+                                                    span.body-s-1 10:00
+                                                li.cart-card__list-item
+                                                    +useIcon('group')
+                                                    span.body-s-1 1 взрослый, 2 ребенка
+                                                li.cart-card__list-item
+                                                    +useIcon('shedule-plus')
+                                                    span.body-s-1 Обед 3 шт, доп. услуга
+                                                li.cart-card__list-item
+                                                    +useIcon('seat')
+                                                    span.body-s-1 Места 3, 4, 5
+                                            .cart-card__warning
+                                                span Билеты скоро закончатся
+                                            .cart-card__price
+                                                .card__price
+                                                    span.card__current-price.body-xl-3 4400 ₽
+                                                .c-flex.c-flex-center.gap-8
+                                                    button.button.button__on-color.remove-btn
+                                                        +useIcon('delete')
+                                                    button.button.button__on-color
+                                                        span Изменить
                 .cart-body__top-right
                     aside.cart-aside
                         .input-wrapper
@@ -122,6 +165,6 @@ block content
                                     h5.h4 Скидка 50% на 3 экскурсию
                                     p.mt-8.body-s-1.text-gray При покупке 3-х четвертая экскурсия по Казани со скидкой 50%
                                     .mt-20
-                                        a(href='javascript:void(0)').promo-card__button Применить
+                                        a.promo-card__button(href='javascript:void(0)') Применить
 
         include ../../components/recommendSecond/index.pug
