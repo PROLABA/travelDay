@@ -18,7 +18,7 @@
         background-color: $gray50;
         border-radius: 32px;
         padding: 32px;
-        margin-top: 164px;
+        // margin-top: 164px;
     }
     &-title {
         &__block {
@@ -107,6 +107,16 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+        &__warning {
+            margin-top: 12px;
+            padding: 8px 12px;
+            border-radius: 32px;
+            background-color: $pinkLight;
+            width: fit-content;
+            color: $pink;
+            font-weight: 500;
+            font-size: 14px;
         }
     }
 }

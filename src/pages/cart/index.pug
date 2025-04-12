@@ -55,7 +55,58 @@ block content
                                                     +useIcon('delete')
                                                 button.button.button__on-color
                                                     span Изменить
-
+                            li.cart-list__item
+                                article.cart-card
+                                    img.cart-card__img(
+                                        src='https://placehold.co/600x400',
+                                        alt='cart-item-img',
+                                        loading='lazy'
+                                    )
+                                    .cart-card__content
+                                        .cart-card__title
+                                            h3.body-m-3.title Экскурсия по Москве на красном двухэтажном автобусе
+                                            label.checkbox
+                                                input(type='checkbox')
+                                                span
+                                        ul.cart-card__list
+                                            li.cart-card__list-item
+                                                +useIcon('shedule')
+                                                span.body-s-1 Пятница, 21 марта 2025 г.
+                                            li.cart-card__list-item
+                                                +useIcon('shedule-time')
+                                                span.body-s-1 10:00
+                                            li.cart-card__list-item
+                                                +useIcon('group')
+                                                span.body-s-1 1 взрослый, 2 ребенка
+                                            li.cart-card__list-item
+                                                +useIcon('shedule-plus')
+                                                span.body-s-1 Обед 3 шт, доп. услуга
+                                            li.cart-card__list-item
+                                                +useIcon('seat')
+                                                span.body-s-1 Места 3, 4, 5
+                                        .cart-card__warning
+                                            span Билеты скоро закончатся
+                                        .cart-card__price
+                                            .card__price
+                                                span.card__current-price.body-xl-3 4400 ₽
+                                            .c-flex.c-flex-center.gap-8
+                                                button.button.button__on-color.remove-btn
+                                                    +useIcon('delete')
+                                                button.button.button__on-color
+                                                    span Изменить
                 .cart-body__top-right
-                    aside.cart-aside zakaz
-                        button.button.button__primary.w-full К оформлению
+                    aside.cart-aside
+                        .input-wrapper
+                            input(type='text', placeholder='Промокод') 
+                        .mt-24
+                            span.h2 Сумма заказа
+                        ul.mt-16
+                            li.c-flex.w-full.c-flex-between
+                                span.body-s-1.text-gray 2 экскурсии
+                                span.body-s-1.text-gray 11 220 ₽
+                        hr.mt-24(style='border-top: 1px solid #e5e5e5')
+                        .mt-16.c-flex.w-full.c-flex-between
+                            span.h2 Итого
+                            span.h2 7 898 ₽
+                        .mt-20
+                            button.button.button__primary.w-full К оформлению

@@ -412,3 +412,13 @@
         padding-top: 4.5rem;
     }
 }
+
+.input-wrapper {
+    input {
+        background-color: $white;
+        padding: 1.0625rem 1rem;
+        border-radius: 1rem;
+        max-height: 3.25rem;
+        width: 100%;
+    }
+}
