@@ -19,7 +19,6 @@
     font-weight: 500;
     font-size: 0.9375rem;
     line-height: 120%;
-    letter-spacing: -2%;
     cursor: pointer;
     transition:
         color 0.3s ease,
@@ -137,7 +136,6 @@
         font-weight: 600;
         font-size: 1rem;
         line-height: 120%;
-        letter-spacing: -1%;
         text-align: center;
         border-radius: 1rem;
         border: 0.0625rem solid transparent;
@@ -240,9 +238,9 @@
 
 .h1 {
     font-weight: 600;
-    @include adaptive-font(44, 22);
     line-height: 120%;
-    letter-spacing: -1%;
+    @include adaptive-font(44, 22);
+
     @media (max-width: $s540) {
         font-weight: 600;
         font-size: 1.375rem;
@@ -252,54 +250,47 @@
     font-weight: 600;
     @include adaptive-font(36, 22);
     line-height: 120%;
-    letter-spacing: -1%;
     @media (max-width: $s540) {
         font-size: 1.375rem;
     }
 }
 .h3 {
     font-weight: 600;
-    @include adaptive-font(28, 22);
     line-height: 120%;
-    letter-spacing: -1%;
+    @include adaptive-font(28, 22);
     @media (max-width: $s540) {
         font-size: 1rem;
     }
 }
 .h4 {
     font-weight: 600;
-    @include adaptive-font(20, 16);
     line-height: 120%;
-    letter-spacing: -1%;
+    @include adaptive-font(20, 16);
     @media (max-width: $s540) {
         font-size: 1rem;
     }
 }
 .body-xl-3 {
     font-weight: 600;
-    @include adaptive-font(26, 22);
     line-height: 120%;
-    letter-spacing: -1%;
+    @include adaptive-font(26, 22);
     vertical-align: middle;
     @media (max-width: $s540) {
         font-weight: 600;
         font-size: 1.375rem;
         line-height: 120%;
-        letter-spacing: -1%;
     }
 }
 .body-l-3 {
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 120%;
-    letter-spacing: -1%;
     vertical-align: middle;
 }
 .body-m-1 {
     font-weight: 400;
-    @include adaptive-font(16, 15);
     line-height: 120%;
-    letter-spacing: -1%;
+    @include adaptive-font(16, 15);
     vertical-align: middle;
     @media (max-width: $s540) {
         font-weight: 400;
@@ -311,13 +302,11 @@
     font-weight: 300;
     @include adaptive-font(16, 15);
     line-height: 150%;
-    letter-spacing: -2%;
     vertical-align: middle;
     @media (max-width: $s540) {
         font-weight: 400;
         font-size: 0.9375rem;
         line-height: 150%;
-        letter-spacing: -2%;
         vertical-align: middle;
     }
 }
@@ -325,17 +314,14 @@
     font-weight: 600;
     font-size: 1rem;
     line-height: 120%;
-    letter-spacing: -2%;
     @media (max-width: $s540) {
         font-size: 0.9375rem;
-        letter-spacing: -1%;
     }
 }
 .body-s-1 {
     font-weight: 400;
     @include adaptive-font(14, 13);
     line-height: 120%;
-    letter-spacing: -2%;
     vertical-align: middle;
     @media (max-width: $s540) {
         font-size: 13px;
@@ -345,7 +331,6 @@
     font-weight: 500;
     @include adaptive-font(14, 13);
     line-height: 120%;
-    letter-spacing: -2%;
     vertical-align: middle;
     @media (max-width: $s540) {
         font-size: 13px;
@@ -355,14 +340,12 @@
     font-weight: 600;
     font-size: 13px;
     line-height: 110.00000000000001%;
-    letter-spacing: -2%;
     vertical-align: middle;
 }
 .body-caption-s-1 {
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
-    letter-spacing: 0%;
     vertical-align: middle;
 }
 .body-caption-m-1 {
@@ -386,7 +369,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 120%;
-    letter-spacing: -1%;
+
     vertical-align: middle;
 }
 

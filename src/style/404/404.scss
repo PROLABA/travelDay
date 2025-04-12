@@ -12,7 +12,6 @@
     font-weight: 900;
     @include adaptive-font(240, 126);
     line-height: 100%;
-    letter-spacing: 0.1%;
     vertical-align: bottom;
     color: $violet;
   }

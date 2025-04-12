@@ -18,9 +18,34 @@ block content
                     .cart-body__content
                         .cart-gift
                             +useIcon('cart-gift')
-                            span При покупке получите подарок
+                            span.body-s-2 При покупке получите подарок
                         ul.cart-list
                             li.cart-list__item
+                                article.cart-card
+                                    img.cart-cart__img(
+                                        src='https://placehold.co/600x400',
+                                        alt='cart-item-img',
+                                        loading='lazy'
+                                    )
+                                    .cart-card__content
+                                        .cart-card__title
+                                            h3.body-m-3 Экскурсия по Москве на красном двухэтажном автобусе
+                                            label.checkbox
+                                                input(type='checkbox')
+                                                span
+                                        ul.cart-card__list
+                                            li.cart-card__list-item
+                                                div text
+                                        .cart-card__price
+                                            .card__price
+                                                span.card__current-price.body-xl-3.violet 4400 ₽
+                                                span.card__old-price.body-s-2 5 200 ₽
+                                            .c-flex.c-flex-center.gap-8
+                                                button.button.button__on-color
+                                                    +useIcon('delete')
+                                                button.button.button__on-color
+                                                    span Изменить
+
                 .cart-body__top-right
                     aside.cart-aside zakaz
                         button.button.button__primary.w-full К оформлению

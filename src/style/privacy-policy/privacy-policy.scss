@@ -17,7 +17,6 @@
       @include adaptive-font(28, 16);
       color: $black;
       line-height: 120%;
-      letter-spacing: -0.01em;
     }
     &__list {
       margin-left: 1.25rem;
@@ -25,7 +24,6 @@
     &__item {
       font-weight: 300;
       line-height: 150%;
-      letter-spacing: -0.02em;
       color: $gray700;
     }
     &__sublist {
@@ -36,7 +34,6 @@
       font-weight: 300;
       @include adaptive-font(16, 15);
       line-height: 150%;
-      letter-spacing: -0.02em;
       color: $gray700;
       margin-top: 0.75rem;
     }
