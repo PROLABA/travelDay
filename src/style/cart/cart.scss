@@ -56,6 +56,13 @@
             height: 35px;
         }
     }
+    &-ordered-info {
+        padding: 20px;
+        border-radius: 28px;
+        background-color: $gray50;
+        text-align: center;
+        margin-top: 8px;
+    }
     &-list {
         margin-top: 16px;
         display: flex;

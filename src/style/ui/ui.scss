@@ -23,6 +23,10 @@
     transition:
         color 0.3s ease,
         background-color 0.3s ease;
+    &.disabled {
+        background-color: $gray300;
+        pointer-events: none;
+    }
     &__primary {
         background-color: $violet;
         text-align: center;
@@ -30,13 +34,6 @@
         color: $white;
         &:hover {
             background-color: $violetHover;
-        }
-        &.disabled {
-            background-color: $gray300;
-            cursor: not-allowed;
-            &:hover {
-                background-color: $gray300;
-            }
         }
     }
     &__secondary {
@@ -46,13 +43,6 @@
         color: $white;
         &:hover {
             background-color: $pinkHover;
-        }
-        &.disabled {
-            background-color: $gray300;
-            cursor: not-allowed;
-            &:hover {
-                background-color: $gray300;
-            }
         }
     }
     &__subded {
@@ -66,13 +56,7 @@
         }
         &.disabled {
             background-color: $gray50;
-            cursor: not-allowed;
             color: $textBaseGray;
-
-            &:hover {
-                background-color: $gray50;
-                color: $textBaseGray;
-            }
         }
     }
     &__on-color {
@@ -86,11 +70,6 @@
         &.disabled {
             background-color: $white70;
             color: $textBaseGray;
-            cursor: not-allowed;
-            &:hover {
-                background-color: $white70;
-                color: $textBaseGray;
-            }
         }
     }
 }

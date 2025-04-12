@@ -19,6 +19,10 @@ block content
                         .cart-gift
                             +useIcon('cart-gift')
                             span.body-s-2.violet При покупке получите подарок
+                        //- cart-ordered-info когда забронированы билеты
+                        .cart-ordered-info
+                            span.body-s-1 Ваши билеты забронированы на
+                            span.body-s-3 19:49 минут
                         ul.cart-list
                             li.cart-list__item
                                 article.cart-card
@@ -135,8 +139,9 @@ block content
                                                 .c-flex.c-flex-center.gap-8
                                                     button.button.button__on-color.remove-btn
                                                         +useIcon('delete')
-                                                    button.button.button__on-color
-                                                        span Изменить
+                                                    //- Тут меняется класс на button__primary и текст
+                                                    button.button.button__primary
+                                                        span Настроить
                 .cart-body__top-right
                     aside.cart-aside
                         .input-wrapper
