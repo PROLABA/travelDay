@@ -22,14 +22,14 @@ block content
                         ul.cart-list
                             li.cart-list__item
                                 article.cart-card
-                                    img.cart-cart__img(
+                                    img.cart-card__img(
                                         src='https://placehold.co/600x400',
                                         alt='cart-item-img',
                                         loading='lazy'
                                     )
                                     .cart-card__content
                                         .cart-card__title
-                                            h3.body-m-3 Экскурсия по Москве на красном двухэтажном автобусе
+                                            h3.body-m-3.title Экскурсия по Москве на красном двухэтажном автобусе
                                             label.checkbox
                                                 input(type='checkbox')
                                                 span
@@ -51,7 +51,7 @@ block content
                                                 span.card__current-price.body-xl-3.violet 4400 ₽
                                                 span.card__old-price.body-s-2 5 200 ₽
                                             .c-flex.c-flex-center.gap-8
-                                                button.button.button__on-color
+                                                button.button.button__on-color.remove-btn
                                                     +useIcon('delete')
                                                 button.button.button__on-color
                                                     span Изменить

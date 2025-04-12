@@ -59,4 +59,62 @@
         flex-direction: column;
         gap: 12px;
     }
+    &-card {
+        display: flex;
+        gap: 14px;
+        padding: 20px 20px 20px 16px;
+        border-radius: 32px;
+        background-color: $gray50;
+        &__content {
+            width: 100%;
+        }
+        &__img {
+            width: 104px;
+            height: 69px;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+        &__title {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 8px;
+            .title {
+                // overflow: hidden;
+                // display: -webkit-box;
+                // -webkit-line-clamp: 1;
+                // -webkit-box-orient: vertical;
+                // line-height: 150%;
+            }
+        }
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 4px;
+            &-item {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                .icon {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+        &__price {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.remove-btn {
+    padding: 14px 16px;
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
 }
