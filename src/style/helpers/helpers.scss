@@ -21,3 +21,8 @@
     align-items: center;
     justify-content: center;
 }
+@mixin useMediaSize($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
