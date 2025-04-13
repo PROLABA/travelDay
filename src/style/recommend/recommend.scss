@@ -1,22 +1,24 @@
 .recommend {
-    padding-top: 4rem;
-
-    .recommend-content {
+    margin-top: 4rem;
+    @include useMediaSize(640px) {
+        margin-top: 48px;
+    }
+    &-content {
         @include card-grid(3, 1.5rem);
-        padding-top: 2.5rem;
+        margin-top: 2.5rem;
 
-        @media (max-width:68.75rem) {
+        @media (max-width: 68.75rem) {
             @include card-grid(2, 1rem);
         }
 
-        @media (max-width:46.875rem) {
+        @media (max-width: 46.875rem) {
             @include card-grid(1, 1.5rem);
-            padding-top: 1rem;
+            margin-top: 1rem;
         }
     }
 
     .container {
-        padding: 0 .25rem;
+        padding: 0 0.25rem;
     }
 
     .get-more-btn {
@@ -27,7 +29,7 @@
         .button {
             max-width: 19.9375rem;
             width: 100%;
-            padding: 1.4063rem .7rem;
+            padding: 1.4063rem 0.7rem;
         }
     }
 }
