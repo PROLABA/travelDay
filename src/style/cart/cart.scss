@@ -181,6 +181,23 @@
             font-weight: 500;
             font-size: 14px;
         }
+        &__grouped {
+            .cart-card__bg {
+                display: block;
+            }
+            &-item {
+                display: flex;
+                gap: 16px;
+                padding: 16px;
+                background-color: white;
+                border-radius: 24px;
+
+                margin-top: 12px;
+                &:first-child {
+                    margin-top: 20px;
+                }
+            }
+        }
         &__bg {
             background-color: $gray50;
             padding: 20px 20px 20px 16px;
