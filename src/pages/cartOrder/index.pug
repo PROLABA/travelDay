@@ -1,0 +1,53 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+
+block content
+    section.container.mt-page.cart-section
+        .cart-body
+            .cart-body__top
+                .cart-body__top-left
+                    .cart-title
+                        a.arrow-back(href='#')
+                            +useIcon('arrow-circle')
+                            span Назад
+                        .cart-title__block
+                            h1.h1.cart-title__text Корзина
+                                span.badge 2
+                            a(href='javascript:void(0)')
+                                span.body-s-1.text-gray Удалить все
+                    .cart-body__content
+                        .cart-gift
+                            +useIcon('cart-gift')
+                            span.body-s-2.violet При покупке получите подарок
+                        .cart-ordered-info
+                            span.body-s-1 Ваши билеты забронированы на
+                            span.body-s-3 19:49 минут
+                .cart-body__top-right
+                    aside.cart-aside
+                        .input-wrapper
+                            input(type='text', placeholder='Промокод') 
+                        .mt-24
+                            span.h2 Сумма заказа
+                        ul.mt-16
+                            li.c-flex.w-full.c-flex-between
+                                span.body-s-1.text-gray 2 экскурсии
+                                span.body-s-1.text-gray 11 220 ₽
+                        hr.mt-24(style='border-top: 1px solid #e5e5e5')
+                        .mt-16.c-flex.w-full.c-flex-between
+                            span.h2 Итого
+                            span.h2 127 898 ₽
+                        .mt-20.cart-aside__button
+                            button.button.button__primary.w-full К оформлению
+        .current-promos
+            .current-promos__title
+                h3.h1 Текущие акции
+            .current-promos__content
+                .current-promos__swiper.swiper
+                    .swiper-wrapper
+                        each item in [1, 2, 3, 4]
+                            .swiper-slide.current-promos__card
+                                .promo-card
+                                    h5.h4 Скидка 50% на 3 экскурсию
+                                    p.mt-8.body-s-1.text-gray При покупке 3-х четвертая экскурсия по Казани со скидкой 50%
+                                    a.promo-card__button(href='javascript:void(0)') Применить
+        include ../../components/recommendSecond/index.pug

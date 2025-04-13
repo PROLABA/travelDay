@@ -35,6 +35,12 @@
 .mt-8 {
     margin-top: 8px;
 }
+.mt-24-12 {
+    margin-top: 24px;
+    @include useMediaSize(768px) {
+        margin-top: 12px;
+    }
+}
 
 .w-full {
     width: 100%;
