@@ -120,14 +120,12 @@ html {
 }
 
 .container {
-    max-width: 1284px;
+    max-width: 1316px;
     margin: 0 auto;
     width: 100%;
     position: relative;
 
-    @media (max-width: 1310px) {
-        padding: 0 1rem;
-    }
+    padding: 0 16px;
 }
 
 .flex-wrapper {

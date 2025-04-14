@@ -3,4 +3,57 @@ include ../../mixin/useIcon.pug
 
 block content
     section.container.mt-page.cart-section
-        .cart-body body
+        .cart-blank
+            a.arrow-back(href='#')
+                +useIcon('arrow-circle')
+                span Назад
+            .cart-blank__content
+                .cart-blank__title
+                    h1.h1 Дата и участники
+                form.cart-blank__form.mt-32-20
+                    .cart-blank__form-item
+                        ul.cart-blank__list
+                            li.cart-blank__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='radio', name='date', checked, hidden)
+                                    .item
+                                        span.title Сегодня
+                                        span.text-gray 10 марта
+                            li.cart-blank__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='radio', name='date', hidden)
+                                    .item
+                                        span.title Завтра
+                                        span.text-gray 11 марта
+                            li.cart-blank__item
+                                button.date-button
+                                    +useIcon('date')
+                                    span Выбрать дату
+                    .cart-blank__form-item
+                        span.label Время отправления
+                        ul.cart-blank__list
+                            each time in ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+                                li.cart-blank__item
+                                    label.cart-blank__radio
+                                        input.cart-blank__radio-input(type='radio', name='time', hidden)
+                                        .item
+                                            span.title #{ time }
+                    .cart-blank__form-item
+                        span.label Место отправления
+                        span Невский пр. 35, (станция метро «Невский проспект», угол Думской ул. и Невского пр.)
+                    .cart-blank__form-item
+                        span.label Время обратного отправления
+                        ul.cart-blank__list
+                            each time in ['11:00', '12:00', '13:00', '14:00', '15:00']
+                                li.cart-blank__item
+                                    label.cart-blank__radio
+                                        input.cart-blank__radio-input(type='radio', name='time-2', hidden)
+                                        .item
+                                            span.title #{ time }
+                    .cart-blank__form-item
+                        span.label Время обратного отправления
+                        span Невский пр. 35, (станция метро «Невский проспект», угол Думской ул. и Невского пр.)
+                    .cart-blank__form-item
+                        span.label Участники
+                        ul.cart-blank__main-list 
+                            li.cart-blank__main-item

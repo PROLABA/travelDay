@@ -1,6 +1,6 @@
 .cart {
     &-section {
-        padding-bottom: 80px;
+        margin-bottom: 80px;
     }
     &-body {
         &__top {
@@ -257,6 +257,65 @@
             }
         }
     }
+
+    // ____cart-blank-data page START________
+    &-blank {
+        position: relative;
+        .arrow-back {
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+        &__content {
+            max-width: 848px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        &__form {
+            &-item {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 24px;
+                &:first-child {
+                    margin-top: 0;
+                }
+                .label {
+                    font-size: 14px;
+                    color: $textBaseGray;
+                }
+            }
+        }
+        &__list {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        &__radio {
+            .item {
+                border: 1px solid #ebebeb;
+                padding: 12px 16px;
+                border-radius: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 120%;
+            }
+            &-input {
+                &:checked ~ .item {
+                    border-color: $violet;
+                    .title {
+                        color: $violet;
+                    }
+                }
+            }
+        }
+    }
+    // ____cart-blank-data page END________
 }
 
 .remove-btn {
@@ -348,7 +407,7 @@ section.recommend {
                 top: 6px;
                 left: 16px;
                 font-size: 12px;
-                color: #A6A6A6;
+                color: #a6a6a6;
             }
         }
     }
