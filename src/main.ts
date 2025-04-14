@@ -7,6 +7,7 @@ import { swiperDiscount } from './scripts/swiperDiscount/swiperDiscount';
 import { faqAccordion } from './scripts/faqAccordion';
 import { ContactForm } from './scripts/contactsForm';
 import { currentPromosSwiper } from './scripts/currentPromosSwiper';
+import { usePromocode } from './scripts/promocode';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -20,5 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (document.querySelector('.current-promos__swiper')) {
         currentPromosSwiper();
+    }
+    if (document.querySelector('.promocode-input')) {
+        usePromocode();
     }
 });

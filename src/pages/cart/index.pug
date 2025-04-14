@@ -198,7 +198,7 @@ block content
                                                             li.cart-card__list-item
                                                                 +useIcon('seat')
                                                                 span.body-s-1 Места 3, 4, 5
-                                                        button.button.button__subded(style='padding: 16px;')
+                                                        button.button.button__subded(style='padding: 16px')
                                                             span Изменить
                                             li.cart-card__grouped-item
                                                 img.cart-card__img(
@@ -231,7 +231,7 @@ block content
                                                             li.cart-card__list-item
                                                                 +useIcon('seat')
                                                                 span.body-s-1 Места 3, 4, 5
-                                                        button.button.button__subded(style='padding: 16px;')
+                                                        button.button.button__subded(style='padding: 16px')
                                                             span Изменить
                                         .c-flex.w-full.c-flex-between.mt-16
                                             .card__price
@@ -280,7 +280,7 @@ block content
                                                             li.cart-card__list-item
                                                                 +useIcon('seat')
                                                                 span.body-s-1 Места 3, 4, 5
-                                                        button.button.button__subded(style='padding: 16px;')
+                                                        button.button.button__subded(style='padding: 16px')
                                                             span Изменить
                                             li.cart-card__grouped-item
                                                 img.cart-card__img(
@@ -313,7 +313,7 @@ block content
                                                             li.cart-card__list-item
                                                                 +useIcon('seat')
                                                                 span.body-s-1 Места 3, 4, 5
-                                                        button.button.button__subded(style='padding: 16px;')
+                                                        button.button.button__subded(style='padding: 16px')
                                                             span Изменить
                                         .c-flex.w-full.c-flex-between.mt-16
                                             .card__price
@@ -323,14 +323,21 @@ block content
                                                 +useIcon('delete')
                 .cart-body__top-right
                     aside.cart-aside
-                        .input-wrapper
-                            input(type='text', placeholder='Промокод') 
+                        //- добавить класс .promocode-input__error для состояния ошибки
+                        //- добавить класс .promocode-input__success для состояния успеха
+                        .input-wrapper.promocode-input.promocode-input__error
+                            input(type='text', placeholder='Промокод')
+                            button.button.button__subded.promocode-button(style='padding: 16px; display: none')
+                                span Применить
                         .mt-24
                             span.h2 Сумма заказа
-                        ul.mt-16
+                        ul.mt-16.cart-aside__list
                             li.c-flex.w-full.c-flex-between
                                 span.body-s-1.text-gray 2 экскурсии
                                 span.body-s-1.text-gray 11 220 ₽
+                            li.c-flex.w-full.c-flex-between
+                                span.body-s-1.text-gray Скидка по промокоду
+                                span.body-s-1.text-gray - 3 352 ₽
                         hr.mt-24(style='border-top: 1px solid #e5e5e5')
                         .mt-16.c-flex.w-full.c-flex-between
                             span.h2 Итого
