@@ -324,8 +324,8 @@ block content
                 .cart-body__top-right
                     aside.cart-aside
                         //- добавить класс .promocode-input__error для состояния ошибки
-                        //- добавить класс .promocode-input__success для состояния успеха
-                        .input-wrapper.promocode-input.promocode-input__error
+                        //- добавить класс .promocode-input__success для состояния текста промокод применен
+                        .input-wrapper.promocode-input.promocode-input__success
                             input(type='text', placeholder='Промокод')
                             button.button.button__subded.promocode-button(style='padding: 16px; display: none')
                                 span Применить
@@ -337,6 +337,13 @@ block content
                                 span.body-s-1.text-gray 11 220 ₽
                             li.c-flex.w-full.c-flex-between
                                 span.body-s-1.text-gray Скидка по промокоду
+                                span.body-s-1.text-gray - 3 352 ₽
+                            li.c-flex.w-full.c-flex-between
+                                span.body-s-1.text-gray Применена акция:
+                                    br
+                                    span(style='color: #1a1a1a') Скидка 50% на 3 экскурсию
+                                    br
+                                    a(href='javascript:void(0)', style='color: #7f56d9') Отменить акцию
                                 span.body-s-1.text-gray - 3 352 ₽
                         hr.mt-24(style='border-top: 1px solid #e5e5e5')
                         .mt-16.c-flex.w-full.c-flex-between

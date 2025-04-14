@@ -34,6 +34,7 @@
         &__list {
             li {
                 margin-top: 12px;
+                align-items: center;
                 &:first-child {
                     margin-top: 0;
                 }
@@ -338,6 +339,16 @@ section.recommend {
                 left: 0;
                 font-size: 12px;
                 color: $pink;
+            }
+        }
+        &__success {
+            &::after {
+                content: 'Промокод применен';
+                position: absolute;
+                top: 6px;
+                left: 16px;
+                font-size: 12px;
+                color: #A6A6A6;
             }
         }
     }
