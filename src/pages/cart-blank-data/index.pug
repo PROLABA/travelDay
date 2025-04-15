@@ -29,6 +29,20 @@ block content
                                 button.date-button
                                     +useIcon('date')
                                     span Выбрать дату
+                    //- для примера другой стейт показываю
+                    .cart-blank__form-item
+                        span.label Направление маршрута
+                        ul.cart-blank__list
+                            li.cart-blank__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='radio', name='naprvalenie', hidden)
+                                    .item
+                                        span.title Туда и обратно
+                            li.cart-blank__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='radio', name='naprvalenie', hidden, checked)
+                                    .item
+                                        span.title В одну сторону
                     .cart-blank__form-item
                         span.label Время отправления
                         ul.cart-blank__list
