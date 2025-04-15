@@ -362,6 +362,29 @@
                 gap: 0;
             }
         }
+        &__footer {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &__modal {
+            margin: auto;
+            padding: 28px;
+            inset: 0;
+            max-width: 412px;
+            width: 100%;
+            border-radius: 32px;
+            &::backdrop {
+                background-color: #00000033;
+            }
+            .close-button {
+                position: absolute;
+                right: 16px;
+                top: 16px;
+            }
+        }
     }
     // ____cart-blank-data page END________
 }
@@ -458,5 +481,12 @@ section.recommend {
                 color: #a6a6a6;
             }
         }
+    }
+}
+
+.close-button {
+    .icon {
+        width: 28px;
+        height: 28px;
     }
 }

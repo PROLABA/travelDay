@@ -77,7 +77,7 @@ block content
                                     span.text-gray.text-14 16+ (РФ и РБ)
                                 .cart-blank__count
                                     .card__price
-                                        span.card__current-price.body-xl-3.violet 1 400 ₽
+                                        span.card__current-price.body-xl-3 1 400 ₽
                                     .cart-blank__count-value
                                         button.cart-blank__count-button
                                             +useIcon('minus')
@@ -88,10 +88,10 @@ block content
                             li.cart-blank__main-item
                                 .c-flex.c-flex-column.gap-4
                                     span Взрослый
-                                    span.text-gray.text-14 16+ (РФ и РБ)
+                                    a(href='#', style='color: #7f56d9') Кто относится?
                                 .cart-blank__count
                                     .card__price
-                                        span.card__current-price.body-xl-3.violet 1 400 ₽
+                                        span.card__current-price.body-xl-3 1 400 ₽
                                     .cart-blank__count-value
                                         button.cart-blank__count-button
                                             +useIcon('minus')
@@ -99,3 +99,52 @@ block content
                                         button.cart-blank__count-button
                                             +useIcon('plus')
                                         input.input-count(type='hidden', name='count', value='2')
+                    .cart-blank__form-item
+                        span.label Дополнительные услуги
+                        ul.cart-blank__main-list
+                            li.cart-blank__main-item
+                                .c-flex.c-flex-column.gap-4
+                                    span Обед на 1 чел.
+                                .cart-blank__count
+                                    .card__price
+                                        span.card__current-price.body-xl-3 1 400 ₽
+                                    .cart-blank__count-value
+                                        button.cart-blank__count-button
+                                            +useIcon('minus')
+                                        span.value 2
+                                        button.cart-blank__count-button
+                                            +useIcon('plus')
+                                        input.input-count(type='hidden', name='count', value='2')
+                    .cart-blank__form-item
+                        .c-flex.c-flex-column.gap-12
+                            .c-flex.gap-12.c-flex-center
+                                .toggle-pill-dark
+                                    input#pill4(type='checkbox', name='check', checked)
+                                    label(for='pill4')
+                                span.body-m-3 Любая дополнительная услуга&nbsp;
+                                    span.violet + 120 ₽
+                            .c-flex.gap-12.c-flex-center
+                                .toggle-pill-dark
+                                    input#pill4(type='checkbox', name='check')
+                                    label(for='pill4')
+                                span.body-m-3 Любая дополнительная услуга&nbsp;
+                                    span.violet + 120 ₽
+                    hr.mt-32(style='border-top: 1px solid #e5e5e5')
+                    .cart-blank__footer
+                        .price.h2
+                            span Итого: &nbsp;
+                            span 123 400 ₽
+                        a.button.button__primary(
+                            href='javascript:void(0)',
+                            style='color: #fff',
+                            data-modal-target='cart-blank__modal'
+                        ) Сохранить изменения
+        dialog.modal-confirm.cart-blank__modal
+            button.close-button(data-modal-close)
+                +useIcon('close')
+            .c-flex.c-flex-column.gap-8
+                span.body-xl-3 Сохранить изменения?
+                p.body-m-1 Без сохранения вам придется заново выбрать параметры для покупки билета
+            .mt-32.c-flex.c-flex-center.gap-12
+                button.button.button__subded.w-full(data-modal-close) Не сохранять
+                button.button.button__primary.w-full Сохранить
