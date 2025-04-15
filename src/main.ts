@@ -8,6 +8,7 @@ import { faqAccordion } from './scripts/faqAccordion';
 import { ContactForm } from './scripts/contactsForm';
 import { currentPromosSwiper } from './scripts/currentPromosSwiper';
 import { usePromocode } from './scripts/promocode';
+import { CartCounter } from './scripts/cartBlankCounter';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -24,5 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (document.querySelector('.promocode-input')) {
         usePromocode();
+    }
+    if (document.querySelector('.cart-blank__count')) {
+        new CartCounter('.cart-blank__count-value');
     }
 });

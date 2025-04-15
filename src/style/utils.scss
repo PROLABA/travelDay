@@ -10,6 +10,9 @@
 .c-flex-between {
     justify-content: space-between;
 }
+.gap-4 {
+    gap: 4px;
+}
 .gap-8 {
     gap: 8px;
 }
@@ -59,4 +62,7 @@
 }
 .error-input {
     border: 1px solid $pink;
+}
+.text-14 {
+    font-size: 14px;
 }

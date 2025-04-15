@@ -55,5 +55,33 @@ block content
                         span Невский пр. 35, (станция метро «Невский проспект», угол Думской ул. и Невского пр.)
                     .cart-blank__form-item
                         span.label Участники
-                        ul.cart-blank__main-list 
+                        ul.cart-blank__main-list
                             li.cart-blank__main-item
+                                .c-flex.c-flex-column.gap-4
+                                    span Взрослый
+                                    span.text-gray.text-14 16+ (РФ и РБ)
+                                .cart-blank__count
+                                    .card__price
+                                        span.card__current-price.body-xl-3.violet 123 400 ₽
+                                        span.card__old-price.body-s-2 165 200 ₽
+                                    .cart-blank__count-value
+                                        button.cart-blank__count-button.disabled
+                                            +useIcon('minus')
+                                        span.value 0
+                                        button.cart-blank__count-button
+                                            +useIcon('plus')
+                                        input.input-count(type='hidden', name='count', value='0')
+                            li.cart-blank__main-item
+                                .c-flex.c-flex-column.gap-4
+                                    span Взрослый
+                                    span.text-gray.text-14 16+ (РФ и РБ)
+                                .cart-blank__count
+                                    .card__price
+                                        span.card__current-price.body-xl-3.violet 1 400 ₽
+                                    .cart-blank__count-value
+                                        button.cart-blank__count-button
+                                            +useIcon('minus')
+                                        span.value 2
+                                        button.cart-blank__count-button
+                                            +useIcon('plus')
+                                        input.input-count(type='hidden', name='count', value='2')
