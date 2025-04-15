@@ -85,3 +85,17 @@ block content
                                         button.cart-blank__count-button
                                             +useIcon('plus')
                                         input.input-count(type='hidden', name='count', value='2')
+                            li.cart-blank__main-item
+                                .c-flex.c-flex-column.gap-4
+                                    span Взрослый
+                                    span.text-gray.text-14 16+ (РФ и РБ)
+                                .cart-blank__count
+                                    .card__price
+                                        span.card__current-price.body-xl-3.violet 1 400 ₽
+                                    .cart-blank__count-value
+                                        button.cart-blank__count-button
+                                            +useIcon('minus')
+                                        span.value 2
+                                        button.cart-blank__count-button
+                                            +useIcon('plus')
+                                        input.input-count(type='hidden', name='count', value='2')

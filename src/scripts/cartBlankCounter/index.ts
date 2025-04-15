@@ -11,9 +11,8 @@ export class CartCounter {
     constructor(selector: string) {
         document.querySelectorAll<HTMLElement>(selector).forEach(item => {
             const buttons = item.querySelectorAll<HTMLButtonElement>('.cart-blank__count-button');
-            const minusBtn =
-                buttons[0] || item.querySelector<HTMLButtonElement>('.cart-blank__count-button:first-child');
-            const plusBtn = buttons[1] || item.querySelector<HTMLButtonElement>('.cart-blank__count-button:last-child');
+            const minusBtn = buttons[0];
+            const plusBtn = buttons[1];
             const valueSpan = item.querySelector<HTMLElement>('.value');
             const input = item.querySelector<HTMLInputElement>('.input-count');
 
@@ -32,7 +31,6 @@ export class CartCounter {
     }
 
     private initCounter({ minusBtn, plusBtn, valueSpan, input }: CounterElements) {
-        console.dir('dsada');
         const getValue = () => parseInt(input.value, 10) || 0;
         const setValue = (val: number) => {
             input.value = val.toString();
