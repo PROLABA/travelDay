@@ -1,11 +1,11 @@
 .bottom-form {
     padding: 5rem 0 2.5rem 0;
 
-    @media (max-width:53.125rem) {
+    @media (max-width: 53.125rem) {
         padding: 3rem 0 1rem;
     }
 
-    .bottom-form__container {
+    &__container {
         display: flex;
         justify-content: space-between;
         gap: 2.5625rem;
@@ -14,110 +14,102 @@
         border-radius: 2.5rem;
         color: $white;
 
-        @media (max-width:53.125rem) {
+        @media (max-width: 53.125rem) {
             flex-direction: column-reverse;
-            padding: .75rem .75rem 1.5rem .75rem;
-            gap: .5rem;
+            padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+            gap: 0.5rem;
             border-radius: 1.25rem;
         }
+    }
+    &__container-right {
+        img {
+            @media (max-width: 53.125rem) {
+                aspect-ratio: 120/76;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                max-width: 120px;
+            }
+        }
+    }
+    &__container-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
 
-        .bottom-form__container-left {
+        @media (max-width: 53.125rem) {
+            gap: 1.125rem;
+        }
+        &-title {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 0.5rem;
+        }
+        .form-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
 
-            @media (max-width:53.125rem) {
-                gap: 1.125rem;
-            }
-
-            .bottom-form__container-left-title {
+            .form-item {
                 display: flex;
-                flex-direction: column;
-                gap: .5rem;
-            }
+                gap: 0.75rem;
+                max-height: 4rem;
 
-            .form-inner {
-                display: flex;
-                flex-direction: column;
-                gap: .5rem;
+                @media (max-width: 53.125rem) {
+                    flex-direction: column;
+                    max-height: none;
+                    width: 100%;
+                }
 
-                .form-item {
-                    display: flex;
-                    gap: .75rem;
+                .input-container {
+                    max-width: 28.75rem;
+                    width: 100%;
+
+                    @media (max-width: 53.125rem) {
+                        max-width: none;
+                        width: 100%;
+                    }
+
+                    input {
+                        width: 100%;
+                        padding: 1.4063rem 1rem;
+                        background-color: white;
+                        border-radius: 1rem;
+                        max-height: 4rem;
+                        color: $black;
+
+                        &::placeholder {
+                            font-weight: 400;
+                            font-size: 1rem;
+                            line-height: 1.2;
+                            color: $gray300;
+                        }
+                    }
+                }
+
+                .button {
+                    padding: 1.4063rem 2rem;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    line-height: 120%;
                     max-height: 4rem;
 
-                    @media (max-width:53.125rem) {
-                        flex-direction: column;
-                        max-height: none;
+                    @media (max-width: 53.125rem) {
+                        max-width: none;
                         width: 100%;
-                    }
-
-                    .input-container {
-                        max-width: 28.75rem;
-                        width: 100%;
-
-                        @media (max-width:53.125rem) {
-                            max-width: none;
-                            width: 100%;
-                        }
-
-                        input {
-                            width: 100%;
-                            padding: 1.4063rem 1rem;
-                            background-color: white;
-                            border-radius: 1rem;
-                            max-height: 4rem;
-                            color: $black;
-
-                            &::placeholder {
-                                font-weight: 400;
-                                font-size: 1rem;
-                                line-height: 1.2;
-                                color: $gray300;
-                            }
-                        }
-
-
-                    }
-
-                    .button {
-                        padding: 1.4063rem 2rem;
-                        font-weight: 500;
-                        font-size: 1rem;
-                        line-height: 120%;
-                        max-height: 4rem;
-
-                        @media (max-width:53.125rem) {
-                            max-width: none;
-                            width: 100%;
-                        }
-
-                    }
-                }
-
-                .form-descripion {
-                    display: flex;
-
-                    .body-caption-m-1 {
-                        color: rgba(255, 255, 255, 0.5);
-                    }
-
-                    a {
-                        color: $white;
                     }
                 }
             }
 
-        }
+            .form-descripion {
+                display: flex;
 
-        .bottom-form__container-right {
-            img {
-                @media (max-width:53.125rem) {
-                    aspect-ratio: 120/76;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    max-width: 120px;
+                .body-caption-m-1 {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+                a {
+                    color: $white;
                 }
             }
         }
