@@ -44,6 +44,7 @@
     }
     &__changing {
         padding: 18.5px 50px;
+        text-align: center;
         a {
             font-weight: 500;
             font-size: 16px;
@@ -169,11 +170,9 @@
             }
         }
     }
-    @include useMediaSize(900px) {
-        gap: 30px;
-    }
     @include useMediaSize(640px) {
         gap: 20px;
+        justify-content: start;
         &__content {
             &-img {
                 max-width: 248px;

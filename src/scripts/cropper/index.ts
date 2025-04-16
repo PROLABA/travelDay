@@ -70,7 +70,7 @@ export class ImageZoomPan {
 
     private handleZoomIn = () => {
         const rect = this.container.getBoundingClientRect();
-        this.applyZoom(100, rect.width / 2, rect.height / 2); // Центр контейнера
+        this.applyZoom(100, rect.width / 2, rect.height / 2);
     };
 
     private handleZoomOut = () => {

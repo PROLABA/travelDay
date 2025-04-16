@@ -32,6 +32,12 @@
 .mt-24 {
     margin-top: 24px;
 }
+.mt-24-20 {
+    margin-top: 24px;
+    @include useMediaSize(768px) {
+        margin-top: 20px;
+    }
+}
 .mt-20 {
     margin-top: 20px;
 }
