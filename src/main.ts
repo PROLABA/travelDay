@@ -10,6 +10,7 @@ import { currentPromosSwiper } from './scripts/currentPromosSwiper';
 import { usePromocode } from './scripts/promocode';
 import { CartCounter } from './scripts/cartBlankCounter';
 import { initDialogs } from './scripts/modals';
+import { ImageZoomPan } from './scripts/cropper';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -31,4 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         new CartCounter('.cart-blank__count-value');
     }
     initDialogs();
+    if (document.querySelector('.select-image')) {
+        const img = document.querySelector('.select-image') as HTMLElement;
+        new ImageZoomPan(img);
+    }
 });

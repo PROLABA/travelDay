@@ -1,0 +1,83 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+
+block content
+    section.container.mt-page.cart-section
+        .cart-blank
+
+            .cart-blank__content
+                .cart-blank__title
+                    a.arrow-back(href='#')
+                        +useIcon('arrow-circle')
+                        span Назад
+                    h1.h1 Выбор мест
+                p.mt-16.body-m-1 Посмотрите номера места на фото и выберите их ниже
+                .cart-blank__select
+                    .select-image
+                        .select-image__img
+                            img(src='https://placehold.co/600x400', alt='image')
+                        .select-image__zoom
+                            button.cart-blank__count-button.plus
+                                +useIcon('plus')
+                            button.cart-blank__count-button.minus
+                                +useIcon('minus')
+                    .mt-32-20.cart-blank__form-item
+                        span.label Нижняя палуба
+                        ul.select-list
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title VIP 1
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title VIP 1
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title 1
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title 2
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title 3
+                    .mt-32.cart-blank__form-item
+                        span.label Верхняя палуба
+                        ul.select-list
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title VIP 1
+                            li.select-list__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='checkbox', name='test', hidden)
+                                    .item
+                                        span.title VIP 1
+                hr.mt-32(style='border-top: 1px solid #e5e5e5')
+                .cart-blank__footer
+                    //- для вызова модалки добавить  data-modal-target
+                    a.button.button__primary(
+                        href='javascript:void(0)',
+                        style='color: #fff; margin-left: auto',
+                        data-modal-target='modal-confirm'
+                    ) Забронировать места
+                    //- дизабляд стейт
+                    //- a.button.button__primary.disabled(href='javascript:void(0)', style='color: #fff;margin-left: auto') Выберите 3 места
+        dialog.modal-confirm
+            button.close-button(data-modal-close)
+                +useIcon('close')
+            .c-flex.c-flex-column.gap-8
+                span.body-xl-3 Сохранить изменения?
+                p.body-m-1 Без сохранения вам придется заново выбрать параметры для покупки билета
+            .mt-32.c-flex.c-flex-center.gap-12
+                button.button.button__subded.w-full(data-modal-close) Не сохранять
+                button.button.button__primary.w-full Сохранить

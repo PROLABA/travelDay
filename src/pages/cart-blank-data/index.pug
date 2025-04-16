@@ -4,11 +4,12 @@ include ../../mixin/useIcon.pug
 block content
     section.container.mt-page.cart-section
         .cart-blank
-            a.arrow-back(href='#')
-                +useIcon('arrow-circle')
-                span Назад
+
             .cart-blank__content
                 .cart-blank__title
+                    a.arrow-back(href='#')
+                        +useIcon('arrow-circle')
+                        span Назад
                     h1.h1 Дата и участники
                 form.cart-blank__form.mt-32-20
                     .cart-blank__form-item
@@ -44,6 +45,14 @@ block content
                                     .item
                                         span.title В одну сторону
                     .cart-blank__form-item
+                        span.label Направление маршрута
+                        ul.cart-blank__list
+                            li.cart-blank__item
+                                label.cart-blank__radio
+                                    input.cart-blank__radio-input(type='radio', name='naprvalenie', hidden, checked)
+                                    .item
+                                        span.title Санкт-Петербург — Петергоф — Санкт-Петербург
+                    .cart-blank__form-item
                         span.label Время отправления
                         ul.cart-blank__list
                             each time in ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
@@ -52,6 +61,8 @@ block content
                                         input.cart-blank__radio-input(type='radio', name='time', hidden)
                                         .item
                                             span.title #{ time }
+                        .badge-error.badge-error__small
+                            span.body-s-2 Осталось мало билетов на это время
                     .cart-blank__form-item
                         span.label Место отправления
                         span Невский пр. 35, (станция метро «Невский проспект», угол Думской ул. и Невского пр.)
@@ -70,6 +81,13 @@ block content
                     .cart-blank__form-item
                         span.label Участники
                         ul.cart-blank__main-list
+                            li
+                                .badge-error.w-full
+                                    .icon-warning
+                                        +useIcon('warning')
+                                    .c-flex.c-flex-column.gap-4
+                                        span.body-m-3 Доступных билетов больше нет
+                                        span.body-s-2 Выберите другое время, если нужно больше билетов
                             li.cart-blank__main-item
                                 .c-flex.c-flex-column.gap-4
                                     span Взрослый
@@ -113,6 +131,44 @@ block content
                                         button.cart-blank__count-button
                                             +useIcon('plus')
                                         input.input-count(type='hidden', name='count', value='2')
+
+                    .cart-blank__form-item
+                        details.details-block
+                            summary.details-title
+                                span Для иностранцев
+                                .icon
+                            .content
+                                span.label Участники
+                                ul.cart-blank__main-list
+                                    li.cart-blank__main-item
+                                        .c-flex.c-flex-column.gap-4
+                                            span Взрослый
+                                            span.text-gray.text-14 16+ (РФ и РБ)
+                                        .cart-blank__count
+                                            .card__price
+                                                span.card__current-price.body-xl-3.violet 123 400 ₽
+                                                span.card__old-price.body-s-2 165 200 ₽
+                                            .cart-blank__count-value
+                                                button.cart-blank__count-button.disabled
+                                                    +useIcon('minus')
+                                                span.value 0
+                                                button.cart-blank__count-button
+                                                    +useIcon('plus')
+                                                input.input-count(type='hidden', name='count', value='0')
+                                    li.cart-blank__main-item
+                                        .c-flex.c-flex-column.gap-4
+                                            span Взрослый
+                                            span.text-gray.text-14 16+ (РФ и РБ)
+                                        .cart-blank__count
+                                            .card__price
+                                                span.card__current-price.body-xl-3 1 400 ₽
+                                            .cart-blank__count-value
+                                                button.cart-blank__count-button
+                                                    +useIcon('minus')
+                                                span.value 2
+                                                button.cart-blank__count-button
+                                                    +useIcon('plus')
+                                                input.input-count(type='hidden', name='count', value='2')
                     .cart-blank__form-item
                         span.label Дополнительные услуги
                         ul.cart-blank__main-list
@@ -129,6 +185,15 @@ block content
                                         button.cart-blank__count-button
                                             +useIcon('plus')
                                         input.input-count(type='hidden', name='count', value='2')
+                    .cart-blank__form-item
+                        span.label Места
+                        ul.cart-blank__main-list
+                            li.cart-blank__main-item.error
+                                span Места не выбраны
+                                a.button.button__primary.small(href='#', style='color: #fff') Выбрать места
+                            li.cart-blank__main-item
+                                span Места не выбраны
+                                a.button.button__primary.small(href='#', style='color: #fff') Выбрать места
                     .cart-blank__form-item
                         .c-flex.c-flex-column.gap-12
                             .c-flex.gap-12.c-flex-center

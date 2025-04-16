@@ -27,6 +27,9 @@
         background-color: $gray300;
         pointer-events: none;
     }
+    &.small {
+        padding: 14px 16px;
+    }
     &__primary {
         background-color: $violet;
         text-align: center;
