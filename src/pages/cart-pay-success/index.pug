@@ -1,0 +1,49 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+
+block content
+    section.cart-status
+        .cart-status__content
+            .cart-status__content-img
+                +useIcon('payment-success')
+            .cart-status__content-info
+                h1.h1 Успешно оплачено
+                span.body-s-1 Билет и подарок отправлены на электронную почту example@mail.com
+        .cart-status__buttons
+            a.button.button__primary.w-full(href='#') Скачать билеты
+        .cart-status__gift
+            .cart-blank__main-item
+                .c-flex.c-flex-column.gap-4
+                    h4.h4 Вам подарок!
+                    span Путеводитель по России от TravelDay в PDF
+                a.button.button__primary(href='#', style='color: #fff') Скачать
+            .cart-status__gift-bot
+                .cart-status__gift-bot-social
+                    .social-title
+                        h3.h3 Если будут вопросы:
+                        span Мы на связи ежедневно, с 9 утра до 1 ночи
+                    .social-numbers
+                        .social-numbers__top
+                            a(href='tel:88123341848') 8 812 334-18-48
+                            span Санкт-Петербург
+                        .social-numbers__top
+                            a(href='tel:88005001399') 8 800 500-13-99
+                            span Вся Россия, бесплатно
+                    .social-links-left
+                        a.contacts-blocks__social-link(href='#')
+                            +useIcon('wa')
+                            | Whatsapp
+                        a.contacts-blocks__social-link(href='#')
+                            +useIcon('tg')
+                            | Telegram
+                .cart-status__gift-bot-social
+                    .social-title
+                        h4.h3 Мы в социальных сетях
+                        span Последние новости, акции и скидки
+                    .social-links-right
+                        a.contacts-blocks__social-link(href='#')
+                            +useIcon('vk')
+                            | ВКонтакте
+                        a.contacts-blocks__social-link(href='#')
+                            +useIcon('tg')
+                            | Канал в Telegram

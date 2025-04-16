@@ -27,6 +27,7 @@ export default defineConfig({
                 cartBlankSelect: resolve(root, 'pages', 'cart-blank-select-place', 'index.html'),
                 cartOrder: resolve(root, 'pages', 'cart-order', 'index.html'),
                 cartPayError: resolve(root, 'pages', 'cart-pay-error', 'index.html'),
+                cartPaySuccess: resolve(root, 'pages', 'cart-pay-success', 'index.html'),
                 contacts: resolve(root, 'pages', 'contacts', 'index.html'),
                 discounts: resolve(root, 'pages', 'discounts', 'index.html'),
                 discountsDetail: resolve(root, 'pages', 'discounts-detail', 'index.html'),
