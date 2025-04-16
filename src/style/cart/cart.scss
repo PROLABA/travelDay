@@ -326,6 +326,9 @@
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 120%;
+                @include useMediaSize(640px) {
+                    font-size: 13px;
+                }
             }
             &-input {
                 &:checked ~ .item {
@@ -621,7 +624,7 @@ section.recommend {
         flex-wrap: wrap;
         gap: 8px;
         .cart-blank__radio-input {
-            &:checked ~ .item {
+            &:checked ~ .item {     
                 background-color: $violet;
                 .title {
                     color: white;

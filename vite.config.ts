@@ -15,40 +15,15 @@ export default defineConfig({
     },
     build: {
         emptyOutDir: true,
-        // outDir: '../local/templates/otevetto/dist',
         outDir: './dist',
         rollupOptions: {
             input: {
                 index: resolve('index.html'),
+                404: resolve(root, 'pages', '404', 'index.html'),
+                about: resolve(root, 'pages', 'about-company', 'index.html'),
+                ui: resolve(root, 'pages', 'ui', 'index.html'),
                 main: resolve(root, 'pages', 'main', 'index.html'),
-                // price: resolve(root, "pages", "prices", "index.html"),
-                // ui: resolve(root, "pages", "ui", "index.html"),
-                // extensions: resolve(root, "pages", "extensions", "index.html"),
-                // referralProgram: resolve(
-                //   root,
-                //   "pages",
-                //   "referral-program",
-                //   "index.html"
-                // ),
-                // digitalFranchise: resolve(
-                //   root,
-                //   "pages",
-                //   "digitalFranchise",
-                //   "index.html"
-                // ),
-                // affiliatePrograms: resolve(
-                //   root,
-                //   "pages",
-                //   "affiliatePrograms",
-                //   "index.html"
-                // ),
-                // blog: resolve(root, "pages", "blog", "index.html"),
-                // about: resolve(root, "pages", "aboutUs", "index.html"),
-                // instructions: resolve(root, "pages", "instructions", "index.html"),
-                404: resolve(root, 'pages', '404', 'index.html')
-                // contacts: resolve(root, "pages", "contacts", "index.html"),
-                // newsDetail: resolve(root, "pages", "newsDetail", "index.html"),
-                // userAgreement: resolve(root, "pages", "userAgreement", "index.html"),
+
             },
             output: {
                 assetFileNames: assetInfo => {
