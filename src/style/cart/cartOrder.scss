@@ -1,0 +1,187 @@
+.cart-form {
+    display: grid;
+    margin-top: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    &__input {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @include useMediaSize(540px) {
+            gap: 6px;
+        }
+        input {
+            font-size: 16px;
+            padding: 18px 16px;
+            transition: all 0.2s ease;
+            border-radius: 16px;
+            border: 1px solid transparent;
+            background-color: #f5f5f5;
+            @include useMediaSize(540px) {
+                height: 52px;
+                font-size: 15px;
+            }
+            &:hover {
+                border-color: #999;
+            }
+            &:focus {
+                border-color: #007bff;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+            }
+            // &:invalid:not(:placeholder-shown) {
+            //     border-color: #f55f7f;
+            // }
+            // &:invalid:not(:placeholder-shown):not(:focus) + .cart-form__input__error {
+            //     display: block;
+            // }
+            &:invalid {
+                border-color: #f55f7f;
+            }
+            &:invalid + .cart-form__input__error {
+                display: block;
+            }
+            &::placeholder {
+                color: #b3b3b3;
+            }
+        }
+        &__error {
+            color: #ff5277;
+            display: none;
+        }
+    }
+    @include useMediaSize(540px) {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        gap: 16px;
+    }
+}
+
+.cart-line {
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $gray150;
+    }
+    @include useMediaSize(540px) {
+        display: none;
+    }
+}
+
+.cart-checkbox {
+    display: inline-flex;
+    margin-top: 26px;
+    gap: 12px;
+    align-items: center;
+    @include useMediaSize(540px) {
+        margin-top: 20px;
+    }
+}
+
+.payment-method {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 65px;
+    &__methods {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ebebeb;
+            border-radius: 16px;
+            transition: border-color 0.3s;
+        }
+    }
+    &__logos {
+        display: flex;
+        gap: 4px;
+        .icon {
+            height: 16px;
+            max-width: 36px;
+        }
+    }
+    &__radio {
+        display: none;
+        &:checked + .payment-method__methods__item {
+            border-color: #000;
+            background-color: #fff;
+        }
+    }
+    @include useMediaSize(700px) {
+        margin-top: 32px;
+        gap: 12px;
+        &__methods {
+            gap: 8px;
+            &__item {
+                padding: 18px 12px;
+            }
+        }
+        &__logos {
+            .icon {
+                max-width: 32px;
+            }
+        }
+    }
+}
+
+.order {
+    &-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &-content {
+        padding: 16px;
+        background-color: #fff;
+        border-radius: 20px;
+        &__info {
+            margin-top: 0px;
+        }
+    }
+    @include useMediaSize(640px) {
+        .cart-aside__button {
+            position: static;
+            background-color: $gray50;
+        }
+    }
+    @include useMediaSize(540px) {
+        &-posts {
+            gap: 8px;
+        }
+        &-content {
+            padding: 12px;
+            &__info {
+                gap: 4px;
+            }
+        }
+        &-title {
+            gap: 12px;
+        }
+    }
+}
+
+.terms {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-wrap: pretty;
+    max-width: 320px;
+    margin: 42px auto 0 auto;
+    color: $textBaseGray;
+    text-align: center;
+    font-size: 14px;
+    @include useMediaSize(640px) {
+        margin-top: 22px;
+        padding: 0 30px;
+        text-align: start;
+        max-width: 100%;
+        font-size: 13px;
+    }
+}

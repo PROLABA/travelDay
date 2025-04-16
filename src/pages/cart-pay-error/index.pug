@@ -1,0 +1,18 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+
+block content
+    section.cart-payment-status
+        .cart-payment-status__content
+            .cart-payment-status__content-img
+                +useIcon('payment-error')
+            .cart-payment-status__content-info 
+                h1.h1 Оплата не завершена
+                span.body-s-1 Возможно, произошла ошибка. Попробуйте еще раз.
+        .cart-payment-status__buttons
+            a.button.button__primary.w-full(href='#') Попробовать снова
+            .cart-payment-status__changing
+                a(href='#' target='_blank') Изменить способ оплаты
+
+        
+

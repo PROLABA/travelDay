@@ -4,50 +4,105 @@ include ../../mixin/useIcon.pug
 block content
     section.container.mt-page.cart-section
         .cart-body
-            .cart-body__top
+            form.cart-body__top.cart-order__form
+                input(type='submit', hidden, style='display: none')
                 .cart-body__top-left
-                    .cart-title
+                    .cart-title.order-title
                         a.arrow-back(href='#')
                             +useIcon('arrow-circle')
                             span Назад
                         .cart-title__block
-                            h1.h1.cart-title__text Корзина
-                                span.badge 2
-                            a(href='javascript:void(0)')
-                                span.body-s-1.text-gray Удалить все
+                            h1.h1.cart-title__text Оформление заказа
                     .cart-body__content
                         .cart-gift
-                            +useIcon('cart-gift')
-                            span.body-s-2.violet При покупке получите подарок
+                            +useIcon('vpn-trouble')
+                            span.body-s-2.violet Возможны ошибки из-за VPN, проверьте, выключен ли он
                         .cart-ordered-info
-                            span.body-s-1 Ваши билеты забронированы на
+                            span.body-s-1 Ваши билеты забронированы на&nbsp;
                             span.body-s-3 19:49 минут
+                        .cart-form
+                            .cart-form__input
+                                label.text-gray.body-s-1(for='name') Имя
+                                input#name(type='text', name='name', placeholder=' ', required, title='Заполните Имя')
+                                span.body-s-1.cart-form__input__error Поле не заполнено
+                            .cart-form__input
+                                label.text-gray.body-s-1(for='surname') Фамилия
+                                input#surname(type='text', name='surname', placeholder=' ', required)
+                                span.body-s-1.cart-form__input__error Поле не заполнено
+                            .cart-form__input
+                                label.text-gray.body-s-1(for='phone') Телефон
+                                input#phone(type='tel', name='phone', placeholder='+7 (___) ___-__-__', required)
+                                span.body-s-1.cart-form__input__error Поле не заполнено
+                            .cart-form__input
+                                label.text-gray.body-s-1(for='email') Электронная почта
+                                input#email(type='email', name='email', placeholder=' ', required)
+                                span.body-s-1.cart-form__input__error Поле не заполнено
+                                span.text-gray.body-s-1 На нее будут высланы билеты
+                        .cart-line.mt-32
+                        label.checkbox.cart-checkbox.body-s-1
+                            input(type='checkbox')
+                            span
+                            | Подписаться на рассылку и быть в курсе новых экскурсий и скидок
+                        .payment-method
+                            .payment-method__title.h2 Способ оплаты
+                            ul.payment-method__methods
+                                li
+                                    input#payment-card.payment-method__radio(type='radio', name='payment', checked)
+                                    label.payment-method__methods__item(for='payment-card')
+                                        span.body-s-2 Банковской картой
+                                        .payment-method__logos
+                                            +useIcon('visa')
+                                            +useIcon('masterCard')
+                                            +useIcon('mir')
+                                li
+                                    input#payment-sbp.payment-method__radio(type='radio', name='payment')
+                                    label.payment-method__methods__item(for='payment-sbp')
+                                        span.body-s-2 СБП онлайн
+                                        .payment-method__logos
+                                            +useIcon('sbp')
+                                li
+                                    input#payment-sberpay.payment-method__radio(type='radio', name='payment')
+                                    label.payment-method__methods__item(for='payment-sberpay')
+                                        span.body-s-2 SberPay
+                                        .payment-method__logos
+                                            +useIcon('sberpay')
                 .cart-body__top-right
-                    aside.cart-aside
-                        .input-wrapper
-                            input(type='text', placeholder='Промокод') 
-                        .mt-24
-                            span.h2 Сумма заказа
-                        ul.mt-16
+                    aside.cart-aside.order
+                        ul.order-posts
+                            li.c-flex.c-flex-column.gap-12.order-content
+                                span.body-m-3 Другая экскурсия по Москве
+                                ul.cart-card__list.order-content__info
+                                    li.cart-card__list-item
+                                        +useIcon('shedule')
+                                        span.body-s-1 Пятница, 21 марта 2025 г.
+                                    li.cart-card__list-item
+                                        +useIcon('group')
+                                        span.body-s-1 1 взрослый, 2 ребенка
+                            li.c-flex.c-flex-column.gap-12.order-content
+                                span.body-m-3 Экскурсия по Москве
+                                ul.cart-card__list.order-content__info
+                                    li.cart-card__list-item
+                                        +useIcon('shedule')
+                                        span.body-s-1 Пятница, 21 марта 2025 г.
+                                    li.cart-card__list-item
+                                        +useIcon('group')
+                                        span.body-s-1 1 взрослый, 2 ребенка
+                        ul.mt-24-20.c-flex.c-flex-column.gap-12
                             li.c-flex.w-full.c-flex-between
-                                span.body-s-1.text-gray 2 экскурсии
+                                span.body-s-1.text-gray 3 экскурсии
                                 span.body-s-1.text-gray 11 220 ₽
-                        hr.mt-24(style='border-top: 1px solid #e5e5e5')
+                            li.c-flex.w-full.c-flex-between
+                                span.body-s-1.text-gray Скидка по промокоду
+                                span.body-s-1.text-gray - 3 352 ₽
+                        hr.mt-32-16(style='border-top: 1px solid #e5e5e5')
                         .mt-16.c-flex.w-full.c-flex-between
-                            span.h2 Итого
-                            span.h2 127 898 ₽
-                        .mt-20.cart-aside__button
-                            button.button.button__primary.w-full К оформлению
-        .current-promos
-            .current-promos__title
-                h3.h1 Текущие акции
-            .current-promos__content
-                .current-promos__swiper.swiper
-                    .swiper-wrapper
-                        each item in [1, 2, 3, 4]
-                            .swiper-slide.current-promos__card
-                                .promo-card
-                                    h5.h4 Скидка 50% на 3 экскурсию
-                                    p.mt-8.body-s-1.text-gray При покупке 3-х четвертая экскурсия по Казани со скидкой 50%
-                                    a.promo-card__button(href='javascript:void(0)') Применить
-        include ../../components/recommendSecond/index.pug
+                            span.h2 Итого:
+                            span.h2 7 898 ₽
+                        .mt-20-16.cart-aside__button
+                            button.button.button__primary.w-full(type='submit') Перейти к оплате
+
+                        .terms Нажимая кнопку «Перейти к оплате», вы принимаете условия&nbsp;
+                            |
+                            a(href='#', target='_blank') Публичной оферты&nbsp;
+                            span и&nbsp;
+                            a(href='#', target='_blank') Политики конфиденциальности
