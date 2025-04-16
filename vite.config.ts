@@ -21,9 +21,17 @@ export default defineConfig({
                 index: resolve('index.html'),
                 404: resolve(root, 'pages', '404', 'index.html'),
                 about: resolve(root, 'pages', 'about-company', 'index.html'),
-                ui: resolve(root, 'pages', 'ui', 'index.html'),
+                answers: resolve(root, 'pages', 'answers-questions', 'index.html'),
+                cart: resolve(root, 'pages', 'cart', 'index.html'),
+                cartBlankData: resolve(root, 'pages', 'cart-blank-data', 'index.html'),
+                cartBlankSelect: resolve(root, 'pages', 'cart-blank-select-place', 'index.html'),
+                cartOrder: resolve(root, 'pages', 'cart-order', 'index.html'),
+                contacts: resolve(root, 'pages', 'contacts', 'index.html'),
+                discounts: resolve(root, 'pages', 'discounts', 'index.html'),
+                discountsDetail: resolve(root, 'pages', 'discounts-detail', 'index.html'),
                 main: resolve(root, 'pages', 'main', 'index.html'),
-
+                privacy: resolve(root, 'pages', 'privacy-policy', 'index.html'),
+                ui: resolve(root, 'pages', 'ui', 'index.html')
             },
             output: {
                 assetFileNames: assetInfo => {
