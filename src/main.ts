@@ -11,6 +11,7 @@ import { usePromocode } from './scripts/promocode';
 import { CartCounter } from './scripts/cartBlankCounter';
 import { initDialogs } from './scripts/modals';
 import { ImageZoomPan } from './scripts/cropper';
+import { thumbGallery } from './scripts/thumbGallery';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -35,5 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.select-image')) {
         const img = document.querySelector('.select-image') as HTMLElement;
         new ImageZoomPan(img);
+    }
+    if (document.querySelector('.excursion-gallery')) {
+        thumbGallery();
     }
 });

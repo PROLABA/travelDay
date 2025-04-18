@@ -10,48 +10,99 @@ block content
                     span.text Санкт-Петербург
                 h1.h1.excursion-back__title Экскурсия в Пушкин (Янтарная комната, дворец)
             .excursion-content
-                .excursion-gallery
-                    .swiper.excursion-gallery__swiper-top
-                        .swiper-wrapper
-                            .swiper-slide
-                                .item
-                                    img(src='https://placehold.co/600x400?text=Hello+World1', alt='')
-                                .item
-                                    img(src='https://placehold.co/600x400?text=Hello+World2', alt='')
-                                .item
-                                    img(src='https://placehold.co/600x400?text=Hello+Worl3', alt='')
-                    .swiper.excursion-gallery__swiper-bottom
-                        .swiper-wrapper
-                            .swiper-slide
-                                .item
-                                    img(src='https://placehold.co/600x400?text=Hello+Worl1', alt='')
-                                .item
-                                    img(src='https://placehold.co/600x400?text=Hello+Worl2', alt='')
-                                .item
-                                    img(src='https://placehold.co/600x400?text=Hello+Worl3', alt='')
-                    .excursion-gallery__badge
-                        +useIcon('fire')
-                        span.body-s-2 Самая посещаемая в 2024
-                .excursion-ticket
-                    include ../../components/ticketTable/index.pug
-                .excursion-descr
-                    p.excursion-descr__text
-                    ul.excursion-descr__list
-                        li.excursion-descr__item
-                            span.body-s-1.text-gray Формат экскурсии
-                            span.body-m-1 Музей
-                        li.excursion-descr__item
-                            span.body-s-1.text-gray Формат экскурсии
-                            span.body-m-1 Музей
-                        li.excursion-descr__item
-                            span.body-s-1.text-gray Формат экскурсии
-                            span.body-m-1 Музей
-                        li.excursion-descr__item
-                            span.body-s-1.text-gray Формат экскурсии
-                            span.body-m-1 Музей
-                        li.excursion-descr__item
-                            span.body-s-1.text-gray Формат экскурсии
-                            span.body-m-1 Музей
+                .excursion-body
+                    .excursion-gallery
+                        .swiper.excursion-gallery__swiper.excursion-gallery__swiper-top
+                            .swiper-wrapper
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World1', alt='')
+                                        figcaption.figcaption
+                                            span Фото:
+                                            span Alex Dumsky / DepositPhotos
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World2', alt='')
+                                        figcaption.figcaption
+                                            span Фото:
+                                            span Alex Dumsky / DepositPhotos
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World3', alt='')
+                                        figcaption.figcaption
+                                            span Фото:
+                                            span Alex Dumsky / DepositPhotos
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World4', alt='')
+                                        figcaption.figcaption
+                                            span Фото:
+                                            span Alex Dumsky / DepositPhotos
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World5', alt='')
+                                        figcaption.figcaption
+                                            span Фото:
+                                            span Alex Dumsky / DepositPhotos
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World6', alt='')
+                                        figcaption.figcaption
+                                            span Фото:
+                                            span Alex Dumsky / DepositPhotos
+                            //- .main-swiper-button-contaiener
+                            //-     .main-swiper-button-prev.btn
+                            //-         +useIcon('prev')
+                            //-     .main-swiper-button-next.btn
+                            //-         +useIcon('next')
+                        .swiper.excursion-gallery__swiper-bottom.excursion-gallery__swiper-bottom
+                            .swiper-wrapper
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World1', alt='')
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World2', alt='')
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World3', alt='')
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World4', alt='')
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World5', alt='')
+                                .swiper-slide
+                                    figure.item
+                                        img(src='https://placehold.co/600x400?text=Hello+World6', alt='')
+                            //- .main-swiper-button-contaiener
+                            //-     .main-swiper-button-prev.btn
+                            //-         +useIcon('prev')
+                            //-     .main-swiper-button-next.btn
+                            //-         +useIcon('next')
+                        .excursion-gallery__badge
+                            +useIcon('fire')
+                            span.body-s-2 Самая посещаемая в 2024
+                    .excursion-ticket
+                        include ../../components/ticketTable/index.pug
+                    .excursion-descr
+                        p.excursion-descr__text Приглашаем вас посетить Пушкин ("Царское Село») - выдающийся образец мировой архитектуры и садово-паркового искусства, входящий в список ЮНЕСКО. Наша экскурсия начнется с осмотра памятника А.С. Пушкину и Лицея (внешне), где учился поэт. Далее, в сопровождении опытного экскурсовода вы посетите жемчужину русского барокко и любимую летнюю резиденцию Екатерины II.
+                        ul.excursion-descr__list
+                            li.excursion-descr__item
+                                span.body-s-1.text-gray Формат экскурсии
+                                span.body-m-1 Музей
+                            li.excursion-descr__item
+                                span.body-s-1.text-gray Формат экскурсии
+                                span.body-m-1 Музей
+                            li.excursion-descr__item
+                                span.body-s-1.text-gray Формат экскурсии
+                                span.body-m-1 Музей
+                            li.excursion-descr__item
+                                span.body-s-1.text-gray Формат экскурсии
+                                span.body-m-1 Музей
+                            li.excursion-descr__item
+                                span.body-s-1.text-gray Формат экскурсии
+                                span.body-m-1 Музей
                 .excursion-shedule
                     .excursion-shedule__title
                         h3.h3(style='margin: 0') Расписание экскурсии
