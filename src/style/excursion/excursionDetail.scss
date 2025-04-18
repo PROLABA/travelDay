@@ -1,0 +1,17 @@
+.excursion {
+    &-content {
+        .cart-blank__form {
+            background-color: $gray50;
+            padding: 32px;
+            border-radius: 32px;
+        }
+        .cart-blank__radio .item {
+            background-color: white;
+            border-color: white;
+        }
+        .cart-blank__main-item,
+        .date-button {
+            background-color: white;
+        }
+    }
+}

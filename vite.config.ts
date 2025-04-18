@@ -31,6 +31,7 @@ export default defineConfig({
                 contacts: resolve(root, 'pages', 'contacts', 'index.html'),
                 discounts: resolve(root, 'pages', 'discounts', 'index.html'),
                 discountsDetail: resolve(root, 'pages', 'discounts-detail', 'index.html'),
+                excursionDetail: resolve(root, 'pages', 'excursion-detail', 'index.html'),
                 main: resolve(root, 'pages', 'main', 'index.html'),
                 privacy: resolve(root, 'pages', 'privacy-policy', 'index.html'),
                 ui: resolve(root, 'pages', 'ui', 'index.html')

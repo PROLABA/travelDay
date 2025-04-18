@@ -2,7 +2,63 @@ extends ../../layout/index.pug
 include ../../mixin/useIcon.pug
 
 block content
-    section dsadsa
-
-        
-
+    section.mt-page
+        .container.excursion-section
+            .excursion-back
+                a.excursion-back__btn(href='#')
+                    +useIcon('back')
+                    span.text Санкт-Петербург
+                h1.h1.excursion-back__title Экскурсия в Пушкин (Янтарная комната, дворец)
+            .excursion-content
+                .excursion-gallery
+                    .swiper.excursion-gallery__swiper-top
+                        .swiper-wrapper
+                            .swiper-slide
+                                .item
+                                    img(src='https://placehold.co/600x400?text=Hello+World1', alt='')
+                                .item
+                                    img(src='https://placehold.co/600x400?text=Hello+World2', alt='')
+                                .item
+                                    img(src='https://placehold.co/600x400?text=Hello+Worl3', alt='')
+                    .swiper.excursion-gallery__swiper-bottom
+                        .swiper-wrapper
+                            .swiper-slide
+                                .item
+                                    img(src='https://placehold.co/600x400?text=Hello+Worl1', alt='')
+                                .item
+                                    img(src='https://placehold.co/600x400?text=Hello+Worl2', alt='')
+                                .item
+                                    img(src='https://placehold.co/600x400?text=Hello+Worl3', alt='')
+                    .excursion-gallery__badge
+                        +useIcon('fire')
+                        span.body-s-2 Самая посещаемая в 2024
+                .excursion-ticket
+                    include ../../components/ticketTable/index.pug
+                .excursion-descr
+                    p.excursion-descr__text
+                    ul.excursion-descr__list
+                        li.excursion-descr__item
+                            span.body-s-1.text-gray Формат экскурсии
+                            span.body-m-1 Музей
+                        li.excursion-descr__item
+                            span.body-s-1.text-gray Формат экскурсии
+                            span.body-m-1 Музей
+                        li.excursion-descr__item
+                            span.body-s-1.text-gray Формат экскурсии
+                            span.body-m-1 Музей
+                        li.excursion-descr__item
+                            span.body-s-1.text-gray Формат экскурсии
+                            span.body-m-1 Музей
+                        li.excursion-descr__item
+                            span.body-s-1.text-gray Формат экскурсии
+                            span.body-m-1 Музей
+                .excursion-shedule
+                    .excursion-shedule__title
+                        h3.h3(style='margin: 0') Расписание экскурсии
+                        .descr
+                            +useIcon('shedule')
+                            span.body-m-1.text-gray Длительность — 2 ч 30 мин
+                .excursion-destination
+                .excursion-infos
+                .excursion-faq
+                .excursion-packet
