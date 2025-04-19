@@ -555,29 +555,6 @@ section.recommend {
         height: 28px;
     }
 }
-.badge {
-    &-error {
-        border-radius: 28px;
-        // background-color: $pink;
-        background-color: #ff52771a;
-        padding: 20px;
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        color: $pink;
-        width: fit-content;
-        &__small {
-            border-radius: 32px;
-            padding: 8px 12px;
-        }
-    }
-}
-.icon-warning {
-    svg {
-        width: 28px;
-        height: 28px;
-    }
-}
 
 .select {
     &-image {
@@ -624,7 +601,7 @@ section.recommend {
         flex-wrap: wrap;
         gap: 8px;
         .cart-blank__radio-input {
-            &:checked ~ .item {     
+            &:checked ~ .item {
                 background-color: $violet;
                 .title {
                     color: white;

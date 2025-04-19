@@ -103,13 +103,38 @@ block content
                             li.excursion-descr__item
                                 span.body-s-1.text-gray Формат экскурсии
                                 span.body-m-1 Музей
-                .excursion-shedule
-                    .excursion-shedule__title
-                        h3.h3(style='margin: 0') Расписание экскурсии
-                        .descr
-                            +useIcon('shedule')
-                            span.body-m-1.text-gray Длительность — 2 ч 30 мин
-                .excursion-destination
-                .excursion-infos
-                .excursion-faq
-                .excursion-packet
+                    .excursion-shedule
+                        .excursion-shedule__title
+                            h3.h2 Расписание экскурсии
+                            .descr.time-shedule
+                                +useIcon('time')
+                                span.body-m-1.text-gray Длительность — 2 ч 30 мин
+                        .excursion-shedule__body
+                            .excursion-shedule__item
+                                .excursion-shedule__item-title
+                                    span.h3(style='margin: 0') Ежедневно
+                                    span.body-s-1.text-gray Автобус отправляется с интервалом 1 час
+                                ul.excursion-shedule__list
+                                    li
+                                        span.body-s-2 09:00 – 20:00 (включительно)
+                            .excursion-shedule__item
+                                .excursion-shedule__item-title
+                                    span.h3(style='margin: 0') Июнь – сентябрь, ежедневно
+                                ul.excursion-shedule__list
+                                    li
+                                        span.body-s-2 09:00
+                                    li
+                                        span.body-s-2 09:00
+                                    li
+                                        span.body-s-2 09:00
+
+                            .excursion-shedule__footer
+                                p.body-s-1.text-gray Дополнительные рейсы смотрите в календаре при бронировании
+                        .badge-error.badge-error__info.mt-12
+                            .icon-warning
+                                +useIcon('warning')
+                            p.body-s-2 По понедельникам, средам, пятницам и субботам в 11:30 отправление рейсов от Ул. Инженерной 2-4, у «Спаса на Крови»
+                    .excursion-destination
+                    .excursion-infos
+                    .excursion-faq
+                    .excursion-packet

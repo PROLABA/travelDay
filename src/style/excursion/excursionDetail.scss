@@ -161,5 +161,61 @@
     }
     &-shedule {
         margin-top: 74px;
+        &__title {
+            .time-shedule {
+                margin-top: 12px;
+            }
+        }
+        &__body {
+            background-color: $gray50;
+            border-radius: 28px;
+            padding: 28px 32px;
+            margin-top: 32px;
+        }
+        &__item {
+            margin-top: 20px;
+            &:first-child {
+                margin-top: 0;
+            }
+            &-title {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+        &__list {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            li {
+                background-color: white;
+                padding: 14px 12px;
+                border-radius: 16px;
+                text-align: center;
+            }
+        }
+        &__footer {
+            padding-top: 16px;
+            margin-top: 20px;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 100%;
+                left: -32px;
+                right: -32px;
+                border-top: 1px dashed #e4e4e4;
+            }
+        }
+    }
+}
+.time-shedule {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .icon {
+        width: 20px;
+        height: 20px;
     }
 }
