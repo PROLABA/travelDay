@@ -1,19 +1,14 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 export const thumbGallery = () => {
     const swiper2 = new Swiper('.excursion-gallery__swiper-bottom', {
-        modules: [Navigation, Pagination, Thumbs],
+        modules: [Navigation, Thumbs],
         navigation: {
-            nextEl: '.main-swiper-button-next',
-            prevEl: '.main-swiper-button-prev'
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
+            nextEl: '.excursion-gallery__nav--bottom .excursion-gallery__button--next',
+            prevEl: '.excursion-gallery__nav--bottom .excursion-gallery__button--prev'
         },
         spaceBetween: 8,
         freeMode: true,
@@ -25,14 +20,10 @@ export const thumbGallery = () => {
         }
     });
     const swiper1 = new Swiper('.excursion-gallery__swiper-top', {
-        modules: [Navigation, Pagination, Thumbs],
+        modules: [Navigation, Thumbs],
         navigation: {
-            nextEl: '.main-swiper-button-next',
-            prevEl: '.main-swiper-button-prev'
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
+            nextEl: '.excursion-gallery__nav--top .excursion-gallery__button--next',
+            prevEl: '.excursion-gallery__nav--top .excursion-gallery__button--prev'
         },
         spaceBetween: 10,
         slidesPerView: 1,

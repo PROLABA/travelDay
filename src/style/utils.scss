@@ -106,3 +106,17 @@
         }
     }
 }
+.button-nav {
+    border-radius: 16px;
+    background-color: white;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 16px 0px #0000001f;
+    .icon {
+        width: 10px;
+        height: 15px;
+    }
+}

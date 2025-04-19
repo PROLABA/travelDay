@@ -50,11 +50,11 @@ block content
                                         figcaption.figcaption
                                             span Фото:
                                             span Alex Dumsky / DepositPhotos
-                            //- .main-swiper-button-contaiener
-                            //-     .main-swiper-button-prev.btn
-                            //-         +useIcon('prev')
-                            //-     .main-swiper-button-next.btn
-                            //-         +useIcon('next')
+                            .excursion-gallery__nav.excursion-gallery__nav--top
+                                button.excursion-gallery__button.excursion-gallery__button--prev.button-nav.button-nav__prev
+                                    +useIcon('prev')
+                                button.excursion-gallery__button.excursion-gallery__button--next.button-nav.button-nav__next
+                                    +useIcon('next')
                         .swiper.excursion-gallery__swiper-bottom.excursion-gallery__swiper-bottom
                             .swiper-wrapper
                                 .swiper-slide
@@ -75,11 +75,11 @@ block content
                                 .swiper-slide
                                     figure.item
                                         img(src='https://placehold.co/600x400?text=Hello+World6', alt='')
-                            //- .main-swiper-button-contaiener
-                            //-     .main-swiper-button-prev.btn
-                            //-         +useIcon('prev')
-                            //-     .main-swiper-button-next.btn
-                            //-         +useIcon('next')
+                            .excursion-gallery__nav.excursion-gallery__nav--bottom
+                                button.excursion-gallery__button.excursion-gallery__button--prev.button-nav.button-nav__prev
+                                    +useIcon('prev')
+                                button.excursion-gallery__button.excursion-gallery__button--next.button-nav.button-nav__next
+                                    +useIcon('next')
                         .excursion-gallery__badge
                             +useIcon('fire')
                             span.body-s-2 Самая посещаемая в 2024
