@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite';
 import vitePugPlugin from 'vite-plugin-pug-transformer';
 import pugPlugin from 'vite-plugin-pug';
-// import { ViteSvgIconsPlugin } from 'vite-plugin-svg-icons';
-// import createSvgSpritePlugin from 'vite-plugin-svg-sprite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path, { resolve } from 'path';
 

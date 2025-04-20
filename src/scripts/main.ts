@@ -1,19 +1,19 @@
 import 'virtual:svg-icons-register';
-import { sliderCard } from './scripts/cardSlider';
-import { mainSwiper } from './scripts/mainSwiper';
-import { mobileSearchAction } from './scripts/mobileSearchAction';
-import { searchAction } from './scripts/searchAction/searchAction';
-import { swiperDiscount } from './scripts/swiperDiscount/swiperDiscount';
-import { faqAccordion } from './scripts/faqAccordion';
-import { ContactForm } from './scripts/contactsForm';
-import { currentPromosSwiper } from './scripts/currentPromosSwiper';
-import { usePromocode } from './scripts/promocode';
-import { CartCounter } from './scripts/cartBlankCounter';
-import { initDialogs } from './scripts/modals';
-import { ImageZoomPan } from './scripts/cropper';
-import { thumbGallery } from './scripts/thumbGallery';
-import initTabs from './scripts/modules/tabs';
-import { TextToggle } from './scripts/modules/textToggle';
+import { sliderCard } from './modules/swipers/cartSlider';
+import { mainSwiper } from './modules/swipers/mainSwiper';
+import { mobileSearchAction } from './modules/mobileSearchAction';
+import { searchAction } from './modules/searchAction';
+import { swiperDiscount } from './modules/swipers/swiperDiscount';
+import { faqAccordion } from './modules/faqAccordion';
+import { ContactForm } from './modules/contactForm';
+import { currentPromosSwiper } from './modules/swipers/currentPromosSwiper';
+import { usePromocode } from './modules/promocode';
+import { CartCounter } from './modules/cartBlankCounter';
+import { initDialogs } from './modules/modals';
+import { ImageZoomPan } from './modules/cropper';
+import { thumbGallery } from './modules/swipers/thumbGallery';
+import initTabs from './modules/tabs';
+import { TextToggle } from './modules/textToggle';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
