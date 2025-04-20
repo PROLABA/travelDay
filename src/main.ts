@@ -12,6 +12,7 @@ import { CartCounter } from './scripts/cartBlankCounter';
 import { initDialogs } from './scripts/modals';
 import { ImageZoomPan } from './scripts/cropper';
 import { thumbGallery } from './scripts/thumbGallery';
+import initTabs from './scripts/modules/tabs';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -40,4 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.excursion-gallery')) {
         thumbGallery();
     }
+    // универсальный таб
+    initTabs({
+        tabButtonsSelector: '.js-tab-btn',
+        tabContentsSelector: '.js-tab-content'
+    });
 });

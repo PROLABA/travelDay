@@ -104,7 +104,7 @@ block content
                                 span.body-s-1.text-gray Формат экскурсии
                                 span.body-m-1 Музей
                     .excursion-shedule
-                        .excursion-shedule__title
+                        .excursion-block__title
                             h3.h2 Расписание экскурсии
                             .descr.time-shedule
                                 +useIcon('time')
@@ -133,8 +133,64 @@ block content
                         .badge-error.badge-error__info.mt-12
                             .icon-warning
                                 +useIcon('warning')
-                            p.body-s-2 По понедельникам, средам, пятницам и субботам в 11:30 отправление рейсов от Ул. Инженерной 2-4, у «Спаса на Крови»
+                            p.body-s-2 По понедельникам, средам, пятницам и субботам в 11:30 отправление рейсов от Ул. Инженерной 2-4, у «Спаса на Крови»
                     .excursion-destination
+                        .excursion-block__title
+                            h3.h2 Место отправления и прибытия
+                            p.body-m-1.text-gray Место отправления зависит от времени
+                        ul.excursion-destination__tab
+                            li
+                                button.js-tab-btn.active.excursion-destination__btn(data-tab='dest-1')
+                                    span.body-s-2 09:00
+                            li
+                                button.js-tab-btn.excursion-destination__btn(data-tab='dest-2')
+                                    span.body-s-2 11:00
+                        section.excursion-destination__content
+                            .js-tab-content.active(data-tab-content='dest-1')
+                                ul.excursion-destination__list
+                                    li.excursion-destination__list-item
+                                        i.icon.icon-location
+                                        .body
+                                            span.body-m-1.text-gray Отправление
+                                            div
+                                                h5.h4 Невский пр. 35
+                                                p.body-m-1 (станция метро «Невский проспект», угол Думской ул. и Невского пр.).
+                                    li.excursion-destination__list-item
+                                        i.icon
+                                        .body
+                                            div
+                                                h5.h4 Невский пр. 35
+                                                p.body-m-1 dsadsadsa dsa
+                                    li.excursion-destination__list-item
+                                        i.icon.icon-location
+                                        .body
+                                            span.body-m-1.text-gray Прибытие
+                                            div
+                                                h5.h4 Невский пр. 35
+                                                p.body-m-1 (станция метро «Невский проспект», угол Думской ул. и Невского пр.).
+                                button.details-title
+                                    span Показать больше
+                                .excursion-destination__map
+                                    img(
+                                        src='https://placehold.co/600x400?text=ya+karta+1',
+                                        alt='',
+                                        style='width: 100%; height: 100%; object-fit: cover'
+                                    )
+                            .js-tab-content(data-tab-content='dest-2')
+                                ul.excursion-destination__list
+                                    li.excursion-destination__list-item
+                                        i.icon.icon-location
+                                        .body
+                                            span.body-m-1.text-gray Отправление и прибытие
+                                            div
+                                                h5.h4 Невский пр. 35
+                                                p.body-m-1 (станция метро «Невский проспект», угол Думской ул. и Невского пр.).
+                                .excursion-destination__map
+                                    img(
+                                        src='https://placehold.co/600x400?text=ya+karta+2',
+                                        alt='',
+                                        style='width: 100%; height: 100%; object-fit: cover'
+                                    )
                     .excursion-infos
                     .excursion-faq
                     .excursion-packet
