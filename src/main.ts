@@ -13,6 +13,7 @@ import { initDialogs } from './scripts/modals';
 import { ImageZoomPan } from './scripts/cropper';
 import { thumbGallery } from './scripts/thumbGallery';
 import initTabs from './scripts/modules/tabs';
+import { TextToggle } from './scripts/modules/textToggle';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -46,4 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tabButtonsSelector: '.js-tab-btn',
         tabContentsSelector: '.js-tab-content'
     });
+
+    const toggler = new TextToggle('p.toggle-text', 250);
+    toggler.init();
 });

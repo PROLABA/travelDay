@@ -202,11 +202,8 @@
                 .price.h2
                     span Итого: &nbsp;
                     span 123 400 ₽
-                a.button.button__primary(
-                    href='javascript:void(0)',
-                    style='color: #fff',
-                    data-modal-target='cart-blank__modal'
-                ) Сохранить изменения
+                .btns
+                    button.button.button__primary(data-modal-target='cart-blank__modal') Сохранить изменения
 dialog.modal-confirm.cart-blank__modal
     button.close-button(data-modal-close)
         +useIcon('close')

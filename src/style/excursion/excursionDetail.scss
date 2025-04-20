@@ -1,4 +1,11 @@
 .excursion {
+    &-section {
+        @include useMediaSize(770px) {
+            .excursion-back__title {
+                display: none;
+            }
+        }
+    }
     &-content {
         position: relative;
         margin-top: 40px;
@@ -7,6 +14,9 @@
             padding: 32px;
             border-radius: 32px;
             margin-top: 0;
+            @include useMediaSize(770px) {
+                padding: 16px 12px;
+            }
         }
         .cart-blank__radio .item {
             background-color: white;
@@ -15,10 +25,22 @@
         .date-button {
             background-color: white;
         }
+        @include useMediaSize(770px) {
+            margin-top: 16px;
+        }
     }
     &-body {
         max-width: 740px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        @include useMediaSize(1316px) {
+            max-width: 100%;
+        }
+        @include useMediaSize(770px) {
+            gap: 28px;
+        }
     }
     &-back {
         display: flex;
@@ -48,8 +70,35 @@
         right: 0;
         top: 0;
         width: 521px;
+        hr {
+            display: none;
+        }
+        .cart-blank__footer {
+            flex-direction: column;
+            gap: 20px;
+            .price {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                font-size: 28px;
+            }
+            .btns {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+        }
+        @include useMediaSize(1316px) {
+            position: static;
+            width: 100%;
+            order: 3;
+            .cart-blank__content {
+                max-width: 100%;
+            }
+        }
     }
     &-gallery {
+        order: 1;
         &__swiper {
             &-top {
                 padding-bottom: 150px !important;
@@ -64,6 +113,9 @@
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        @include useMediaSize(770px) {
+                            border-radius: 20px;
+                        }
                     }
                 }
                 .figcaption {
@@ -73,12 +125,20 @@
                     z-index: 2;
                     color: #a6a6a6;
                     font-size: 13px;
+                    @include useMediaSize(770px) {
+                        position: static;
+                        margin-top: 8px;
+                    }
                 }
                 &:hover {
                     .excursion-gallery__nav.excursion-gallery__nav--top {
                         opacity: 1;
                         visibility: visible;
                     }
+                }
+                @include useMediaSize(770px) {
+                    margin-bottom: 0;
+                    padding-bottom: 0 !important;
                 }
             }
             &-bottom {
@@ -104,6 +164,9 @@
                         margin: 2px;
                     }
                 }
+                @include useMediaSize(770px) {
+                    display: none !important;
+                }
             }
         }
         &__badge {
@@ -111,20 +174,16 @@
             top: 20px;
             left: 20px;
             z-index: 10;
-            padding: 6px 10px;
-            border-radius: 24px;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            .icon {
-                width: 20px;
-                height: 20px;
+            @include useMediaSize(770px) {
+                display: none;
             }
         }
         &__nav {
             opacity: 0;
             visibility: hidden;
+            @include useMediaSize(770px) {
+                display: none;
+            }
         }
         &__button {
             position: absolute;
@@ -146,7 +205,7 @@
         }
     }
     &-descr {
-        margin-top: 60px;
+        order: 2;
         &__list {
             margin-top: 28px;
             display: grid;
@@ -158,14 +217,47 @@
             flex-direction: column;
             gap: 4px;
         }
+        @include useMediaSize(770px) {
+            &__list {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            &__item {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                padding-bottom: 8px;
+                border-bottom: 1px dashed #ebebeb;
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+        .mobile {
+            display: none;
+            margin-bottom: 12px;
+            @include useMediaSize(770px) {
+                display: grid;
+                gap: 12px;
+                .excursion-gallery__badge {
+                    display: flex;
+                    position: static;
+                    background-color: #f5f5f5;
+                }
+            }
+        }
     }
     &-shedule {
-        margin-top: 74px;
+        order: 4;
         &__body {
             background-color: $gray50;
             border-radius: 28px;
             padding: 28px 32px;
             margin-top: 32px;
+            @include useMediaSize(770px) {
+                margin-top: 18px;
+                padding: 16px 12px;
+            }
         }
         &__item {
             margin-top: 20px;
@@ -189,6 +281,12 @@
                 border-radius: 16px;
                 text-align: center;
             }
+            @include useMediaSize(770px) {
+                margin-top: 12px;
+                li {
+                    padding: 6px 12px;
+                }
+            }
         }
         &__footer {
             padding-top: 16px;
@@ -209,10 +307,13 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            @include useMediaSize(770px) {
+                gap: 6px;
+            }
         }
     }
     &-destination {
-        margin-top: 60px;
+        order: 5;
         &__tab {
             display: flex;
             align-items: center;
@@ -271,7 +372,38 @@
             aspect-ratio: 2.32/1;
             width: 100%;
             height: 100%;
+            @include useMediaSize(770px) {
+                aspect-ratio: 1/1;
+            }
         }
+    }
+    &-info {
+        order: 6;
+        &__content {
+            display: grid;
+            gap: 20px;
+            margin-top: 60px;
+            &:first-child {
+                margin-top: 0;
+            }
+            @include useMediaSize(770px) {
+                gap: 12px;
+                margin-top: 46px;
+            }
+        }
+        &__img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    &-faq {
+        order: 7;
+        .faq-section {
+            margin-top: 32px;
+        }
+    }
+    &-packet {
+        order: 8;
     }
 }
 .time-shedule {
@@ -281,5 +413,8 @@
     .icon {
         width: 20px;
         height: 20px;
+    }
+    @include useMediaSize(770px) {
+        gap: 4px;
     }
 }

@@ -1,5 +1,6 @@
 extends ../../layout/index.pug
 include ../../mixin/useIcon.pug
+include ../../mixin/faqAccordeon.pug
 
 block content
     section.mt-page
@@ -80,12 +81,18 @@ block content
                                     +useIcon('prev')
                                 button.excursion-gallery__button.excursion-gallery__button--next.button-nav.button-nav__next
                                     +useIcon('next')
-                        .excursion-gallery__badge
+                        .excursion-gallery__badge.badge-info
                             +useIcon('fire')
                             span.body-s-2 Самая посещаемая в 2024
                     .excursion-ticket
+                        //- тут в конце в футере кнопки другие поменять на button и убрать модалку
                         include ../../components/ticketTable/index.pug
                     .excursion-descr
+                        .mobile
+                            .excursion-gallery__badge.badge-info
+                                +useIcon('fire')
+                                span.body-s-2 Самая посещаемая в 2024
+                            h1.h1 Экскурсия в Пушкин (Янтарная комната, дворец)
                         p.excursion-descr__text Приглашаем вас посетить Пушкин ("Царское Село») - выдающийся образец мировой архитектуры и садово-паркового искусства, входящий в список ЮНЕСКО. Наша экскурсия начнется с осмотра памятника А.С. Пушкину и Лицея (внешне), где учился поэт. Далее, в сопровождении опытного экскурсовода вы посетите жемчужину русского барокко и любимую летнюю резиденцию Екатерины II.
                         ul.excursion-descr__list
                             li.excursion-descr__item
@@ -191,6 +198,70 @@ block content
                                         alt='',
                                         style='width: 100%; height: 100%; object-fit: cover'
                                     )
-                    .excursion-infos
+                    .excursion-info
+                        .excursion-info__content
+                            h5.h2 Описание
+                            p.toggle-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a, suscipit incidunt consectetur quis ipsam iusto illo sequi placeat provident fugiat porro officiis nihil quos libero facere ullam. Eum, maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a, suscipit incidunt consectetur quis ipsam iusto illo sequi placeat provident fugiat porro officiis nihil quos libero facere ullam. Eum, maiores.
+                        .excursion-info__content
+                            h5.h2 Рекомендации
+                            p.toggle-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a, suscipit incidunt consectetur quis ipsam iusto illo sequi placeat provident fugiat porro officiis nihil quos libero facere ullam. Eum, maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a, suscipit incidunt consectetur quis ipsam iusto illo sequi placeat provident fugiat porro officiis nihil quos libero facere ullam. Eum, maiores.
+                        .excursion-info__content
+                            h5.h2 Рекомендации
+                            p.toggle-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam a, suscipit incidunt
+                            img.excursion-info__img(src='https://placehold.co/600x400', alt='')
                     .excursion-faq
+                        h4.h2 Часто задаваемые вопросы
+                        .faq-section
+                            +faq-accordion([ { question: "Как отменить заказ?", answer: "Как отменить заказ?Как отменить заказ?" }, { question: "Как изменить заказ?", answer: "Как отменить заказ?Как отменить заказ?Как отменить заказ?" } ], "section2")
+
                     .excursion-packet
+                        article.cart-card.cart-card__grouped
+                            .cart-card__bg
+                                .badge-info
+                                    +useIcon('fire')
+                                    span.body-s-2 Можно купить дешевле
+                                .cart-card__title.mt-12
+                                    h3.h3(style='margin: 0') Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum corrupti sapiente ea non beatae ipsum cumque suscipit distinctio veritatis mollitia earum nihil quis, possimus amet quos.
+                                ul.cart-card__grouped-list
+                                    li.cart-card__grouped-item
+                                        img.cart-card__img(
+                                            src='https://placehold.co/600x400',
+                                            alt='cart-item-img',
+                                            loading='lazy'
+                                        )
+                                        .card-group
+                                            .cart-card__title
+                                                img.cart-card__img.cart-card__img-mobile(
+                                                    src='https://placehold.co/600x400',
+                                                    alt='cart-item-img',
+                                                    loading='lazy'
+                                                )
+                                                h5.body-m-3.title Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum
+                                    li.cart-card__grouped-item
+                                        img.cart-card__img(
+                                            src='https://placehold.co/600x400',
+                                            alt='cart-item-img',
+                                            loading='lazy'
+                                        )
+                                        .card-group
+                                            .cart-card__title
+                                                img.cart-card__img.cart-card__img-mobile(
+                                                    src='https://placehold.co/600x400',
+                                                    alt='cart-item-img',
+                                                    loading='lazy'
+                                                )
+                                                h5.body-m-3.title Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum
+                                .c-flex.w-full.c-flex-between.mt-16
+                                    .card__price
+                                        span.card__current-price.body-xl-3.violet 123 400 ₽
+                                        span.card__old-price.body-s-2 165 200 ₽
+                                    button.button.button__primary В корзину
+        section.mt-60-48
+            .container
+                include ../../components/discount/index.pug
+            .get--more-btn
+                button.button.button__subded Посмотреть ещё
+        section.container
+            include ../../components/recommendSecond/index.pug
+        section
+            include ../../components/bottomForm/bottomForm.pug

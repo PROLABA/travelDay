@@ -40,6 +40,11 @@
                 }
             }
         }
+        &__button {
+            .button {
+                width: 100%;
+            }
+        }
         @include useMediaSize(640px) {
             padding: 12px;
             border-radius: 20px;
