@@ -85,8 +85,170 @@ block content
                             +useIcon('fire')
                             span.body-s-2 Самая посещаемая в 2024
                     .excursion-ticket
-                        //- тут в конце в футере кнопки другие поменять на button и убрать модалку
-                        include ../../components/ticketTable/index.pug
+                        .cart-blank
+                            .cart-blank__content
+                                form.cart-blank__form.mt-32-20
+                                    h3.h3(style='margin: 0') Купить билеты онлайн
+                                    .cart-blank__form-item
+                                        ul.cart-blank__list
+                                            li.cart-blank__item
+                                                label.cart-blank__radio
+                                                    input.cart-blank__radio-input(
+                                                        type='radio',
+                                                        name='date',
+                                                        checked,
+                                                        hidden
+                                                    )
+                                                    .item
+                                                        span.title Сегодня
+                                                        span.text-gray 10 марта
+                                            li.cart-blank__item
+                                                label.cart-blank__radio
+                                                    input.cart-blank__radio-input(type='radio', name='date', hidden)
+                                                    .item
+                                                        span.title Завтра
+                                                        span.text-gray 11 марта
+                                            li.cart-blank__item
+                                                button.date-button
+                                                    +useIcon('date')
+                                                    span Выбрать дату
+                                    .cart-blank__form-item
+                                        span.label Время отправления
+                                        ul.cart-blank__list
+                                            each time in ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00']
+                                                li.cart-blank__item
+                                                    label.cart-blank__radio
+                                                        input.cart-blank__radio-input(
+                                                            type='radio',
+                                                            name='time',
+                                                            hidden
+                                                        )
+                                                        .item
+                                                            span.title #{ time }
+                                    .cart-blank__form-item
+                                        span.label Время обратного отправления
+                                        span Невский пр. 35, (станция метро «Невский проспект», угол Думской ул. и Невского пр.)
+                                    .cart-blank__form-item
+                                        span.label Участники
+                                        ul.cart-blank__main-list
+                                            li.cart-blank__main-item
+                                                .c-flex.c-flex-column.gap-4
+                                                    span Взрослый
+                                                    span.text-gray.text-14 16+ (РФ и РБ)
+                                                .cart-blank__count
+                                                    .card__price
+                                                        span.card__current-price.body-xl-3.violet 123 400 ₽
+                                                        span.card__old-price.body-s-2 165 200 ₽
+                                                    .cart-blank__count-value
+                                                        button.cart-blank__count-button.disabled
+                                                            +useIcon('minus')
+                                                        span.value 0
+                                                        button.cart-blank__count-button
+                                                            +useIcon('plus')
+                                                        input.input-count(type='hidden', name='count', value='0')
+                                            li.cart-blank__main-item
+                                                .c-flex.c-flex-column.gap-4
+                                                    span Взрослый
+                                                    span.text-gray.text-14 16+ (РФ и РБ)
+                                                .cart-blank__count
+                                                    .card__price
+                                                        span.card__current-price.body-xl-3 1 400 ₽
+                                                    .cart-blank__count-value
+                                                        button.cart-blank__count-button
+                                                            +useIcon('minus')
+                                                        span.value 2
+                                                        button.cart-blank__count-button
+                                                            +useIcon('plus')
+                                                        input.input-count(type='hidden', name='count', value='2')
+                                            li.cart-blank__main-item
+                                                .c-flex.c-flex-column.gap-4
+                                                    span Взрослый
+                                                    a(href='#', style='color: #7f56d9') Кто относится?
+                                                .cart-blank__count
+                                                    .card__price
+                                                        span.card__current-price.body-xl-3 1 400 ₽
+                                                    .cart-blank__count-value
+                                                        button.cart-blank__count-button
+                                                            +useIcon('minus')
+                                                        span.value 2
+                                                        button.cart-blank__count-button
+                                                            +useIcon('plus')
+                                                        input.input-count(type='hidden', name='count', value='2')
+                                    .cart-blank__form-item
+                                        span.label Места
+                                        ul.cart-blank__main-list
+                                            li.cart-blank__main-item.error
+                                                span Места не выбраны
+                                                a.button.button__primary.small(href='#', style='color: #fff') Выбрать места
+                                            li.cart-blank__main-item
+                                                span Места не выбраны
+                                                a.button.button__primary.small(href='#', style='color: #fff') Выбрать места
+                                    .cart-blank__form-item
+                                        .c-flex.c-flex-column.gap-12
+                                            .c-flex.gap-12.c-flex-center
+                                                .toggle-pill-dark
+                                                    input#pill4(type='checkbox', name='check', checked)
+                                                    label(for='pill4')
+                                                span.body-m-3 Любая дополнительная услуга&nbsp;
+                                                    span.violet + 120 ₽
+                                            .c-flex.gap-12.c-flex-center
+                                                .toggle-pill-dark
+                                                    input#pill4(type='checkbox', name='check')
+                                                    label(for='pill4')
+                                                span.body-m-3 Любая дополнительная услуга&nbsp;
+                                                    span.violet + 120 ₽
+                                    hr.mt-32(style='border-top: 1px solid #e5e5e5')
+                                    .cart-blank__footer
+                                        .price.h2
+                                            span Итого: &nbsp;
+                                            span 123 400 ₽
+                                        .btns
+                                            button.button.button__on-color В корзину
+                                            button.button.button__primary Купить
+                        //- для пакета эскурсий состояние 
+                        .cart-blank
+                            .cart-blank__content
+                                form.cart-blank__form.mt-32-20
+                                    h3.h3(style='margin: 0') Купить билеты онлайн
+                                    p.mt-8.body-s-1 Для бронирования пакета экскурсий укажите детали для каждой экскурсии
+                                    ul.cart-card__grouped-list
+                                        li.cart-card__grouped-item
+                                            img.cart-card__img(
+                                                src='https://placehold.co/600x400',
+                                                alt='cart-item-img',
+                                                loading='lazy'
+                                            )
+                                            .card-group.w-full
+                                                .cart-card__title
+                                                    img.cart-card__img.cart-card__img-mobile(
+                                                        src='https://placehold.co/600x400',
+                                                        alt='cart-item-img',
+                                                        loading='lazy'
+                                                    )
+                                                    .c-flex.c-flex-column.gap-4
+                                                        .card__text-top
+                                                            ul.card__excursion.body-s-1
+                                                                li.card__excursion-item Групповая
+                                                                    span.card__excursion-separator &middot;
+                                                                li.card__excursion-item Музей
+                                                            .card__time
+                                                                +useIcon("time")
+                                                                p.body-s-1 2.4ч
+                                                        h5.body-m-3.title Lorem ipsum dolor sit amet consectetur adipisicing elit. Error corporis ratione illum nostrum
+                                                .c-flex.c-flex-center.c-flex-between.mt-12
+                                                    .card__price.card__price--grouped.card__price--small
+                                                        span.card__current-price.body-xl-3.violet 123 400 ₽
+                                                        span.card__old-price.body-s-2 165 200 ₽
+                                                    button.button.button__subded(style='padding: 16px')
+                                                        span Изменить
+                                    .cart-blank__footer
+                                        .price.h2
+                                            span Итого: &nbsp;
+                                            span 123 400 ₽
+                                        .btns
+                                            button.button.button__on-color В корзину
+                                            button.button.button__primary Купить
+
                     .excursion-descr
                         .mobile
                             .excursion-gallery__badge.badge-info

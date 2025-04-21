@@ -27,7 +27,7 @@
         }
     }
 
-    .card__label {
+    &__label {
         position: absolute;
         top: 0.75rem;
         left: 0.75rem;
@@ -60,13 +60,24 @@
             object-fit: cover;
         }
     }
-
-    .card__text {
+    &__time {
+        display: flex;
+        gap: 0.1875rem;
+        align-items: center;
+        .icon {
+            width: 16px;
+            height: 16px;
+        }
+        p {
+            color: $textBaseGray;
+        }
+    }
+    &__text {
         padding: 0.75rem 1rem 2rem 1rem;
         @media (max-width: 46.875rem) {
             padding: 0.75rem 0.75rem 1rem 0.75rem;
         }
-        .card__text-top {
+        &-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -75,16 +86,6 @@
                 display: flex;
                 gap: 0.4375rem;
                 color: $textBaseGray;
-            }
-
-            .card__time {
-                display: flex;
-                gap: 0.1875rem;
-                align-items: center;
-
-                p {
-                    color: $textBaseGray;
-                }
             }
         }
 
@@ -136,5 +137,15 @@
         position: relative;
         text-decoration: line-through;
         text-decoration-color: rgba(112, 112, 112, 1);
+    }
+    &--grouped {
+        flex-direction: column;
+    }
+    &--small {
+        gap: 0;
+        align-items: flex-start;
+        .card__current-price {
+            font-size: 20px;
+        }
     }
 }

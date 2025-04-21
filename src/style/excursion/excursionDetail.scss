@@ -86,6 +86,10 @@
                 display: flex;
                 align-items: center;
                 gap: 16px;
+                width: 100%;
+                .button {
+                    width: 100%;
+                }
             }
         }
         @include useMediaSize(1316px) {
