@@ -1,0 +1,70 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+
+block content
+    section.mt-page
+        section.banner-page
+            .container
+                .banner-page__body
+                    img.banner-page__bg(src='https://placehold.co/600x400', alt='banner-img')
+                    a.arrow-back(href='#')
+                        +useIcon('arrow-circle')
+                        span Назад
+                    h2.banner-page__title.h1 Экскурсии в Санкт‑Петербурге
+        section.categories
+            .categories__wrapper
+                ul.categories__list
+                    li.categories__item
+                        span.title.body-m-3 По городу
+                        span.body-s-1.text-gray 4 экскурсии
+                    li.categories__item
+                        span.title.body-m-3 По городу
+                        span.body-s-1.text-gray 4 экскурсии
+                    li.categories__item
+                        span.title.body-m-3 По городу
+                        span.body-s-1.text-gray 4 экскурсии
+                    li.categories__item
+                        span.title.body-m-3 По городу
+                        span.body-s-1.text-gray 4 экскурсии
+                    li.categories__item
+                        span.title.body-m-3 По городу
+                        span.body-s-1.text-gray 4 экскурсии
+                    li.categories__item.categories__item--last
+                        i.icon.icon--size-20
+                            +useIcon('plus')
+                        span.body-m-3 Еще
+        section.filter
+            .container
+                ul.filter__list
+                    li.filter__item
+                        .filter__label
+                            .toggle-pill-dark
+                                input#test(type='checkbox', name='check')
+                                label(for='test') 
+                            span.filter__label--text Набор экскурсий
+                    li.filter__item
+                        .filter__label
+                            .toggle-pill-dark
+                                input#test1(type='checkbox', name='check')
+                                label(for='test1') 
+                            span.filter__label--text Cо скидкой
+                    li.filter__item
+                        span.filter__label--text Цена
+                        i.arrow.arrow--down
+                            +useIcon('arrow')
+                    li.filter__item
+                        i.icon.icon--size-20
+                            +useIcon('shedule')
+                        span.filter__label--text Даты
+                    li.filter__item
+                        i.icon.icon--size-20
+                            +useIcon('filter')
+                        span.filter__label--text Все фильтры
+                .parent(style='position: relative')
+                    .datepicker-custom(
+                        data-title='Когда отправимся?',
+                        data-descr='',
+                        data-buttons='["today", "tomorrow", "weekend"]',
+                    )
+                        input#datepicker(type='text', hidden)
+                button#date-button Открыть календарь

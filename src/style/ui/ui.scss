@@ -347,6 +347,12 @@
         align-items: center;
         justify-content: center;
     }
+    &--size-20 {
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 .btn-l-3 {
     font-weight: 600;
