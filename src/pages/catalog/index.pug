@@ -60,11 +60,9 @@ block content
                         i.icon.icon--size-20
                             +useIcon('filter')
                         span.filter__label--text Все фильтры
-                .parent(style='position: relative')
-                    .datepicker-custom(
-                        data-title='Когда отправимся?',
-                        data-descr='',
-                        data-buttons='["today", "tomorrow", "weekend"]',
-                    )
-                        input#datepicker(type='text', hidden)
+                .datepicker-custom(
+                    data-title='Когда отправимся?',
+                    data-descr='',
+                )
+                    input#datepicker(type='text', hidden)
                 button#date-button Открыть календарь

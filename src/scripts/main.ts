@@ -93,10 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
                 },
                 open: function (input, inst) {
-                    console.dir(input);
-                    console.dir(inst);
-                    console.dir(inst.dpDiv);
-                    setTimeout(() => insertCustomButtons(inst.dpDiv), 50);
+                    setTimeout(() => insertCustomButtons(inst.instance.element), 50);
                 },
                 dateFormat: 'dd.mm',
                 initialText: 'Дата',
@@ -172,82 +169,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function insertCustomButtons($dpDiv) {
-            console.dir($dpDiv);
-            if ($dpDiv.find('.custom-buttons').length) return; // уже добавлены
+            const $modalBodyContent = $('.comiseo-daterangepicker-main .comiseo-daterangepicker-presets');
+            if ($modalBodyContent.find('.dp-custom-header').length) return; // уже добавлены
 
-            // const $wrapper = $('.datepicker-custom');
+            const $wrapper = $('.datepicker-custom');
 
-            // const title = $wrapper.data('title');
-            // const descr = $wrapper.data('descr');
+            const title = $wrapper.data('title');
+            const descr = $wrapper.data('descr');
             // const buttons = JSON.parse($wrapper.attr('data-buttons') || '[]');
 
-            // const $btnContainer = $('<div class="dp-custom-header"></div>');
+            const $btnContainer = $('<div class="dp-custom-header"></div>');
 
-            // if (title) {
-            //     $btnContainer.append(`<h5 class="h4">${title}</h5>`);
-            // }
+            if (title) {
+                $btnContainer.append(`<h5 class="h4">${title}</h5>`);
+            }
 
-            // if (descr) {
-            //     $btnContainer.append(`<p class="description">${descr}</p>`);
-            // }
+            if (descr) {
+                $btnContainer.append(`<p class="description">${descr}</p>`);
+            }
 
-            // if (Array.isArray(buttons) && buttons.length) {
-            //     const $buttonsDiv = $('<div class="dp-custom-buttons"></div>');
-
-            //     buttons.forEach(btn => {
-            //         let label = '';
-            //         switch (btn) {
-            //             case 'today':
-            //                 label = 'Сегодня';
-            //                 break;
-            //             case 'tomorrow':
-            //                 label = 'Завтра';
-            //                 break;
-            //             case 'weekend':
-            //                 label = 'На выходных';
-            //                 break;
-            //             case 'night':
-            //                 label = 'Предстоящая ночь';
-            //                 break;
-            //             default:
-            //                 label = btn;
-            //         }
-
-            //         const $button = $(`<button class="dp-custom-${btn} dp-custom-btn">${label}</button>`);
-            //         $buttonsDiv.append($button);
-            //     });
-
-            //     $btnContainer.append($buttonsDiv);
-            // }
-
-            // $dpDiv.prepend($btnContainer);
-
-            // $btnContainer.find('.dp-custom-night').on('click', function () {
-            //     // тут логика кнопки предстоящая ночь пиздец че за кнопку придумали для выбора времени...
-            //     $datepicker.datepicker('setDate', new Date());
-            //     $datepicker.datepicker('hide');
-            // });
-
-            // $btnContainer.find('.dp-custom-today').on('click', function () {
-            //     $datepicker.datepicker('setDate', new Date());
-            //     $datepicker.datepicker('hide');
-            // });
-
-            // $btnContainer.find('.dp-custom-tomorrow').on('click', function () {
-            //     const tomorrow = new Date();
-            //     tomorrow.setDate(tomorrow.getDate() + 1);
-            //     $datepicker.datepicker('setDate', tomorrow);
-            //     $datepicker.datepicker('hide');
-            // });
-
-            // $btnContainer.find('.dp-custom-weekend').on('click', function () {
-            //     const date = new Date();
-            //     const day = date.getDay();
-            //     const daysUntilSaturday = (6 - day + 7) % 7;
-            //     date.setDate(date.getDate() + daysUntilSaturday);
-            //     $datepicker.datepicker('setDate', date);
-            //     $datepicker.datepicker('hide');
-            // });
+            $modalBodyContent.prepend($btnContainer);
         }
 
         // function setupScrollHandler($dpDiv) {
