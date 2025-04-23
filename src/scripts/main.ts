@@ -15,6 +15,7 @@ import { thumbGallery } from './modules/swipers/thumbGallery';
 import initTabs from './modules/tabs';
 import { TextToggle } from './modules/textToggle';
 import initCustomDatepicker from './modules/datepicker';
+import { initVideoPlayers } from './modules/videoPlayer';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -53,4 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggler.init();
 
     initCustomDatepicker();
+    if (document.querySelector('.video-container')) {
+        initVideoPlayers();
+    }
 });
