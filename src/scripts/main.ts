@@ -68,6 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function initDesktopDatepicker() {
+            let clickCount = 0;
+            let startDate = null;
+            let endDate = null;
+
             $datepicker.daterangepicker({
                 datepickerOptions: {
                     // showOn: 'button',
@@ -90,11 +94,66 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Декабрь'
                     ],
                     dayNames: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-                    dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
+                    dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    beforeShowDay: function (date) {
+                        if (!startDate || !endDate) {
+                            return [true, ''];
+                        }
+
+                        const time = date.getTime();
+                        const startTime = Math.min(startDate.getTime(), endDate.getTime());
+                        const endTime = Math.max(startDate.getTime(), endDate.getTime());
+
+                        if (time === startTime) {
+                            return [true, 'range-start'];
+                        } else if (time === endTime) {
+                            return [true, 'range-end'];
+                        } else if (time > startTime && time < endTime) {
+                            return [true, 'range-middle'];
+                        } else {
+                            return [true, ''];
+                        }
+                    },
+                    onSelect: function (e, inst) {
+                        const selectedDate = new Date(inst.selectedYear, inst.selectedMonth, inst.selectedDay);
+                        console.dir(selectedDate);
+
+                        if (clickCount === 0) {
+                            startDate = selectedDate;
+                            endDate = null;
+                            clickCount = 1;
+                        } else if (clickCount === 1) {
+                            endDate = selectedDate;
+                            clickCount = 2;
+                        } else {
+                            // сброс на третий клик
+                            startDate = selectedDate;
+                            endDate = null;
+                            clickCount = 1;
+
+                            // вручную удаляем классы
+                            $('.ui-datepicker-calendar td').removeClass('range-start range-end range-middle');
+                        }
+                        // if (!firstClickDate) {
+                        //     // первый клик
+                        //     firstClickDate = selectedDate;
+                        //     secondClickDate = null;
+                        // } else {
+                        //     // второй клик
+                        //     secondClickDate = selectedDate;
+
+                        //     // перерисовать, чтобы beforeShowDay применил классы
+                        //     // $(this).daterangepicker('refresh');
+                        // }
+                        // const dates = dateText.split(' - ');
+                        // const startDate = $.datepicker.parseDate('mm/dd/yy', dates[0]);
+                        // const endDate = $.datepicker.parseDate('mm/dd/yy', dates[1]);
+
+                        // $('#datepicker').data('rangeStart', startDate);
+                        // $('#datepicker').data('rangeEnd', endDate);
+                    }
                 },
-                open: function (input, inst) {
-                    setTimeout(() => insertCustomButtons(inst.instance.element), 50);
-                },
+
                 dateFormat: 'dd.mm',
                 initialText: 'Дата',
                 applyButtonText: 'Применить',
@@ -129,7 +188,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 ],
-                applyOnMenuSelect: false
+                // applyOnMenuSelect: false,
+                open: function () {
+                    setTimeout(() => insertCustomButtons(), 50);
+                }
+                // change: function (e) {
+                //     console.dir(e);
+                //     console.dir('dsada');
+                // }
             });
         }
 
@@ -165,11 +231,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         $('#date-button').click(function (e) {
             e.preventDefault();
+            // вручную удаляем классы
             $datepicker.daterangepicker('open');
         });
+        $datepicker.on('daterangepickerclose', function (event, data) {
+            console.dir('dsadasdsa');
+            $('.comiseo-daterangepicker .ui-datepicker-calendar td').removeClass('range-start range-end range-middle');
+        });
 
-        function insertCustomButtons($dpDiv) {
+        function insertCustomButtons() {
             const $modalBodyContent = $('.comiseo-daterangepicker-main .comiseo-daterangepicker-presets');
+
             if ($modalBodyContent.find('.dp-custom-header').length) return; // уже добавлены
 
             const $wrapper = $('.datepicker-custom');
