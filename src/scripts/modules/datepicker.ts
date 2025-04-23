@@ -20,16 +20,12 @@ const initCustomDatepicker = () => {
 
         const isMobile = window.innerWidth < 768;
 
-        // if (isMobile) {
-        //     initMobileDatepicker();
-        // } else {
-        // }
         initDesktopDatepicker();
 
         function initDesktopDatepicker() {
             ($datepicker as any).daterangepicker({
                 datepickerOptions: {
-					showCurrentAtPos: 0,
+                    showCurrentAtPos: 0,
                     numberOfMonths: isMobile ? 12 : 1,
                     minDate: 0,
                     // maxDate: isMobile ? 12 : null,
@@ -46,7 +42,7 @@ const initCustomDatepicker = () => {
                 applyButtonText: 'Применить',
                 clearButtonText: isMobile ? 'Сбросить' : '',
                 cancelButtonText: '',
-				autoFitCalendars: isMobile ? false : true,
+                autoFitCalendars: isMobile ? false : true,
                 presetRanges: [
                     {
                         text: 'Сегодня',
@@ -83,21 +79,6 @@ const initCustomDatepicker = () => {
                 icon: 'custom-date-icon'
             });
         }
-
-        // function initMobileDatepicker() {
-        //     $datepicker.daterangepicker({
-        //         datepickerOptions: {
-        //             minDate: 0,
-        //             numberOfMonths: 12,
-        //             // stepMonths: 1,
-        //             showCurrentAtPos: 0,
-        //             showOn: 'focus'
-        //         },
-        //         open: function () {
-        //             setTimeout(() => insertCustomButtons(), 50);
-        //         }
-        //     });
-        // }
 
         $('#date-button').click(function (e) {
             e.preventDefault();
