@@ -103,6 +103,9 @@ html .ui-button.ui-state-disabled:active {
 .ui-datepicker td span,
 .ui-datepicker td a {
     padding: 14px 15px;
+    @include useMediaSize(768px) {
+        padding: 12px;
+    }
 }
 .ui-datepicker-current-day {
     background-color: $violet !important;
@@ -136,7 +139,7 @@ html .ui-button.ui-state-disabled:active {
         }
     }
 }
-.comiseo-daterangepicker-buttonpanel  button {
+.comiseo-daterangepicker-buttonpanel button {
     margin: 0 auto;
     width: 100%;
     padding: 12px 24px;
@@ -158,6 +161,20 @@ html .ui-button.ui-state-disabled:active {
     background-color: white;
     display: flex;
     flex-direction: column;
+
+    @include useMediaSize(769px) {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-height: 700px;
+        height: 100%;
+        top: 110px !important;
+        .ui-datepicker-multi .ui-datepicker-group table {
+            margin: 0;
+            width: 100%;
+        }
+    }
     &-main {
         display: flex;
         // flex-direction: column-reverse;
@@ -196,7 +213,7 @@ html .ui-button.ui-state-disabled:active {
         border-radius: 16px;
         padding: 12px;
         padding-left: 40px;
-        background-color: #F5F5F5;
+        background-color: #f5f5f5;
         font-size: 15px;
         font-weight: 500;
         .ui-button {
@@ -214,7 +231,6 @@ html .ui-button.ui-state-disabled:active {
         }
         &.ui-button {
             min-width: unset;
-
         }
         &:hover {
             background-color: #7f56d91a;
@@ -223,6 +239,38 @@ html .ui-button.ui-state-disabled:active {
         &:focus {
             background-color: #7f56d91a;
             border: unset;
+        }
+    }
+    &-buttonpanel {
+        @include useMediaSize(768px) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .ui-priority-secondary {
+            background-color: #F5F5F5;
+            color: black;
+        }
+    }
+    .ui-datepicker.ui-widget-content.ui-datepicker-multi-12 {
+        @include useMediaSize(769px) {
+            width: 100% !important;
+        }
+    }
+}
+.comiseo-daterangepicker-right .comiseo-daterangepicker-calendar {
+    @include useMediaSize(769px) {
+        padding: unset;
+        height: 50dvh;
+        overflow-y: auto;
+    }
+}
+.ui-datepicker-multi .ui-datepicker-group {
+    @include useMediaSize(769px) {
+        width: 100%;
+        float: unset;
+        margin-bottom: 16px;
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 }
