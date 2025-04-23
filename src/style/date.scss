@@ -68,48 +68,7 @@
     height: unset;
     padding: 0;
 }
-.comiseo-daterangepicker {
-    box-shadow: 0px 2px 15px 0px #0000001f;
-    padding: 20px;
-    border-radius: 28px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    &-main {
-        display: flex;
-        // flex-direction: column-reverse;
-        flex-direction: column;
-    }
-    &-calendar {
-        border: unset;
-    }
-    &-presets {
-        .ui-menu {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 16px;
-        }
-        .ui-menu-item {
-            .ui-state-active {
-                color: unset;
-                margin: 0;
-            }
-            & > * {
-                padding: 14px 12px;
-                border-radius: 16px;
-                background-color: #f5f5f5;
-                font-size: 13px;
-                letter-spacing: -1px;
-                border: unset !important;
-                &:hover {
-                    background-color: #ebebeb;
-                    color: #3c3c3c;
-                }
-            }
-        }
-    }
-}
+
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
@@ -162,6 +121,9 @@ html .ui-button.ui-state-disabled:active {
         a {
             color: white !important;
         }
+        &.range-end {
+            border-radius: 12px !important;
+        }
     }
     &-end {
         background-color: #7f56d9 !important;
@@ -174,7 +136,7 @@ html .ui-button.ui-state-disabled:active {
         }
     }
 }
-.comiseo-daterangepicker-left .comiseo-daterangepicker-buttonpanel > button {
+.comiseo-daterangepicker-buttonpanel  button {
     margin: 0 auto;
     width: 100%;
     padding: 12px 24px;
@@ -183,4 +145,84 @@ html .ui-button.ui-state-disabled:active {
     font-size: 14px;
     font-weight: 500;
     color: white;
+    &:hover {
+        background-color: $violet;
+        border: unset;
+        color: white;
+    }
+}
+.comiseo-daterangepicker {
+    box-shadow: 0px 2px 15px 0px #0000001f;
+    padding: 20px;
+    border-radius: 28px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    &-main {
+        display: flex;
+        // flex-direction: column-reverse;
+        flex-direction: column;
+    }
+    &-calendar {
+        border: unset;
+    }
+    &-presets {
+        .ui-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+        }
+        .ui-menu-item {
+            .ui-state-active {
+                color: unset;
+                margin: 0;
+            }
+            & > * {
+                padding: 14px 12px;
+                border-radius: 16px;
+                background-color: #f5f5f5;
+                font-size: 13px;
+                letter-spacing: -1px;
+                border: unset !important;
+                &:hover {
+                    background-color: #ebebeb;
+                    color: #3c3c3c;
+                }
+            }
+        }
+    }
+    &-triggerbutton {
+        border-radius: 16px;
+        padding: 12px;
+        padding-left: 40px;
+        background-color: #F5F5F5;
+        font-size: 15px;
+        font-weight: 500;
+        .ui-button {
+            &-icon {
+                left: 12px;
+                width: 20px;
+                height: 20px;
+                margin-top: 0;
+                transform: translateY(-50%);
+                &.custom-date-icon {
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 3C10 2.44772 9.55228 2 9 2C8.44772 2 8 2.44772 8 3V4H7C4.79086 4 3 5.79086 3 8V10V17C3 19.2091 4.79086 21 7 21H17C19.2091 21 21 19.2091 21 17V10V8C21 5.79086 19.2091 4 17 4H16V3C16 2.44772 15.5523 2 15 2C14.4477 2 14 2.44772 14 3V4H10V3ZM8 6V6.5C8 7.05228 8.44772 7.5 9 7.5C9.55228 7.5 10 7.05228 10 6.5V6H14V6.5C14 7.05228 14.4477 7.5 15 7.5C15.5523 7.5 16 7.05228 16 6.5V6H17C18.1046 6 19 6.89543 19 8V9H5V8C5 6.89543 5.89543 6 7 6H8ZM5 11H19V17C19 18.1046 18.1046 19 17 19H7C5.89543 19 5 18.1046 5 17V11Z' fill='%233C3C3C' fill-opacity='0.9'/%3E%3C/svg%3E%0A");
+                    background-position: center;
+                }
+            }
+        }
+        &.ui-button {
+            min-width: unset;
+
+        }
+        &:hover {
+            background-color: #7f56d91a;
+            border: unset;
+        }
+        &:focus {
+            background-color: #7f56d91a;
+            border: unset;
+        }
+    }
 }
