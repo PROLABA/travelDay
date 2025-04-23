@@ -9,8 +9,11 @@
       background-color: rgba(245, 245, 245, 1);
       border-radius: 2rem;
       &:nth-child(1) {
+        max-height: 27.6875rem;
+        height: fit-content;
         @media (max-width: $s1000) {
           padding: 1.25rem 1rem 1.5rem 1rem;
+          max-height: inherit;
         }
       }
       &:nth-child(2) {
@@ -50,6 +53,9 @@
             display: flex;
             align-items: center;
             gap: 1.25rem;
+            button {
+              min-width: 12.5rem;
+            }
             .form__policy {
               color: $textBaseGray;
               font-weight: 400;
@@ -119,9 +125,24 @@
             min-height: 10.4375rem;
             grid-column: span 2 / span 2;
           }
-          .form__input::placeholder,
-          .form__textarea::placeholder {
+          .form__input,
+          .form__textarea {
+            position: relative;
+          }
+          .form__label {
+            position: absolute;
+            top: 1.0625rem;
+            left: 1rem;
             color: $gray300;
+            cursor: text;
+            user-select: none;
+          }
+          .form__input:not(:first-child) .form__label,
+          .form__textarea .form__label {
+            &::after {
+              content: "*";
+              color: rgba(255, 82, 119, 1);
+            }
           }
           @media (max-width: $s1000) {
             display: flex;
