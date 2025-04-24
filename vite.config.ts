@@ -18,8 +18,9 @@ export default defineConfig({
             input: {
                 index: resolve('index.html'),
                 404: resolve(root, 'pages', '404', 'index.html'),
-                about: resolve(root, 'pages', 'about-company', 'index.html'),
+                aboutCompany: resolve(root, 'pages', 'about-company', 'index.html'),
                 answers: resolve(root, 'pages', 'answers-questions', 'index.html'),
+                blog: resolve(root, 'pages', 'blog', 'index.html'),
                 cart: resolve(root, 'pages', 'cart', 'index.html'),
                 cartBlankData: resolve(root, 'pages', 'cart-blank-data', 'index.html'),
                 cartBlankSelect: resolve(root, 'pages', 'cart-blank-select-place', 'index.html'),
