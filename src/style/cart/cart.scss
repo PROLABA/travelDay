@@ -82,7 +82,8 @@
         }
         @include useMediaSize(540px) {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            gap: 8px;
             &__block {
                 margin-top: unset;
                 width: 100%;

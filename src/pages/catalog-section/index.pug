@@ -1,0 +1,139 @@
+extends ../../layout/index.pug
+include ../../mixin/useIcon.pug
+include ../../mixin/card.pug
+include ../../mixin/comboTours.pug
+
+block content
+    section.mt-page
+        section.container.categories__back
+            .cart-title
+                a.arrow-back(href='#')
+                    +useIcon('arrow-circle')
+                    span Назад
+                .cart-title__block
+                    h1.h1.cart-title__text Экскурсии по городу
+                    p.text-gray.body-l-3 в Санкт-Петербурге
+        section.categories
+            .categories__wrapper
+                .categories__list.categories__swiper.swiper-width-auto
+                    .swiper-wrapper
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 По городу
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 Водные прогулки
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 Водные прогулки Водные прогулки
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 По городу
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 По городу
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            .categories__item.categories__item--last
+                                i.icon.icon--size-20
+                                    +useIcon('plus')
+                                span.body-m-3 Еще
+        section.filter
+            .container
+                .filter__body
+                    ul.filter__list
+                        li
+                            .filter__item
+                                .filter__label
+                                    .toggle-pill-dark
+                                        input#test(type='checkbox', name='check')
+                                        label(for='test') 
+                                span.filter__label--text Набор экскурсий
+                        li
+                            .filter__item
+                                .filter__label
+                                    .toggle-pill-dark
+                                        input#test1(type='checkbox', name='check')
+                                        label(for='test1') 
+                                span.filter__label--text Cо скидкой
+                        li
+                            .filter__item
+                                span.filter__label--text Цена
+                                i.arrow.arrow--down
+                                    +useIcon('arrow')
+                        li
+                            .filter__item
+                                .datepicker-custom(data-title='Когда отправимся?', data-descr='dsadsa')
+                                    input#datepicker(type='text', hidden)
+                                    //- делаешь клик по этой кнопке тогда сбрасывается календарь
+                                    button#custom-date-clear(type='button', hidden)
+                        li
+                            .filter__item
+                                i.icon.icon--size-20
+                                    +useIcon('filter')
+                                span.filter__label--text Все фильтры
+                    div tyt dropdown
+                    .filter__info
+                        span.text-gray Доступно 316 экскурсий
+        section.catalog__section
+            .container
+                .recommend-content.catalog__grid
+                    +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽")
+                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], true, "4 200 ₽","4 400 ₽")
+                    +comboTurs("Выгоднее на 2000 ₽", "Пакет экскурсий: на школьные каникулы этой осенью", ["/public/images/comboTours/comboTurs1.png","/public/images/comboTours/comboTurs2.png","/public/images/comboTours/comboTurs3.png"], ["Экскурсия по Москве на красном двухэтажном автобусе с гидом на всех языках мира", "Выставка современной живописи",'Экскурсия по Москве на красном двухэтажном автобусе'], true, "4 200 ₽",'4 400 ₽')
+                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Самая популярная", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Выбор посетителей", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Новое", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                .get-more-btn
+                    button.button.button__subded Посмотреть ещё
+                ul.pagination-container.mt-32
+                    li.button-pagination.prev
+                        +useIcon('arrow')
+                    li.pagination-number 1
+                    li.pagination-number 2
+                    li.pagination-number 3
+                    li.pagination-number 4
+                    li.pagination-number 5
+                    li.button-pagination.next
+                        +useIcon('arrow') 
+        section.assembly__section
+            .container
+                .assembly__title
+                    h3.h1 Подборки
+                .assembly__list.assembly__swiper.swiper-width-auto
+                    .swiper-wrapper
+                        a.swiper-slide(href='#')
+                            article.assembly__item
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
+                                span.text Первый раз в городе, увидеть главное
+                        a.swiper-slide(href='#')
+                            article.assembly__item
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
+                                span.text Первый раз в городе, увидеть главное Первый раз в городе, увидеть главное Первый раз в городе, увидеть главное
+                        a.swiper-slide(href='#')
+                            article.assembly__item
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
+                                span.text Первый раз в городе, увидеть главное
+                        a.swiper-slide(href='#')
+                            article.assembly__item
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
+                                span.text Первый раз в городе, увидеть главное
+        section.promo__section
+            .container.main-discont
+                include ../../components/discount/index.pug
+                .get-more-btn
+                    a.button.button__subded(href='#') Смотреть ещё
+        section.seo__section
+            .container
+                .seo__title
+                    h3.h1 SEO–текст для поисковиков
+                .seo__content
+                    p.seo__text Здесь будет SEO-текст про поиск экскурсий: удобный сервис, лучшие маршруты, выгодные цены. Планируйте путешествия легко! Скоро добавим полезную информацию о популярных направлениях, советах туристам и выгодных предложениях. Оставайтесь с нами! Здесь будет SEO-текст про поиск экскурсий: удобный сервис, лучшие маршруты, выгодные цены. Планируйте путешествия легко! Скоро добавим полезную информацию о популярных направлениях, советах туристам и выгодных предложениях. Оставайтесь с нами!
+        include ../../components/bottomForm/bottomForm.pug
