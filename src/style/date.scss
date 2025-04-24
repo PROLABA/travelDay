@@ -210,15 +210,14 @@ html .ui-button.ui-state-disabled:active {
         }
     }
     &-triggerbutton {
-        border-radius: 16px;
-        padding: 12px;
-        padding-left: 40px;
-        background-color: #f5f5f5;
-        font-size: 15px;
-        font-weight: 500;
+        padding-left: 28px;
+        padding-right: 0;
+        font-size: 15px ;
+        font-weight: 500 ;
+        font-family: "Geologica", sans-serif;
         .ui-button {
             &-icon {
-                left: 12px;
+                left: 0;
                 width: 20px;
                 height: 20px;
                 margin-top: 0;
@@ -233,11 +232,11 @@ html .ui-button.ui-state-disabled:active {
             min-width: unset;
         }
         &:hover {
-            background-color: #7f56d91a;
+            background-color: unset;
             border: unset;
         }
         &:focus {
-            background-color: #7f56d91a;
+            background-color: unset;
             border: unset;
         }
     }

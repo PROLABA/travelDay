@@ -57,4 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.video-container')) {
         initVideoPlayers();
     }
+
+    function strjoin(delimetr: string, ...args: string[]): string {
+        let result = '';
+
+        for (let i = 0; i < args.length; i++) {
+            result += args[i];
+            // console.dir(i < args.length - 1);
+            // console.dir(args.length - 1);
+            result += delimetr
+            // if (i < args.length - 1) {
+            //     result += delimetr;
+            // }
+        }
+
+        return result;
+    }
+    // console.log(strjoin('-', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'));
+    console.log(strjoin('.', 'a', 'b', 'c'));
 });
