@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 
-export const mainSwiper = () => {
-    const swiper = new Swiper('.main-swiper', {
+export const swiperWidthAuto = () => {
+    const swiper = new Swiper('.swiper-width-auto', {
         slidesPerView: 'auto',
         breakpoints: {
             0: {

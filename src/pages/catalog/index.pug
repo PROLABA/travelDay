@@ -15,32 +15,33 @@ block content
                     h2.banner-page__title.h1 Экскурсии в Санкт‑Петербурге
         section.categories
             .categories__wrapper
-                ul.categories__list
-                    li
-                        a.categories__item(href='#')
-                            span.title.body-m-3 По городу
-                            span.body-s-1.text-gray 4 экскурсии
-                    li
-                        a.categories__item(href='#')
-                            span.title.body-m-3 Водные прогулки
-                            span.body-s-1.text-gray 4 экскурсии
-                    li
-                        a.categories__item(href='#')
-                            span.title.body-m-3 Водные прогулки Водные прогулки
-                            span.body-s-1.text-gray 4 экскурсии
-                    li
-                        a.categories__item(href='#')
-                            span.title.body-m-3 По городу
-                            span.body-s-1.text-gray 4 экскурсии
-                    li
-                        a.categories__item(href='#')
-                            span.title.body-m-3 По городу
-                            span.body-s-1.text-gray 4 экскурсии
-                    li
-                        .categories__item.categories__item--last
-                            i.icon.icon--size-20
-                                +useIcon('plus')
-                            span.body-m-3 Еще
+                .categories__list.categories__swiper.swiper-width-auto
+                    .swiper-wrapper
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 По городу
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 Водные прогулки
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 Водные прогулки Водные прогулки
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 По городу
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            a.categories__item(href='#')
+                                span.title.body-m-3 По городу
+                                span.body-s-1.text-gray 4 экскурсии
+                        .swiper-slide
+                            .categories__item.categories__item--last
+                                i.icon.icon--size-20
+                                    +useIcon('plus')
+                                span.body-m-3 Еще
         section.filter
             .container
                 .filter__body
@@ -106,26 +107,33 @@ block content
             .container
                 .assembly__title
                     h3.h1 Подборки
-                .assembly__list
+                .assembly__list.assembly__swiper.swiper-width-auto
                     .swiper-wrapper
                         a.swiper-slide(href='#')
                             article.assembly__item
-                                img(src='https://placehold.co/600x400', alt='')
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
                                 span.text Первый раз в городе, увидеть главное
                         a.swiper-slide(href='#')
                             article.assembly__item
-                                img(src='https://placehold.co/600x400', alt='')
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
+                                span.text Первый раз в городе, увидеть главное Первый раз в городе, увидеть главное Первый раз в городе, увидеть главное
+                        a.swiper-slide(href='#')
+                            article.assembly__item
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
                                 span.text Первый раз в городе, увидеть главное
                         a.swiper-slide(href='#')
                             article.assembly__item
-                                img(src='https://placehold.co/600x400', alt='')
-                                span.text Первый раз в городе, увидеть главное
-                        a.swiper-slide(href='#')
-                            article.assembly__item
-                                img(src='https://placehold.co/600x400', alt='')
+                                img.assembly__img(src='https://placehold.co/600x400', alt='')
                                 span.text Первый раз в городе, увидеть главное
         section.promo__section
             .container.main-discont
                 include ../../components/discount/index.pug
                 .get-more-btn
                     a.button.button__subded(href='#') Смотреть ещё
+        section.seo__section
+            .container
+                .seo__title
+                    h3.h1 SEO–текст для поисковиков
+                .seo__content
+                    p.seo__text Здесь будет SEO-текст про поиск экскурсий: удобный сервис, лучшие маршруты, выгодные цены. Планируйте путешествия легко! Скоро добавим полезную информацию о популярных направлениях, советах туристам и выгодных предложениях. Оставайтесь с нами! Здесь будет SEO-текст про поиск экскурсий: удобный сервис, лучшие маршруты, выгодные цены. Планируйте путешествия легко! Скоро добавим полезную информацию о популярных направлениях, советах туристам и выгодных предложениях. Оставайтесь с нами!
+        include ../../components/bottomForm/bottomForm.pug

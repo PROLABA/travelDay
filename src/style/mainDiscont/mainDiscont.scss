@@ -27,4 +27,7 @@
     .swiper-discount {
         padding-top: 2.5rem;
     }
+    @include useMediaSize(768px) {
+        margin-top: 3rem;
+    }
 }

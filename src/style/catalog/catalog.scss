@@ -13,6 +13,10 @@
         align-items: center;
         gap: 8px;
         margin-top: 18px;
+        .swiper-slide {
+            width: auto !important;
+            margin-right: 8px !important;
+        }
     }
     &__item {
         border-radius: 16px;
@@ -33,6 +37,10 @@
         }
         &:hover {
             background-color: $gray50;
+        }
+        @include useMediaSize(768px) {
+            padding: 12px;
+            height: 81px;
         }
     }
 }
@@ -83,13 +91,68 @@
 }
 
 .assembly {
+    &__section {
+        margin-top: 80px;
+        .container {
+            overflow-x: hidden;
+        }
+        @include useMediaSize(768px) {
+            margin-top: 48px;
+        }
+    }
     &__list {
         margin-top: 40px;
         .swiper-slide {
             width: auto !important;
         }
+        @include useMediaSize(768px) {
+            margin-top: 16px;
+        }
     }
     &__item {
-        
+        aspect-ratio: 0.8/1;
+        width: 100%;
+        max-width: 303px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        border-radius: 32px;
+        padding: 28px 20px;
+        overflow: hidden;
+        .text {
+            font-size: 22px;
+            font-weight: 600;
+            color: white;
+        }
+        @include useMediaSize(768px) {
+            padding: 12px;
+            max-width: 156px;
+            border-radius: 20px;
+            .text {
+                font-size: 13px;
+            }
+        }
+    }
+    &__img {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.seo {
+    &__section {
+        margin-top: 80px;
+        @include useMediaSize(768px) {
+            margin-top: 48px;
+        }
+    }
+    &__content {
+        margin-top: 40px;
+        @include useMediaSize(768px) {
+            margin-top: 12px;
+        }
     }
 }

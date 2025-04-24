@@ -430,8 +430,15 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            @include useMediaSize(920px) {
+                padding: 16px 12px;
+            }
+            @include useMediaSize(640px) {
+                aspect-ratio: unset;
+                height: 175px;
+                border-radius: 20px;
+            }
             .arrow-back {
-                // position: absolute;
                 width: fit-content;
                 background-color: white;
                 padding: 12px 20px;
@@ -442,6 +449,12 @@
                 svg {
                     width: 16px;
                     height: 16px;
+                }
+                @include useMediaSize(640px) {
+                    padding: 8px;
+                    span {
+                        display: none;
+                    }
                 }
             }
         }

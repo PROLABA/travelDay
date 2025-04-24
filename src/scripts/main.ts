@@ -16,6 +16,7 @@ import initTabs from './modules/tabs';
 import { TextToggle } from './modules/textToggle';
 import initCustomDatepicker from './modules/datepicker';
 import { initVideoPlayers } from './modules/videoPlayer';
+import { swiperWidthAuto } from './modules/swipers/swiperWidthAuto';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -57,22 +58,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.video-container')) {
         initVideoPlayers();
     }
-
-    function strjoin(delimetr: string, ...args: string[]): string {
-        let result = '';
-
-        for (let i = 0; i < args.length; i++) {
-            result += args[i];
-            // console.dir(i < args.length - 1);
-            // console.dir(args.length - 1);
-            result += delimetr
-            // if (i < args.length - 1) {
-            //     result += delimetr;
-            // }
-        }
-
-        return result;
-    }
-    // console.log(strjoin('-', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'));
-    console.log(strjoin('.', 'a', 'b', 'c'));
+    swiperWidthAuto();
 });
