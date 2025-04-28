@@ -15,12 +15,14 @@ const initCustomDatepicker = () => {
     ];
     const dayNames = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
     const dayNamesMin = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+
+    const testDays = ['2025-04-29', '2025-04-30', '2025-05-01', '2025-05-02'];
     $(function () {
         const $datepicker = $('#datepicker-range');
         const isMobile = window.innerWidth < 768;
 
         // Проверка атрибута data-range
-        const isRangeMode = $datepicker.closest('[data-range]').data('range') === true;
+        const isRangeMode = $datepicker.closest('[data-range]')?.data('range') === true;
 
         initDesktopDatepicker();
 
@@ -37,15 +39,18 @@ const initCustomDatepicker = () => {
                     monthNames: monthNames,
                     dayNames: dayNames,
                     dayNamesMin: dayNamesMin,
-                    onSelect: function (dateText) {
+                    onSelect: function () {
                         if (!isRangeMode) {
-                            console.dir(dateText);
                             // В режиме одиночной даты просто закрываем виджет
                             setTimeout(() => {
                                 // $datepicker.daterangepicker('clearRange');
                                 $datepicker.daterangepicker('close');
                             }, 150);
                         }
+                    },
+                    beforeShowDay: function (date) {
+                        const formattedDate = $.datepicker.formatDate('yy-mm-dd', date);
+                        return [testDays.includes(formattedDate)];
                     }
                 },
                 isRange: isRangeMode,
@@ -91,11 +96,6 @@ const initCustomDatepicker = () => {
                 icon: 'custom-date-icon'
             });
         }
-
-        // $('#date-button').click(function (e) {
-        //     e.preventDefault();
-        //     $datepicker.daterangepicker('open');
-        // });
 
         $('#custom-date-clear').click(e => {
             e.preventDefault();

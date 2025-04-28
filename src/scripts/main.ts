@@ -14,7 +14,7 @@ import { ImageZoomPan } from './modules/cropper';
 import { thumbGallery } from './modules/swipers/thumbGallery';
 import initTabs from './modules/tabs';
 import { TextToggle } from './modules/textToggle';
-import initCustomDatepicker from './modules/datepicker';
+// import initCustomDatepicker from './modules/datepicker';
 import { initVideoPlayers } from './modules/videoPlayer';
 import { swiperWidthAuto } from './modules/swipers/swiperWidthAuto';
 import initDropdowns from './modules/dropdowns';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggler = new TextToggle('p.toggle-text', 250);
     toggler.init();
 
-    initCustomDatepicker();
+    // initCustomDatepicker();
     if (document.querySelector('.video-container')) {
         initVideoPlayers();
     }

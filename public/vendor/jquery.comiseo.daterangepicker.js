@@ -288,47 +288,6 @@
                 result[2] || userResult[2] // tooltip
             ];
         }
-        // function beforeShowDay(date) {
-        //     if (options.isRange) {
-        //         let result = [
-        //             true, // selectable
-        //             '', // class to be added
-        //             '' // tooltip
-        //         ];
-
-        //         const { start, end } = range;
-
-        //         if (start && +date === +start) {
-        //             result[1] += ' range-start';
-        //         }
-        //         if (end && +date === +end) {
-        //             result[1] += ' range-end';
-        //         }
-        //         if (start && (+date === +start || (end && start <= date && date <= end))) {
-        //             result[1] += ' ui-state-highlight';
-        //         }
-
-        //         let userResult = [true, '', ''];
-        //         if (options.datepickerOptions.hasOwnProperty('beforeShowDay')) {
-        //             userResult = options.datepickerOptions.beforeShowDay(date);
-        //         }
-        //         return [result[0] && userResult[0], (result[1] + ' ' + userResult[1]).trim(), userResult[2]];
-        //     } else {
-        //         var result = [
-        //                 true // selectable
-        //                 // range.start &&
-        //                 // (+date === +range.start || (range.end && range.start <= date && date <= range.end))
-        //                 //     ? 'ui-state-highlight'
-        //                 //     : '' // class to be added
-        //             ],
-        //             userResult = [true, '', ''];
-
-        //         if (options.datepickerOptions.hasOwnProperty('beforeShowDay')) {
-        //             userResult = options.datepickerOptions.beforeShowDay(date);
-        //         }
-        //         return [result[0] && userResult[0], result[1] + ' ' + userResult[1], userResult[2]];
-        //     }
-        // }
 
         function updateAtMidnight() {
             setTimeout(
