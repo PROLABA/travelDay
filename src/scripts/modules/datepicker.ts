@@ -16,9 +16,11 @@ const initCustomDatepicker = () => {
     const dayNames = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
     const dayNamesMin = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
     $(function () {
-        const $datepicker = $('#datepicker');
-
+        const $datepicker = $('#datepicker-range');
         const isMobile = window.innerWidth < 768;
+
+        // Проверка атрибута data-range
+        const isRangeMode = $datepicker.closest('[data-range]').data('range') === true;
 
         initDesktopDatepicker();
 
@@ -34,12 +36,22 @@ const initCustomDatepicker = () => {
                     firstDay: 1,
                     monthNames: monthNames,
                     dayNames: dayNames,
-                    dayNamesMin: dayNamesMin
+                    dayNamesMin: dayNamesMin,
+                    onSelect: function (dateText) {
+                        if (!isRangeMode) {
+                            console.dir(dateText);
+                            // В режиме одиночной даты просто закрываем виджет
+                            setTimeout(() => {
+                                // $datepicker.daterangepicker('clearRange');
+                                $datepicker.daterangepicker('close');
+                            }, 150);
+                        }
+                    }
                 },
-
+                isRange: isRangeMode,
                 dateFormat: 'dd.mm',
                 initialText: 'Дата',
-                applyButtonText: 'Применить',
+                applyButtonText: isRangeMode ? 'Применить' : '',
                 clearButtonText: isMobile ? 'Сбросить' : '',
                 cancelButtonText: '',
                 autoFitCalendars: isMobile ? false : true,
@@ -80,10 +92,10 @@ const initCustomDatepicker = () => {
             });
         }
 
-        $('#date-button').click(function (e) {
-            e.preventDefault();
-            $datepicker.daterangepicker('open');
-        });
+        // $('#date-button').click(function (e) {
+        //     e.preventDefault();
+        //     $datepicker.daterangepicker('open');
+        // });
 
         $('#custom-date-clear').click(e => {
             e.preventDefault();

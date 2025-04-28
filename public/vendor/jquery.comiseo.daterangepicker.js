@@ -19,71 +19,7 @@
             // presetRanges: array of objects; each object describes an item in the presets menu
             // and must have the properties: text, dateStart, dateEnd.
             // dateStart, dateEnd are functions returning a moment object
-            presetRanges: [
-                {
-                    text: 'Today',
-                    dateStart: function () {
-                        return moment();
-                    },
-                    dateEnd: function () {
-                        return moment();
-                    }
-                },
-                {
-                    text: 'Yesterday',
-                    dateStart: function () {
-                        return moment().subtract('days', 1);
-                    },
-                    dateEnd: function () {
-                        return moment().subtract('days', 1);
-                    }
-                },
-                {
-                    text: 'Last 7 Days',
-                    dateStart: function () {
-                        return moment().subtract('days', 6);
-                    },
-                    dateEnd: function () {
-                        return moment();
-                    }
-                },
-                {
-                    text: 'Last Week (Mo-Su)',
-                    dateStart: function () {
-                        return moment().subtract('days', 7).isoWeekday(1);
-                    },
-                    dateEnd: function () {
-                        return moment().subtract('days', 7).isoWeekday(7);
-                    }
-                },
-                {
-                    text: 'Month to Date',
-                    dateStart: function () {
-                        return moment().startOf('month');
-                    },
-                    dateEnd: function () {
-                        return moment();
-                    }
-                },
-                {
-                    text: 'Previous Month',
-                    dateStart: function () {
-                        return moment().subtract('month', 1).startOf('month');
-                    },
-                    dateEnd: function () {
-                        return moment().subtract('month', 1).endOf('month');
-                    }
-                },
-                {
-                    text: 'Year to Date',
-                    dateStart: function () {
-                        return moment().startOf('year');
-                    },
-                    dateEnd: function () {
-                        return moment();
-                    }
-                }
-            ],
+            isRange: true,
             initialText: 'Select date range...', // placeholder text - shown when nothing is selected
             icon: 'ui-icon-triangle-1-s',
             applyButtonText: 'Apply', // use '' to get rid of the button
@@ -287,19 +223,24 @@
 
         // called when a day is selected
         function onSelectDay(dateText, instance) {
-            var dateFormat = options.datepickerOptions.dateFormat || $.datepicker._defaults.dateFormat,
-                selectedDate = $.datepicker.parseDate(dateFormat, dateText);
+            if (options.isRange) {
+                var dateFormat = options.datepickerOptions.dateFormat || $.datepicker._defaults.dateFormat,
+                    selectedDate = $.datepicker.parseDate(dateFormat, dateText);
 
-            if (!range.start || range.end) {
-                // start not set, or both already set
-                range.start = selectedDate;
-                range.end = null;
-            } else if (selectedDate < range.start) {
-                // start set, but selected date is earlier
-                range.end = range.start;
-                range.start = selectedDate;
+                if (!range.start || range.end) {
+                    // start not set, or both already set
+                    range.start = selectedDate;
+                    range.end = null;
+                } else if (selectedDate < range.start) {
+                    // start set, but selected date is earlier
+                    range.end = range.start;
+                    range.start = selectedDate;
+                } else {
+                    range.end = selectedDate;
+                }
             } else {
-                range.end = selectedDate;
+                $(instance.input).val(dateText);
+                // $(instance.dpDiv).hide();
             }
             if (options.datepickerOptions.hasOwnProperty('onSelect')) {
                 options.datepickerOptions.onSelect(dateText, instance);
@@ -308,30 +249,86 @@
 
         // called for each day in the datepicker before it is displayed
         function beforeShowDay(date) {
-            let result = [
-                true, // selectable
-                '', // class to be added
-                '' // tooltip
-            ];
-
-            const { start, end } = range;
-
-            if (start && +date === +start) {
-                result[1] += ' range-start';
-            }
-            if (end && +date === +end) {
-                result[1] += ' range-end';
-            }
-            if (start && (+date === +start || (end && start <= date && date <= end))) {
-                result[1] += ' ui-state-highlight';
-            }
-
+            let result = [true, '', '']; // selectable, class, tooltip
             let userResult = [true, '', ''];
+
+            if (options.isRange) {
+                // Режим диапазона
+                const { start, end } = range;
+
+                if (start && +date === +start) {
+                    result[1] += ' range-start';
+                }
+                if (end && +date === +end) {
+                    result[1] += ' range-end';
+                }
+                if (start && (+date === +start || (end && start <= date && date <= end))) {
+                    result[1] += ' ui-state-highlight';
+                }
+            } else {
+                // Режим одиночной даты
+                const selectedDate = $.datepicker.parseDate(
+                    options.datepickerOptions.dateFormat || $.datepicker._defaults.dateFormat,
+                    $(this).val()
+                );
+
+                if (selectedDate && +date === +selectedDate) {
+                    result[1] += ' ui-state-highlight'; // Подсветка выбранной даты
+                }
+            }
+
+            // Вызов пользовательского обработчика beforeShowDay
             if (options.datepickerOptions.hasOwnProperty('beforeShowDay')) {
                 userResult = options.datepickerOptions.beforeShowDay(date);
             }
-            return [result[0] && userResult[0], (result[1] + ' ' + userResult[1]).trim(), userResult[2]];
+
+            return [
+                result[0] && userResult[0], // selectable
+                (result[1] + ' ' + userResult[1]).trim(), // class
+                result[2] || userResult[2] // tooltip
+            ];
         }
+        // function beforeShowDay(date) {
+        //     if (options.isRange) {
+        //         let result = [
+        //             true, // selectable
+        //             '', // class to be added
+        //             '' // tooltip
+        //         ];
+
+        //         const { start, end } = range;
+
+        //         if (start && +date === +start) {
+        //             result[1] += ' range-start';
+        //         }
+        //         if (end && +date === +end) {
+        //             result[1] += ' range-end';
+        //         }
+        //         if (start && (+date === +start || (end && start <= date && date <= end))) {
+        //             result[1] += ' ui-state-highlight';
+        //         }
+
+        //         let userResult = [true, '', ''];
+        //         if (options.datepickerOptions.hasOwnProperty('beforeShowDay')) {
+        //             userResult = options.datepickerOptions.beforeShowDay(date);
+        //         }
+        //         return [result[0] && userResult[0], (result[1] + ' ' + userResult[1]).trim(), userResult[2]];
+        //     } else {
+        //         var result = [
+        //                 true // selectable
+        //                 // range.start &&
+        //                 // (+date === +range.start || (range.end && range.start <= date && date <= range.end))
+        //                 //     ? 'ui-state-highlight'
+        //                 //     : '' // class to be added
+        //             ],
+        //             userResult = [true, '', ''];
+
+        //         if (options.datepickerOptions.hasOwnProperty('beforeShowDay')) {
+        //             userResult = options.datepickerOptions.beforeShowDay(date);
+        //         }
+        //         return [result[0] && userResult[0], result[1] + ' ' + userResult[1], userResult[2]];
+        //     }
+        // }
 
         function updateAtMidnight() {
             setTimeout(

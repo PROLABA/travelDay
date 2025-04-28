@@ -17,6 +17,7 @@ import { TextToggle } from './modules/textToggle';
 import initCustomDatepicker from './modules/datepicker';
 import { initVideoPlayers } from './modules/videoPlayer';
 import { swiperWidthAuto } from './modules/swipers/swiperWidthAuto';
+import initDropdowns from './modules/dropdowns';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -59,4 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
         initVideoPlayers();
     }
     swiperWidthAuto();
+    initDropdowns();
 });

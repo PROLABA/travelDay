@@ -61,14 +61,21 @@ block content
                                         label(for='test1') 
                                 span.filter__label--text Cо скидкой
                         li
-                            .filter__item
-                                span.filter__label--text Цена
-                                i.arrow.arrow--down
-                                    +useIcon('arrow')
+                            .js-dropdown
+                                .filter__item.js-dropdown-btn
+                                    span.filter__label--text Цена
+                                    i.arrow.arrow--down
+                                        +useIcon('arrow')
+                                .js-dropdown-content.dropdown__content
+                                    div dsadsad
                         li
                             .filter__item
-                                .datepicker-custom(data-title='Когда отправимся?', data-descr='dsadsa')
-                                    input#datepicker(type='text', hidden)
+                                .datepicker-custom(
+                                    data-title='Когда отправимся?',
+                                    data-descr='тут не ренж соло',
+                                    data-range='true'
+                                )
+                                    input#datepicker-range(type='text')
                                     //- делаешь клик по этой кнопке тогда сбрасывается календарь
                                     button#custom-date-clear(type='button', hidden)
                         li
@@ -76,7 +83,24 @@ block content
                                 i.icon.icon--size-20
                                     +useIcon('filter')
                                 span.filter__label--text Все фильтры
-                    div tyt dropdown
+                    .js-dropdown.dropdown.filter__sort
+                        button.js-dropdown-btn.dropdown__btn
+                            span Популярные
+                            i.arrow.arrow--down
+                                +useIcon('arrow')
+                        .js-dropdown-content.dropdown__content
+                            ul.dropdown__list
+                                li
+                                    a.dropdown__list-item.active(href='javascript:void(0)') Популярные
+                                li
+                                    a.dropdown__list-item(href='javascript:void(0)') Дешевле
+                                li
+                                    a.dropdown__list-item(href='javascript:void(0)') Дороже
+                                li
+                                    a.dropdown__list-item(href='javascript:void(0)') Дешевле
+                                li
+                                    a.dropdown__list-item(href='javascript:void(0)') Дороже
+
                     .filter__info
                         span.text-gray Доступно 316 экскурсий
         section.catalog__section
