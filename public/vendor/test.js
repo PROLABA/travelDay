@@ -15,7 +15,7 @@ const monthNames = [
 const dayNames = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 const dayNamesMin = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 
-const testDays = ['2025-04-29', '2025-04-30', '2025-05-01', '2025-05-02'];
+const testDays = ['2025-04-29', '2025-04-30', '2025-05-01', '2025-10-02'];
 $(function () {
     const $datepicker = $('#datepicker-range');
     const isMobile = window.innerWidth < 768;
@@ -38,9 +38,12 @@ $(function () {
                 monthNames: monthNames,
                 dayNames: dayNames,
                 dayNamesMin: dayNamesMin,
-                onSelect: function () {
+                onSelect: function (date, ins) {
                     if (!isRangeMode) {
-                        // В режиме одиночной даты просто закрываем виджет
+                        const { currentYear, currentMonth, currentDay } = ins;
+                        const selectedDate = new Date(currentYear, currentMonth, currentDay);
+
+                        $datepicker.daterangepicker('setRange', { start: selectedDate });
                         setTimeout(() => {
                             // $datepicker.daterangepicker('clearRange');
                             $datepicker.daterangepicker('close');

@@ -223,10 +223,9 @@
 
         // called when a day is selected
         function onSelectDay(dateText, instance) {
+            var dateFormat = options.datepickerOptions.dateFormat || $.datepicker._defaults.dateFormat,
+                selectedDate = $.datepicker.parseDate(dateFormat, dateText);
             if (options.isRange) {
-                var dateFormat = options.datepickerOptions.dateFormat || $.datepicker._defaults.dateFormat,
-                    selectedDate = $.datepicker.parseDate(dateFormat, dateText);
-
                 if (!range.start || range.end) {
                     // start not set, or both already set
                     range.start = selectedDate;
@@ -239,8 +238,9 @@
                     range.end = selectedDate;
                 }
             } else {
-                $(instance.input).val(dateText);
-                // $(instance.dpDiv).hide();
+                range.start = selectedDate;
+                range.end = selectedDate;
+
             }
             if (options.datepickerOptions.hasOwnProperty('onSelect')) {
                 options.datepickerOptions.onSelect(dateText, instance);
