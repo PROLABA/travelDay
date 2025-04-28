@@ -240,6 +240,7 @@
             } else {
                 range.start = selectedDate;
                 range.end = selectedDate;
+
             }
             if (options.datepickerOptions.hasOwnProperty('onSelect')) {
                 options.datepickerOptions.onSelect(dateText, instance);
