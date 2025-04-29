@@ -1,7 +1,5 @@
 import Swiper from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 export const thumbGallery = () => {
     const swiper2 = new Swiper('.excursion-gallery__swiper-bottom', {

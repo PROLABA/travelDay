@@ -1,4 +1,8 @@
 import 'virtual:svg-icons-register';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import { sliderCard } from './modules/swipers/cartSlider';
 import { mainSwiper } from './modules/swipers/mainSwiper';
 import { mobileSearchAction } from './modules/mobileSearchAction';

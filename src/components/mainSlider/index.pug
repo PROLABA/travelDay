@@ -6,10 +6,9 @@
 
     ]
 
-.main-slider 
+.main-slider
     .main-slider__container.container
-        .main-swiper 
-            .swiper-pagination
+        .main-swiper
             .swiper-wrapper
                 each item in mainSlider
                     .swiper-slide 
@@ -31,9 +30,10 @@
                                     img(src=item.img, alt="" srcset="")
                                     .bals-icon 
                                         include ./bals.svg
-            .main-swiper-button-contaiener
-                .main-swiper-button-prev.btn
-                    include ./prev.svg
-                .main-swiper-button-next.btn
-                    include ./next.svg
+            .swiper-pagination
+        .main-swiper-button-contaiener
+            .main-swiper-button-prev.btn
+                include ./prev.svg
+            .main-swiper-button-next.btn
+                include ./next.svg
 

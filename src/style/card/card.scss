@@ -2,13 +2,16 @@
     overflow: hidden;
     position: relative;
     border-radius: 1.25rem;
-
-    &.card--bordered {
+    max-height: 462px;
+    height: 100%;
+    &--bordered {
         border: 0.25rem solid $violet;
     }
 
     .swiper-card {
         position: relative;
+        border-radius: 0.75rem;
+        overflow: hidden;
     }
 
     .swiper-pagination {
@@ -27,16 +30,21 @@
         }
     }
 
+    &__slider {
+        position: absolute;
+        inset: 0;
+    }
+
     &__label {
         position: absolute;
         top: 0.75rem;
         left: 0.75rem;
         z-index: 2;
-        padding: 0.2706rem 0.75rem 0.2706rem 0.3956rem;
+        padding: 7px 12px;
         background-color: $white;
         display: flex;
         align-items: center;
-        gap: 0.2706rem;
+        gap: 2px;
         font-weight: 600;
         font-size: 0.875rem;
         line-height: 1.2;
@@ -46,19 +54,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 1cap;
         }
     }
 
-    .swiper-slide {
-        border-radius: 0.75rem;
-        overflow: hidden;
-
-        .card__image {
-            aspect-ratio: 412/224;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__image {
+        aspect-ratio: 412/224;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     &__time {
         display: flex;
@@ -73,7 +77,11 @@
         }
     }
     &__text {
-        padding: 0.75rem 1rem 2rem 1rem;
+        padding: 0.75rem 1rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        padding-top: 242px;
+        height: 100%;
         @media (max-width: 46.875rem) {
             padding: 0.75rem 0.75rem 1rem 0.75rem;
         }
@@ -87,11 +95,6 @@
                 gap: 0.4375rem;
                 color: $textBaseGray;
             }
-        }
-
-        .card__title {
-            padding-top: 0.375rem;
-            max-width: 23.75rem;
         }
 
         .card__variants {
@@ -108,44 +111,51 @@
             }
         }
     }
-}
-
-.card__bottom {
-    padding-top: 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .card__price-desc {
-        color: $textBaseGray;
+    &__title {
+        padding-top: 0.375rem;
+        max-width: 23.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
-}
+    &__bottom {
+        padding-top: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
 
-.card__price {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    .card__current-price {
-        &.violet {
-            color: $violet;
+        .card__price-desc {
+            color: $textBaseGray;
         }
     }
+    &__price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
 
-    .card__old-price {
-        color: $textBaseGray;
-        position: relative;
-        text-decoration: line-through;
-        text-decoration-color: rgba(112, 112, 112, 1);
-    }
-    &--grouped {
-        flex-direction: column;
-    }
-    &--small {
-        gap: 0;
-        align-items: flex-start;
         .card__current-price {
-            font-size: 20px;
+            &.violet {
+                color: $violet;
+            }
+        }
+
+        .card__old-price {
+            color: $textBaseGray;
+            position: relative;
+            text-decoration: line-through;
+            text-decoration-color: rgba(112, 112, 112, 1);
+        }
+        &--grouped {
+            flex-direction: column;
+        }
+        &--small {
+            gap: 0;
+            align-items: flex-start;
+            .card__current-price {
+                font-size: 20px;
+            }
         }
     }
 }
