@@ -3,12 +3,12 @@
         .bottom-form__container
             .bottom-form__container-left
                 .bottom-form__container-left-title
-                    h2.h2 Хотите быть в курсе новых экскурсий и скидок?
+                    h5.h2 Хотите быть в курсе новых экскурсий и скидок?
                     p.body-m-2 Подпишитесь на нашу почтовую рассылку!
-                form.form-inner
+                form.form-inner.js-form-newsletter(action='https://httpbin.org/post', method='POST')
                     .form-item
                         .input-container
-                            input(type='email', placeholder='Электронная почта', required) 
+                            input(type='email', name='email', placeholder='Электронная почта', required) 
                         button.button.button__secondary Подписаться
                     .form-descripion
                         .body-caption-m-1 Оставляя свои персональные данные, вы соглашаетесь с
@@ -19,4 +19,4 @@
 
             .bottom-form__container-right
                 .bottom-form__container-right-img
-                    img(src='/public/images/bottomForm/bottomForm.png', alt='', srcset='')
+                    img(src='/public/images/bottomForm/bottomForm.png', alt='')

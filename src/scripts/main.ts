@@ -22,6 +22,7 @@ import initCustomDatepicker from './modules/datepicker';
 import { initVideoPlayers } from './modules/videoPlayer';
 import { swiperWidthAuto } from './modules/swipers/swiperWidthAuto';
 import initDropdowns from './modules/dropdowns';
+import { formAjaxNewsletter } from './modules/formAjaxNewsletter';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -65,4 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     swiperWidthAuto();
     initDropdowns();
+
+    formAjaxNewsletter();
 });
