@@ -127,6 +127,9 @@
     &.pink {
         background-color: $pink;
         color: $white;
+        .button {
+            background-color: rgb(127, 86, 217);
+        }
     }
 
     .slider-blur-element {

@@ -25,7 +25,7 @@ export const formAjaxNewsletter = () => {
                 }
                 throw new Error('Ошибка сервера: ' + response.status);
             })
-            .then(data => {
+            .then(() => {
                 const formInner = document.querySelector('.form-inner');
                 if (formInner) (formInner as HTMLElement).style.display = 'none';
 
