@@ -225,17 +225,7 @@
         transition:
             opacity 0.4s ease,
             display 0.4s ease allow-discrete;
-        // max-height: 212px;
         overflow-y: auto;
-        // scrollbar-width: thin !important;
-        // scrollbar-color: #c1c1c1 white !important;
-        // &::-webkit-scrollbar {
-        //     width: 4px !important;
-        //     background-color: white !important;
-        // }
-        // &::-webkit-scrollbar-thumb {
-        //     background-color: #c1c1c1 !important;
-        // }
     }
     &.active {
         .js-dropdown-content {
@@ -251,4 +241,7 @@
     .js-dropdown.active .js-dropdown-content {
         opacity: 0;
     }
+}
+.js-swiper-hide-slides {
+    overflow: visible !important;
 }
