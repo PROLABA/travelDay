@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body style="margin: 0; padding: 0; background-color: #f9f8f9; font-family: Inter, sans-serif; color: #1a1a1a">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <table
+            role="presentation"
+            width="100%"
+            cellspacing="32"
+            cellpadding="0"
+            border="0"
+            style="max-width: 1240px; -webkit-border-horizontal-spacing: 0px; margin: 0 auto; padding: 0 24px"
+        >
+            <tr data-name="header">
+                <td align="left" style="padding-top: 20px; padding-bottom: 20px">
+                    <!--[if mso]>
+                        <img src="./logo.png" alt="logo" border="0" height="60" width="260" style="display: block" />
+                    <![endif]-->
+
+                    <!--[if !mso]><!-- -->
+                    <svg width="261" height="61" viewBox="0 0 261 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M197.393 44.025C192.303 44.025 187.89 39.7704 187.89 32.8121C187.89 25.8139 192.264 21.5594 197.353 21.5594C200.614 21.5594 202.522 23.0306 203.954 24.6608V14.5215H211.508V43.5478L203.954 43.5478V40.685C202.482 42.4743 200.614 44.025 197.393 44.025ZM199.699 37.7028C202.124 37.7028 204.073 35.6749 204.073 32.7325C204.073 29.9094 202.124 27.8816 199.699 27.8816C197.274 27.8816 195.285 29.8697 195.285 32.8121C195.285 35.6749 197.274 37.7028 199.699 37.7028Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M221.758 44.025C217.663 44.025 214.522 41.679 214.522 37.3052C214.522 32.8518 217.901 30.5456 222.951 30.5456C224.939 30.5456 226.888 30.9432 228.12 31.3806V31.0228C228.12 28.7961 226.729 27.5237 223.826 27.5237C221.559 27.5237 219.81 27.9611 217.901 28.7166L216.351 23.3884C218.776 22.3944 221.361 21.7184 225.059 21.7184C228.915 21.7184 231.54 22.633 233.25 24.3427C234.88 25.9332 235.556 28.1599 235.556 31.1818V43.5478H228.08V41.3212C226.609 42.9514 224.581 44.025 221.758 44.025ZM224.462 39.2933C226.649 39.2933 228.2 37.9016 228.2 35.7545V34.7604C227.444 34.4423 226.371 34.2037 225.257 34.2037C223.07 34.2037 221.798 35.2773 221.798 36.9473C221.798 38.4185 222.911 39.2933 224.462 39.2933Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            d="M244.79 50.0291C242.126 50.0291 239.86 49.2736 237.872 48.1603L240.218 42.8719C241.41 43.5876 242.683 44.025 243.518 44.025C244.273 44.025 244.79 43.8262 245.267 43.1502L236.838 22.0365H244.75L249.045 34.999L253.101 22.0365L260.854 22.0365L252.981 43.0309C251.112 48.041 249.085 50.0291 244.79 50.0291Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            d="M69.7177 36.259L69.6973 28.5713H65.8252V22.509H69.6812L69.6705 18.4494L77.2425 14.8403L77.2604 22.509L85.286 22.509V28.5713L77.2746 28.5713L77.2897 35.0324C77.2897 37.4621 81.4413 37.6508 85.2156 35.8108L85.2392 43.0998C84.6598 43.2624 84.1691 43.413 83.7253 43.5492C82.1095 44.0451 81.116 44.35 78.7286 44.35C74.176 44.35 69.7177 41.3778 69.7177 36.259Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            d="M88.4972 22.0365V43.5478H96.052V36.8678C96.052 31.8975 98.2786 29.6311 102.215 29.6311H102.851V21.6787C99.2727 21.5196 97.2846 23.4282 96.052 26.3706V22.0365H88.4972Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M103.461 37.3052C103.461 41.679 106.603 44.025 110.698 44.025C113.521 44.025 115.549 42.9514 117.02 41.3212V43.5478L124.496 43.5478V31.1818C124.496 28.1599 123.82 25.9332 122.189 24.3427C120.48 22.633 117.855 21.7184 113.998 21.7184C110.3 21.7184 107.716 22.3944 105.29 23.3884L106.841 28.7166C108.75 27.9611 110.499 27.5237 112.766 27.5237C115.668 27.5237 117.06 28.7961 117.06 31.0228V31.3806C115.827 30.9432 113.879 30.5456 111.891 30.5456C106.841 30.5456 103.461 32.8518 103.461 37.3052ZM117.14 35.7545C117.14 37.9016 115.589 39.2933 113.402 39.2933C111.851 39.2933 110.738 38.4185 110.738 36.9473C110.738 35.2773 112.01 34.2037 114.197 34.2037C115.311 34.2037 116.384 34.4423 117.14 34.7604V35.7545Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            d="M125.66 22.0365L134.249 43.7069H141.128L149.716 22.0365H141.883L137.748 34.6014L133.613 22.0365H125.66Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M150.025 32.8121C150.025 39.5716 154.797 44.0648 161.556 44.0648C165.851 44.0648 168.833 42.3152 170.9 39.6909L166.725 36.2316C165.175 37.7426 163.743 38.4185 161.954 38.4185C159.608 38.4185 157.898 37.2257 157.302 34.8797H171.696C171.735 34.3628 171.735 33.8061 171.735 33.329C171.735 27.0068 168.316 21.5594 160.88 21.5594C154.518 21.5594 150.025 26.5296 150.025 32.8121ZM164.658 31.0228H157.183C157.58 28.6768 158.932 27.1261 160.92 27.1261C162.988 27.1261 164.379 28.637 164.658 31.0228Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            d="M182.468 36.068C182.468 37.4038 182.927 38.1135 184.263 38.1135C184.764 38.1135 185.265 38.03 185.682 37.863V43.7908C184.889 44.1248 183.72 44.3335 182.343 44.3335C178.001 44.3335 175.204 42.0375 175.204 37.4038V18.2819L182.468 14.8198V36.068Z"
+                            fill="#7F56D9"
+                        />
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M31.2622 53.6378C31.9859 52.2937 33.2638 51.3549 34.7121 50.8722C44.9129 47.4724 52.2673 37.8467 52.2673 26.5033C52.2673 12.3201 40.7695 0.822266 26.5863 0.822266C12.4031 0.822266 0.905273 12.3201 0.905273 26.5033C0.905273 37.8467 8.25974 47.4724 18.4605 50.8722C19.9088 51.3549 21.1867 52.2937 21.9104 53.6378L21.9129 53.6423L25.3962 60.1114C25.9066 61.0592 27.266 61.0592 27.7764 60.1114L31.2622 53.6378ZM26.5862 9.71484L13.8096 16.6174V19.2874H39.3628V16.6174L26.5862 9.71484ZM39.3628 38.9132V34.752H13.8096V38.9132H39.3628ZM24.3613 21.5127H28.8114V32.628H24.3613V21.5127ZM21.1282 21.5125H16.9669V32.6278H21.1282V21.5125ZM32.042 21.5127H36.2033V32.628H32.042V21.5127Z"
+                            fill="#F55F7F"
+                        />
+                    </svg>
+                    <!--<![endif]-->
+                </td>
+            </tr>
+
+            <tr data-name="ticket">
+                <td align="center">
+                    <table
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                        width="100%"
+                        style="
+                            background-color: #ffffff;
+                            padding: 32px;
+                            border-radius: 40px;
+                            box-shadow: 0px 14px 40px 0px #f1eff1;
+                        "
+                    >
+                        <tr>
+                            <td>
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                    <tr style="font-size: 18px; font-weight: 500">
+                                        <td>Заказ #70281033 ∙ 190560_5213669 &nbsp;&nbsp;&nbsp;&nbsp; Места: 12, 13</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td
+                                            style="
+                                                font-size: 32px;
+                                                line-height: 34px;
+                                                font-weight: 600;
+                                                padding-top: 20px;
+                                                display: block;
+                                                width: 100%;
+                                            "
+                                        >
+                                            Тур к мраморному каньону Рускеала (1 день) Тур к мраморному каньону Рускеала
+                                            (1 день) Тур к мраморному каньону Рускеала (1 день)
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td height="80" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <table
+                                                role="presentation"
+                                                border="0"
+                                                cellspacing="0"
+                                                cellpadding="0"
+                                                width="100%"
+                                            >
+                                                <tr>
+                                                    <td>
+                                                        <table
+                                                            role="presentation"
+                                                            border="0"
+                                                            cellspacing="0"
+                                                            cellpadding="0"
+                                                        >
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 12px;
+                                                                        font-weight: 500;
+                                                                        color: #aaa1aa;
+                                                                    "
+                                                                >
+                                                                    ОТПРАВЛЕНИЕ
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="8" style="font-size: 0; line-height: 0">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 18px; font-weight: 500">
+                                                                    09.07.2024, 07:00
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table
+                                                            role="presentation"
+                                                            border="0"
+                                                            cellspacing="0"
+                                                            cellpadding="0"
+                                                        >
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 12px;
+                                                                        font-weight: 500;
+                                                                        color: #aaa1aa;
+                                                                    "
+                                                                >
+                                                                    ФИО
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="8" style="font-size: 0; line-height: 0">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 18px; font-weight: 500">
+                                                                    Петров Павел Антонович
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td height="21" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <table
+                                                            role="presentation"
+                                                            border="0"
+                                                            cellspacing="0"
+                                                            cellpadding="0"
+                                                        >
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 12px;
+                                                                        font-weight: 500;
+                                                                        color: #aaa1aa;
+                                                                    "
+                                                                >
+                                                                    ПРОДОЛЖИТЕЛЬНОСТЬ
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="8" style="font-size: 0; line-height: 0">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 18px; font-weight: 500">
+                                                                    1 день
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table
+                                                            role="presentation"
+                                                            border="0"
+                                                            cellspacing="0"
+                                                            cellpadding="0"
+                                                        >
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 12px;
+                                                                        font-weight: 500;
+                                                                        color: #aaa1aa;
+                                                                    "
+                                                                >
+                                                                    СТОИМОСТЬ
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="8" style="font-size: 0; line-height: 0">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 18px; font-weight: 500">
+                                                                    10 000 RUB
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td height="21" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <table
+                                                            role="presentation"
+                                                            border="0"
+                                                            cellspacing="0"
+                                                            cellpadding="0"
+                                                        >
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 12px;
+                                                                        font-weight: 500;
+                                                                        color: #aaa1aa;
+                                                                    "
+                                                                >
+                                                                    МЕСТО ОТПРАВЛЕНИЯ
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="8" style="font-size: 0; line-height: 0">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 18px;
+                                                                        font-weight: 500;
+                                                                        max-width: 350px;
+                                                                    "
+                                                                >
+                                                                    Станция метро «Площадь Восстания» (Лиговский пр.
+                                                                    10); автобус «Скан Тур»;
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table
+                                                            role="presentation"
+                                                            border="0"
+                                                            cellspacing="0"
+                                                            cellpadding="0"
+                                                        >
+                                                            <tr>
+                                                                <td
+                                                                    style="
+                                                                        font-size: 12px;
+                                                                        font-weight: 500;
+                                                                        color: #aaa1aa;
+                                                                    "
+                                                                >
+                                                                    КОЛИЧЕСТВО ЧЕЛОВЕК
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="8" style="font-size: 0; line-height: 0">
+                                                                    &nbsp;
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-size: 18px; font-weight: 500">
+                                                                    Семейный билет (2 взр. и 1 реб. 3-12 лет)
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td style="border: 1px solid #e7e4e7; border-radius: 20px; padding: 28px">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <img
+                                                src="https://placehold.co/600x400"
+                                                alt="qa"
+                                                border="0"
+                                                height="100"
+                                                width="100"
+                                                style="display: block; object-fit: cover"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="25" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img
+                                                src="https://placehold.co/600x400"
+                                                alt="qa"
+                                                border="0"
+                                                width="100"
+                                                style="display: block; object-fit: cover"
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="25" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-size: 14px; font-weight: 500">1705928287</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr data-name="info">
+                <td>
+                    <table
+                        role="presentation"
+                        width="100%"
+                        cellspacing="16"
+                        cellpadding="0"
+                        border="0"
+                        style="
+                            -webkit-border-horizontal-spacing: 0px;
+                            background-color: #f3effc;
+                            border-radius: 20px;
+                            padding: 20px;
+                        "
+                    >
+                        <tr style="font-size: 16px; font-weight: 500">
+                            <td>
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM14.0046 6.29922C14.7778 6.29968 15.4042 6.92686 15.4038 7.70005L15.4 14.0002C15.3995 14.7734 14.7724 15.3999 13.9992 15.3994C13.226 15.3989 12.5995 14.7718 12.6 13.9986L12.6038 7.69838C12.6042 6.92518 13.2314 6.29876 14.0046 6.29922ZM14.0063 22.3992C15.166 22.3992 16.1063 21.459 16.1063 20.2992C16.1063 19.1394 15.166 18.1992 14.0063 18.1992C12.8465 18.1992 11.9062 19.1394 11.9062 20.2992C11.9062 21.459 12.8465 22.3992 14.0063 22.3992Z"
+                                        fill="#7F56D9"
+                                    />
+                                </svg>
+                            </td>
+                            <td width="16"></td>
+                            <td>
+                                Пожалуйста, покажите этот билет в распечатанном виде или электронном виде на месте
+                                отправления. Необходимо быть на месте отправления за 15 минут до начала экскурсии.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr data-name="map">
+                <td style="border-radius: 40px; overflow: hidden">
+                    <img
+                        src="https://placehold.co/600x400"
+                        alt="qa"
+                        border="0"
+                        style="display: block; object-fit: cover; width: 100%"
+                    />
+                </td>
+            </tr>
+
+            <tr data-name="contact">
+                <td>
+                    <table
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                        width="100%"
+                        style="
+                            background-color: #ffffff;
+                            padding: 32px;
+                            border-radius: 40px;
+                            box-shadow: 0px 14px 40px 0px #f1eff1;
+                        "
+                    >
+                        <tr>
+                            <td align="left" style="width: 50%">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="50%">
+                                    <tr>
+                                        <td style="font-size: 24px; font-weight: 700">
+                                            Звоните или пишите по любым вопросам
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="8" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" style="font-size: 16px; font-weight: 400; color: #9e949e">
+                                            Мы на связи ежедневно, с 9 утра до 1 ночи
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td align="right">
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td style="font-size: 14px; font-weight: 500; color: #9e949e">
+                                                        НАШ САЙТ
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="8" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 18px; font-weight: 600; color: #7f56d9">
+                                                        travelday.ru
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td style="font-size: 14px; font-weight: 500; color: #9e949e">
+                                                        РОССИЯ, БЕСПЛАТНО
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="8" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 18px; font-weight: 600; color: #7f56d9">
+                                                        8 800 351-17-89
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td height="24" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td style="font-size: 14px; font-weight: 500; color: #9e949e">
+                                                        ПОЧТА
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="8" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 18px; font-weight: 600; color: #7f56d9">
+                                                        welcome@travelday.ru
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td style="font-size: 14px; font-weight: 500; color: #9e949e">
+                                                        САНКТ-ПЕТЕРБУРГ
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="8" style="font-size: 0; line-height: 0">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-size: 18px; font-weight: 600; color: #7f56d9">
+                                                        8 812 317-18-99
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr data-name="footer">
+                <td>
+                    <table
+                        role="presentation"
+                        border="0"
+                        cellspacing="8"
+                        cellpadding="0"
+                        style="text-transform: uppercase"
+                    >
+                        <tr>
+                            <td style="color: #9e949e; font-size: 12px; font-weight: 500">
+                                Продавец: TRAVELDAY, ИП Яшугин Евгений Александрович, ИНН 781143590254
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9e949e; font-size: 12px; font-weight: 500">
+                                Организатор экскурсии: ООО "Сити Сайтсиинг Москоу", ИНН 7705982870
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #9e949e; font-size: 12px; font-weight: 500">
+                                Правила оказания услуг: travelday.ru/link
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
