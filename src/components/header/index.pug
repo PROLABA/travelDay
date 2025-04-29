@@ -1,54 +1,56 @@
-- 
+-
     var footerLeft = [ 'Санкт-Петербург','Казань','Москва', 'Нижний Новгород',]
     var footerCenter =[ 'О компании', 'Скидки и акции',  'Контакты', ]
-header.header 
-    .header__container 
-        .header__container-right  
-            a(href="/")
-                include ./logo.svg 
-        .header__container-center 
-            .header__container-center-inputs
-                .button.button__subded.openMenu
-                    .icon 
-                        span 
-                        span 
-                        span         
-                    p Меню
-                .input-search-container         
-                    .input-search 
-                        .icon     
-                            include ./search.svg
-                        input(type="text" placeholder='Куда отправимся сегодня?' name="search") 
-                        .search-item 
-                            .clear-search 
-                                include ./clear.svg
-                            .search-btn 
-                                .button.button__primary.getSearch   Найти 
-                    .input-search-content 
-                        include ./step1.pug
-                        include ./step2.pug
-            include ./search-modal.pug
-        .header__container-left 
-            a(href="/").header-btn  
-                include ./shop.svg    
-include ./hedaerMenuModal.pug 
-.header__mobile 
-    .container 
-        .header__mobile-container 
-            .header__mobile-container-left
-                button.openMenu
-                    .icon 
-                        span 
-                        span 
-                        span 
-                a(href="/").logo-link
-                    include ./logo.svg         
-            .header__mobile-container-right
-                .get-search
-                    include ./mobileSearch.svg
-                a(href="#").get-shop 
-                    include ./shopMobile.svg 
-include ./headerMobileSteps.pug
-.header-menu-container-overlay 
-.overlay-search                     
-.search-content-container-overlay
+
+header.header__parent
+    .header
+        .header__container
+            .header__container-right
+                a(href='/')
+                    include ./logo.svg
+            .header__container-center
+                .header__container-center-inputs
+                    .button.button__subded.openMenu
+                        .icon
+                            span 
+                            span 
+                            span 
+                        p Меню
+                    .input-search-container
+                        .input-search
+                            .icon
+                                include ./search.svg
+                            input(type='text', placeholder='Куда отправимся сегодня?', name='search') 
+                            .search-item
+                                .clear-search
+                                    include ./clear.svg
+                                .search-btn
+                                    .button.button__primary.getSearch Найти
+                        .input-search-content
+                            include ./step1.pug
+                            include ./step2.pug
+                include ./search-modal.pug
+            .header__container-left
+                a.header-btn(href='/')
+                    include ./shop.svg
+        include ./hedaerMenuModal.pug
+    .header__mobile
+        .container
+            .header__mobile-container
+                .header__mobile-container-left
+                    button.openMenu
+                        .icon
+                            span 
+                            span 
+                            span 
+                    a.logo-link(href='/')
+                        include ./logo.svg
+                .header__mobile-container-right
+                    .get-search
+                        include ./mobileSearch.svg
+                    a.get-shop(href='#')
+                        include ./shopMobile.svg
+    include ./headerMobileSteps.pug
+    .header-menu-container-overlay
+    .overlay-search
+    .search-content-container-overlay
