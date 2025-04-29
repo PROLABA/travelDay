@@ -40,11 +40,11 @@
         top: 0.75rem;
         left: 0.75rem;
         z-index: 2;
-        padding: 0.2706rem 0.75rem 0.2706rem 0.3956rem;
+        padding: 7px 12px;
         background-color: $white;
         display: flex;
         align-items: center;
-        gap: 0.2706rem;
+        gap: 2px;
         font-weight: 600;
         font-size: 0.875rem;
         line-height: 1.2;
@@ -54,6 +54,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 1cap;
         }
     }
 

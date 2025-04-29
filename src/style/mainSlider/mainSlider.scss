@@ -20,6 +20,7 @@
         .main-swiper {
             position: relative;
             overflow: hidden;
+            border-radius: 2.5rem;
             height: 440px;
         }
 
@@ -48,174 +49,174 @@
                 }
             }
         }
+    }
+}
 
-        .main-swiper-button-contaiener {
-            width: 100%;
-            align-items: center;
-            position: absolute;
-            top: 49%;
+.main-swiper-button-contaiener {
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    top: 49%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+
+    @media (max-width: 68.75rem) {
+        display: none;
+    }
+
+    .main-swiper-button-prev {
+        position: absolute;
+        left: -8px;
+
+        @media (max-width: 83.75rem) {
             left: 0;
-            right: 0;;
-            z-index: 20;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            opacity: 0;
-            visibility: hidden;
+        }
+    }
 
-            @media (max-width: 68.75rem) {
-                display: none;
-            }
+    .main-swiper-button-next {
+        position: absolute;
+        right: -8px;
 
-            .main-swiper-button-prev {
-                position: absolute;
-                left: -8px;
-
-                @media (max-width: 83.75rem) {
-                    left: 0;
-                }
-            }
-
-            .main-swiper-button-next {
-                position: absolute;
-                right: -8px;
-
-                @media (max-width: 83.75rem) {
-                    right: 0;
-                }
-
-                @media (max-width: 68.75rem) {
-                    display: none;
-                }
-            }
-
-            .btn {
-                background-color: $white;
-                width: 3.5rem;
-                height: 3.5rem;
-                cursor: pointer;
-                @include smooth-transition(opacity);
-                border-radius: 1rem;
-                @include flex-center;
-                box-shadow: 0rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.12);
-            }
+        @media (max-width: 83.75rem) {
+            right: 0;
         }
 
-        .swiper-slide-content {
-            display: grid;
-            grid-template-columns: auto 40.125rem;
-            gap: 2rem;
-            grid-template-rows: 27.5rem;
-            border-radius: 2.5rem;
-            align-items: center;
-            overflow: hidden;
+        @media (max-width: 68.75rem) {
+            display: none;
+        }
+    }
+
+    .btn {
+        background-color: $white;
+        width: 3.5rem;
+        height: 3.5rem;
+        cursor: pointer;
+        @include smooth-transition(opacity);
+        border-radius: 1rem;
+        @include flex-center;
+        box-shadow: 0rem 0.25rem 1rem 0rem rgba(0, 0, 0, 0.12);
+    }
+}
+
+.swiper-slide-content {
+    display: grid;
+    grid-template-columns: auto 40.125rem;
+    gap: 2rem;
+    grid-template-rows: 27.5rem;
+
+    align-items: center;
+    overflow: hidden;
+
+    @media (max-width: 68.75rem) {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    &.violet {
+        background-color: $violet;
+        color: $white;
+    }
+
+    &.pink {
+        background-color: $pink;
+        color: $white;
+    }
+
+    .slider-blur-element {
+        position: absolute;
+        width: 41.5rem;
+        height: 41.5rem;
+        left: -14.6875rem;
+        top: 14.6875rem;
+        background: #ffffff;
+        opacity: 0.25;
+        filter: blur(10.125rem);
+        pointer-events: none;
+    }
+
+    .swiper-slide-content-left {
+        padding-left: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4.0625rem;
+
+        @media (max-width: 68.75rem) {
+            padding: 1.25rem 0 1.5rem 1rem;
+        }
+
+        .swiper-slide-content-left-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding-top: 2.5rem;
+
+            .swiper-slide-content-left-text__title {
+                max-width: 34.625rem;
+            }
+
+            .swiper-slide-content-left-text__description {
+                max-width: 27.1875rem;
+
+                .body-m-1 {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+
+    .swiper-slide-content-right {
+        width: 100%;
+        height: 100%;
+        border-radius: 2.5rem;
+        box-shadow: 0rem 0.2319rem 12.2731rem 0rem rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        position: relative;
+
+        @media (max-width: 68.75rem) {
+            position: initial;
+            border-radius: 0;
+            overflow: auto;
+        }
+
+        .swiper-slide-content-right-img {
+            position: relative;
+            position: relative;
+            width: 100%;
+            height: 100%;
 
             @media (max-width: 68.75rem) {
-                display: flex;
-                flex-direction: column;
-                align-items: start;
+                position: initial;
             }
 
-            &.violet {
-                background-color: $violet;
-                color: $white;
-            }
-
-            &.pink {
-                background-color: $pink;
-                color: $white;
-            }
-
-            .slider-blur-element {
+            img {
                 position: absolute;
-                width: 41.5rem;
-                height: 41.5rem;
-                left: -14.6875rem;
-                top: 14.6875rem;
-                background: #ffffff;
-                opacity: 0.25;
-                filter: blur(10.125rem);
-                pointer-events: none;
-            }
-
-            .swiper-slide-content-left {
-                padding-left: 3.5rem;
-                display: flex;
-                flex-direction: column;
-                gap: 4.0625rem;
-
-                @media (max-width: 68.75rem) {
-                    padding: 1.25rem 0 1.5rem 1rem;
-                }
-
-                .swiper-slide-content-left-text {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.75rem;
-                    padding-top: 2.5rem;
-
-                    .swiper-slide-content-left-text__title {
-                        max-width: 34.625rem;
-                    }
-
-                    .swiper-slide-content-left-text__description {
-                        max-width: 27.1875rem;
-
-                        .body-m-1 {
-                            font-weight: 400;
-                            font-size: 1rem;
-                            line-height: 1.2;
-                        }
-                    }
-                }
-            }
-
-            .swiper-slide-content-right {
+                bottom: 0;
                 width: 100%;
                 height: 100%;
-                border-radius: 2.5rem;
-                box-shadow: 0rem 0.2319rem 12.2731rem 0rem rgba(0, 0, 0, 0.15);
-                overflow: hidden;
-                position: relative;
+                aspect-ratio: 642/383;
 
                 @media (max-width: 68.75rem) {
                     position: initial;
-                    border-radius: 0;
-                    overflow: auto;
                 }
+            }
 
-                .swiper-slide-content-right-img {
-                    position: relative;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
+            .bals-icon {
+                position: absolute;
+                right: 3rem;
+                z-index: 1;
+                top: 0;
 
-                    @media (max-width: 68.75rem) {
-                        position: initial;
-                    }
-
-                    img {
-                        position: absolute;
-                        bottom: 0;
-                        width: 100%;
-                        height: 100%;
-                        aspect-ratio: 642/383;
-
-                        @media (max-width: 68.75rem) {
-                            position: initial;
-                        }
-                    }
-
-                    .bals-icon {
-                        position: absolute;
-                        right: 3rem;
-                        z-index: 1;
-                        top: 0;
-
-                        @media (max-width: 68.75rem) {
-                            top: 0;
-                        }
-                    }
+                @media (max-width: 68.75rem) {
+                    top: 0;
                 }
             }
         }
