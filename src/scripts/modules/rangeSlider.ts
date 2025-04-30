@@ -14,8 +14,12 @@ export class RangeSlider {
         this.toSlider = container.querySelector('.js-range-slider-to-slider')!;
         this.fromInput = container.querySelector('.js-range-slider-from-input')!;
         this.toInput = container.querySelector('.js-range-slider-to-input')!;
-        this.fromClearBtn = container.querySelector('.js-range-slider-from-input')?.parentElement?.querySelector('.range-slider__clear-btn')! as HTMLButtonElement;
-        this.toClearBtn = container.querySelector('.js-range-slider-to-input')?.parentElement?.querySelector('.range-slider__clear-btn')! as HTMLButtonElement;
+        this.fromClearBtn = container
+            .querySelector('.js-range-slider-from-input')
+            ?.parentElement?.querySelector('.range-slider__clear-btn')! as HTMLButtonElement;
+        this.toClearBtn = container
+            .querySelector('.js-range-slider-to-input')
+            ?.parentElement?.querySelector('.range-slider__clear-btn')! as HTMLButtonElement;
         this.controlSlider = this.toSlider;
 
         if (!this.fromSlider || !this.toSlider || !this.fromInput || !this.toInput) {
@@ -41,11 +45,11 @@ export class RangeSlider {
         this.toSlider.oninput = () => this.controlToSlider();
         this.fromInput.oninput = () => this.controlFromInput();
         this.toInput.oninput = () => this.controlToInput();
-        
+
         if (this.fromClearBtn) {
             this.fromClearBtn.onclick = () => this.clearFromInput();
         }
-        
+
         if (this.toClearBtn) {
             this.toClearBtn.onclick = () => this.clearToInput();
         }
@@ -126,26 +130,6 @@ export class RangeSlider {
             ${this.sliderColor} ${toPercent}%,
             ${this.sliderColor} 100%)`;
     }
-
-    // private setToggleAccessible(): void {
-    //     // const fromVal = parseInt(this.fromSlider.value, 10);
-    //     // const toVal = parseInt(this.toSlider.value, 10);
-    //     // const midPoint = (parseInt(this.toSlider.max, 10) + parseInt(this.toSlider.min, 10)) / 2;
-    //     // if (toVal >= midPoint || fromVal <= midPoint) {
-    //     //     this.toSlider.style.zIndex = '2';
-    //     //     this.fromSlider.style.zIndex = '1';
-    //     // } else {
-    //     //     this.fromSlider.style.zIndex = '2';
-    //     //     this.toSlider.style.zIndex = '1';
-    //     // }
-
-    //     const currentVal = parseInt(this.toSlider.value, 10);
-    //     if (currentVal <= parseInt(this.toSlider.min, 10) + 1) {
-    //         // this.toSlider.style.zIndex = '2';
-    //     } else {
-    //         // this.toSlider.style.zIndex = '1';
-    //     }
-    // }
 
     private clearFromInput(): void {
         const minValue = this.fromSlider.min || '0';

@@ -136,7 +136,7 @@ block content
                                     //- делаешь клик по этой кнопке тогда сбрасывается календарь
                                     button#custom-date-clear(type='button', hidden)
                         li
-                            .filter__item
+                            .filter__item.js-tab-btn(data-tab='filter-aside')
                                 i.icon.icon--size-20
                                     +useIcon('filter')
                                 span.filter__label--text Все фильтры
@@ -157,9 +157,14 @@ block content
                                     a.dropdown__list-item(href='javascript:void(0)') Дешевле
                                 li
                                     a.dropdown__list-item(href='javascript:void(0)') Дороже
-
                     .filter__info
                         span.text-gray Доступно 316 экскурсий
+            aside.filter__aside.js-tab-content(data-tab-content='filter-aside')
+                form.filter__aside-content
+                    .filter__aside-body
+                        div im body
+                    .filter__aside-footer
+                        button.button.button__primary.w-full(type='button') Показать экскурсии
         section.catalog__section
             .container
                 .recommend-content.catalog__grid

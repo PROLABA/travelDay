@@ -3,8 +3,6 @@ function initDropdowns() {
         const target = event.target as Element;
         const dropdown = target.closest('.js-dropdown');
 
-        if (!dropdown) return;
-
         // Обработка кнопки закрытия дропдауна
         if (target.closest('.js-dropdown-close')) {
             if (dropdown) {
@@ -24,6 +22,8 @@ function initDropdowns() {
             });
             return;
         }
+
+        if (!dropdown) return;
 
         document.querySelectorAll('.js-dropdown').forEach(dd => {
             if (dd !== dropdown) {
