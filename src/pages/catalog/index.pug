@@ -87,7 +87,17 @@ block content
                                     i.arrow.arrow--down
                                         +useIcon('arrow')
                                 .js-dropdown-content.dropdown__content
-                                    div dsadsad
+                                    .range-slider__container
+                                        h5.h4 Цена, ₽
+                                        .range-slider__control.mt-16
+                                            input.range-slider__input(type='number', min='0')
+                                            input.range-slider__input(type='number', min='0')
+                                        .range-slider__line
+                                            input.range-slider__line(type='range', min='0')
+                                            input.range-slider__line(type='range', min='0')
+                                        .mt-20
+                                            button.button.button__primary.js-dropdown-close(type='button', style='width: 100%;') Применить
+
                         li
                             .filter__item
                                 .datepicker-custom(
@@ -95,7 +105,7 @@ block content
                                     data-descr='тут не ренж соло',
                                     data-range='false'
                                 )
-                                    input#datepicker-range(type='text',).test
+                                    input#datepicker-range.test(type='text')
                                     //- делаешь клик по этой кнопке тогда сбрасывается календарь
                                     button#custom-date-clear(type='button', hidden)
                         li

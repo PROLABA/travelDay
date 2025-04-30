@@ -60,6 +60,7 @@
 
 .filter {
     &__body {
+        margin-top: 36px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -67,7 +68,6 @@
         padding-bottom: 50px;
     }
     &__list {
-        margin-top: 36px;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -209,6 +209,25 @@
                     display: block;
                 }
             }
+        }
+    }
+}
+.range-slider {
+    &__container {
+    }
+    &__control {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    &__input {
+        padding: 16px 12px;
+        border-radius: 16px;
+        background-color: #f5f5f5;
+        border: 1px solid transparent;
+        font-size: 15px;
+        &:focus {
+            border-color: #b3b3b3;
         }
     }
 }
