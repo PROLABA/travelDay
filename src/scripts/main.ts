@@ -23,6 +23,7 @@ import { initVideoPlayers } from './modules/videoPlayer';
 import { swiperWidthAuto } from './modules/swipers/swiperWidthAuto';
 import initDropdowns from './modules/dropdowns';
 import { formAjaxNewsletter } from './modules/formAjaxNewsletter';
+import { RangeSlider } from './modules/rangeSlider';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -68,4 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initDropdowns();
 
     formAjaxNewsletter();
+
+    const rangeSliderContainers = document.querySelectorAll<HTMLElement>('.js-range-slider');
+    if (rangeSliderContainers) {
+        rangeSliderContainers.forEach(container => {
+            new RangeSlider(container);
+        });
+    }
 });

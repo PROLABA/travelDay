@@ -87,16 +87,43 @@ block content
                                     i.arrow.arrow--down
                                         +useIcon('arrow')
                                 .js-dropdown-content.dropdown__content
-                                    .range-slider__container
+                                    .range-slider__container.js-range-slider
                                         h5.h4 Цена, ₽
                                         .range-slider__control.mt-16
-                                            input.range-slider__input(type='number', min='0')
-                                            input.range-slider__input(type='number', min='0')
+                                            .range-slider__input-wrapper
+                                                input.range-slider__input.js-range-slider-from-input(
+                                                    type='number',
+                                                    min='0',
+                                                    value='10'
+                                                )
+                                                button.range-slider__clear-btn.icon.icon--size-20
+                                                    +useIcon('cross')
+                                            .range-slider__input-wrapper
+                                                input.range-slider__input.js-range-slider-to-input(
+                                                    type='number',
+                                                    min='0',
+                                                    value='50'
+                                                )
+                                                button.range-slider__clear-btn.icon.icon--size-20
+                                                    +useIcon('cross')
                                         .range-slider__line
-                                            input.range-slider__line(type='range', min='0')
-                                            input.range-slider__line(type='range', min='0')
+                                            input.range-slider__line-input.js-range-slider-from-slider(
+                                                type='range',
+                                                min='0',
+                                                max='100',
+                                                value='10'
+                                            )
+                                            input.range-slider__line-input.js-range-slider-to-slider(
+                                                type='range',
+                                                min='0',
+                                                max='100',
+                                                value='50'
+                                            )
                                         .mt-20
-                                            button.button.button__primary.js-dropdown-close(type='button', style='width: 100%;') Применить
+                                            button.button.button__primary.js-dropdown-close(
+                                                type='button',
+                                                style='width: 100%'
+                                            ) Применить
 
                         li
                             .filter__item
