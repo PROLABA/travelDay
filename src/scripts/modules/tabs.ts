@@ -1,6 +1,7 @@
 interface ITabsOptions {
     tabButtonsSelector: string;
     tabContentsSelector: string;
+    closeTabButtonsSelector?: string;
     activeClass?: string;
 }
 
@@ -15,12 +16,14 @@ interface ITabsOptions {
  *
  * @param {string} options.tabButtonsSelector - CSS selector for the tab buttons.
  * @param {string} options.tabContentsSelector - CSS selector for the tab contents.
+ * @param {string} [options.closeTabButtonsSelector] - CSS selector for the close tab buttons.
  * @param {string} [options.activeClass='active'] - По умолчанию класс для активного состояния. стоит active
  */
 
 export default function initTabs({
     tabButtonsSelector,
     tabContentsSelector,
+    closeTabButtonsSelector = 'js-tab-close',
     activeClass = 'active'
 }: ITabsOptions): void {
     const tabButtons = document.querySelectorAll(tabButtonsSelector);
@@ -35,14 +38,30 @@ export default function initTabs({
             tabButtons.forEach(btn => btn.classList.remove(activeClass));
             tabContents.forEach(content => {
                 content.classList.remove(activeClass);
-                // content.style.display = 'none';
             });
 
             button.classList.add(activeClass);
             const targetContent = document.querySelector(`${tabContentsSelector}[data-tab-content="${targetTab}"]`);
             if (targetContent) {
                 targetContent.classList.add(activeClass);
-                // targetContent.style.display = 'block';
+            }
+        });
+    });
+
+    // Добавляем обработчики для кнопок закрытия табов
+    const closeButtons = document.querySelectorAll(`.${closeTabButtonsSelector}`);
+
+    closeButtons.forEach(closeButton => {
+        closeButton.addEventListener('click', e => {
+            e.stopPropagation();
+            const parentTabContent = (closeButton as HTMLElement).closest(tabContentsSelector);
+
+            if (parentTabContent) {
+                parentTabContent.classList.remove(activeClass);
+                // const tabId = (parentTabContent as HTMLElement).dataset.tabContent;
+
+                // Находим соответствующую кнопку таба и контент
+                // const tabButton = document.querySelector(`${tabButtonsSelector}[data-tab="${tabId}"]`);
             }
         });
     });

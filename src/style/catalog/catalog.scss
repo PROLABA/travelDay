@@ -123,6 +123,12 @@
                 transform: translateX(0);
             }
         }
+        &-header {
+            .icon {
+                width: 44px;
+                height: 44px;
+            }
+        }
     }
 }
 
