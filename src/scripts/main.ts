@@ -24,6 +24,7 @@ import { swiperWidthAuto } from './modules/swipers/swiperWidthAuto';
 import initDropdowns from './modules/dropdowns';
 import { formAjaxNewsletter } from './modules/formAjaxNewsletter';
 import { RangeSlider } from './modules/rangeSlider';
+import { initShowMoreList } from './modules/showMoreList';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -76,4 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
             new RangeSlider(container);
         });
     }
+    initShowMoreList();
 });

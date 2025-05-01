@@ -161,15 +161,177 @@ block content
                         span.text-gray Доступно 316 экскурсий
             aside.filter__aside.js-tab-content(data-tab-content='filter-aside')
                 form.filter__aside-content
-                    .filter__aside-body
+                    .filter__aside-relative
                         .filter__aside-header
                             a.js-tab-close.c-flex.c-flex-center.gap-8(href='javascript:void(0)')
                                 +useIcon('arrow-circle')
                                 span.h3 Фильтры
-                        .filter__aside-body
-
-                    .filter__aside-footer
-                        button.button.button__primary.w-full(type='button') Показать экскурсии
+                        .filter__aside-body.mt-32
+                            .block-border.c-flex.c-flex-column.gap-16
+                                .c-flex.c-flex-center.gap-12
+                                    .filter__label
+                                        .toggle-pill-dark
+                                            input#test(type='checkbox', name='check')
+                                            label(for='test') 
+                                    span.body-m-1 Набор экскурсий
+                                .c-flex.c-flex-center.gap-12
+                                    .filter__label
+                                        .toggle-pill-dark
+                                            input#test1(type='checkbox', name='check')
+                                            label(for='test1') 
+                                    span.body-m-1 Со скидкой
+                            .block-border
+                                .range-slider__container.js-range-slider
+                                    h5.h4 Цена, ₽
+                                    .range-slider__control.mt-16
+                                        .range-slider__input-wrapper
+                                            input.range-slider__input.js-range-slider-from-input(
+                                                type='number',
+                                                min='0',
+                                                value='10'
+                                            )
+                                            button.range-slider__clear-btn.icon.icon--size-20
+                                                +useIcon('cross')
+                                        .range-slider__input-wrapper
+                                            input.range-slider__input.js-range-slider-to-input(
+                                                type='number',
+                                                min='0',
+                                                value='50'
+                                            )
+                                            button.range-slider__clear-btn.icon.icon--size-20
+                                                +useIcon('cross')
+                                    .range-slider__line
+                                        input.range-slider__line-input.js-range-slider-from-slider(
+                                            type='range',
+                                            min='0',
+                                            max='100',
+                                            value='10'
+                                        )
+                                        input.range-slider__line-input.js-range-slider-to-slider(
+                                            type='range',
+                                            min='0',
+                                            max='100',
+                                            value='50'
+                                        )
+                            .block-border.filter__aside-list
+                                h5.h4 Способ перемещения
+                                ul.list.js-list-show-more
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                            .block-border.filter__aside-list
+                                h5.h4 Способ перемещения
+                                ul.list.js-list-show-more
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                            .block-border.filter__aside-list
+                                h5.h4 Способ перемещения
+                                ul.list.js-list-show-more
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                                    li
+                                        .filter__label
+                                            .toggle-pill-dark
+                                                input#test(type='checkbox', name='check')
+                                                label(for='test') 
+                                        span.body-m-1 Пешком
+                        .filter__aside-footer
+                            button.button.button__primary.w-full(type='button') Показать экскурсии
         section.catalog__section
             .container
                 .recommend-content.catalog__grid

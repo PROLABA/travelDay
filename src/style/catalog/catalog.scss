@@ -97,7 +97,9 @@
         position: fixed;
         inset: 0;
         z-index: 1000;
-
+        .relative {
+            position: relative;
+        }
         &::after {
             content: '';
             position: absolute;
@@ -111,12 +113,16 @@
             width: 480px;
             background-color: white;
             border-top-left-radius: 40px;
-            padding: 40px;
             position: absolute;
             right: 0;
             height: 100dvh;
             transform: translateX(300%);
             transition: all 0.3s ease;
+            overflow-x: hidden;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
         &.active {
             .filter__aside-content {
@@ -124,9 +130,62 @@
             }
         }
         &-header {
+            padding: 40px 40px 0 40px;
             .icon {
                 width: 44px;
                 height: 44px;
+            }
+        }
+        &-body {
+            // margin-bottom: 100px;
+            padding: 0 40px;
+            .block-border {
+                position: relative;
+                padding: 24px 0;
+                &:first-child {
+                    padding-top: 0;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: -100px;
+                    width: 1500px;
+                    height: 1px;
+                    background-color: #f1f1f1;
+                }
+            }
+        }
+        &-footer {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 12px 20px 20px 20px;
+            background-color: white;
+            box-shadow: 0px 0px 15px 0px #0000000f;
+            border-top: 1px solid #ebebeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .button {
+                width: 100%;
+            }
+        }
+        &-list {
+            .list {
+                margin-top: 20px;
+            }
+            li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+            .text-toggle-btn {
+                margin: 0;
+                padding: 0;
             }
         }
     }
