@@ -75,6 +75,13 @@
             color: $textBaseGray;
         }
     }
+    .counter {
+        background-color: #986ef6;
+        padding: 4px 10px;
+        border-radius: 27px;
+        margin-left: 4px;
+        display: inline-block;
+    }
 }
 .pagination-container {
     display: flex;
