@@ -64,6 +64,18 @@ block content
                                 span.body-m-3 Еще
         section.filter
             .container
+                .filter__body-mobile
+                    .datepicker-custom(
+                        data-title='Когда отправимся?',
+                        data-descr='тут не ренж соло',
+                        data-range='false'
+                    )
+                        input.datepicker-range(type='text')
+                    button.button.button__primary.button--filter.js-tab-btn(data-tab='filter-aside')
+                        i.icon.icon--size-20
+                            +useIcon('filter')
+                        span Фильтры
+                        span.counter 12
                 .filter__body
                     ul.filter__list
                         li
@@ -132,9 +144,7 @@ block content
                                     data-descr='тут не ренж соло',
                                     data-range='false'
                                 )
-                                    input#datepicker-range.test(type='text')
-                                    //- делаешь клик по этой кнопке тогда сбрасывается календарь
-                                    button#custom-date-clear(type='button', hidden)
+                                    input.datepicker-range(type='text')
                         li
                             .filter__item.js-tab-btn(data-tab='filter-aside')
                                 i.icon.icon--size-20

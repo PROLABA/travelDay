@@ -18,7 +18,7 @@ const initCustomDatepicker = () => {
 
     const testDays = ['2025-04-29', '2025-04-30', '2025-05-01', '2025-10-02'];
     $(function () {
-        const $datepicker = $('#datepicker-range');
+        const $datepicker = $('.datepicker-range');
         const isMobile = window.innerWidth < 768;
 
         // Проверка атрибута data-range
