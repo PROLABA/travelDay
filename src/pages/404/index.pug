@@ -1,3 +1,9 @@
 extends ../../layout/index.pug
 block content
-    include ../../components/404/index.pug
+    .cart-status
+        .cart-status__content
+            h1.h1.h1--violet 404
+            h3.h1 Страница не найдена
+            p.body-m-1-pharagraph Такой страницы нет или она была удалена, попробуйте вернуться на главную и начать сначала
+        div
+            a.button.button__primary(href='/') Вернуться на главную

@@ -11,6 +11,9 @@
     display: flex;
     flex-direction: column;
     gap: 48px;
+    a {
+        color: white;
+    }
     .h3 {
         margin: 0;
     }
@@ -19,6 +22,10 @@
         flex-direction: column;
         gap: 20px;
         align-items: center;
+        max-width: 550px;
+        .body-m-1-pharagraph {
+            text-align: center;
+        }
         &-img {
             max-width: 100%;
             .icon {

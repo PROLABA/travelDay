@@ -240,6 +240,13 @@
         font-weight: 600;
         font-size: 1.375rem;
     }
+    &--violet {
+        font-weight: 900;
+        @include adaptive-font(240, 126);
+        line-height: 100%;
+        vertical-align: bottom;
+        color: $violet;
+    }
 }
 .h2 {
     font-weight: 600;
