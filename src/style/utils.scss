@@ -23,6 +23,12 @@
     gap: 16px;
 }
 
+.mt-80-40 {
+    margin-top: 80px;
+    @include useMediaSize(768px) {
+        margin-top: 40px;
+    }
+}
 .mt-60-48 {
     margin-top: 60px;
     @include useMediaSize(768px) {

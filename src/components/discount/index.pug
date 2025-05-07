@@ -4,21 +4,15 @@
         {title: "Для ребенка до 12 лет — бесплатно", img:"/public/images/discountSlider/swiperDiscount2.png"},
         {title: "Приведи друга — получи бонус", img:"/public/images/discountSlider/swiperDiscount3.png"},
     ]
+include ../../mixin/useIcon.pug
 
 .discount
-    .discount-container 
-        .title 
-            .h4 Акции и скидки
-        .check-all 
-            .btn-m-2 Смотреть все
-            .icon 
-                include ./right.svg
-    .swiper-discount
+    .discount-swiper.swiper-discount
         .swiper-wrapper
             each item in discountItem
                 .swiper-slide 
-                    .swiper-slide-discount
-                        .swiper-slide-discount-img 
-                            img(src=item.img, alt="" srcset="")
-                        .swiper-slide-discount-title 
-                            .h4=item.title        
+                    a(href="#").discount-card
+                        .discount-card__image
+                            img(src=item.img, alt=item.title) 
+                        .discount-card__title
+                            h4.h4=item.title

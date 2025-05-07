@@ -4,6 +4,7 @@
     border-radius: 1.25rem;
     max-height: 462px;
     height: 100%;
+    display: block;
     @media screen and (max-width: 68.75rem) {
         max-height: 100%;
     }
