@@ -1,32 +1,46 @@
 extends ../../layout/index.pug
 include ../../mixin/discountCard.pug
-include ../../mixin/breadcrumbs.pug
+include ../../mixin/useIcon.pug
 
 block content
-    .discounts.container
-        .discounts__container 
+    .mt-page
+        .discounts.container
             .discounts__title
-                +breadcrumbs('#','Главная', 'Для ребенка до 12 лет экскурсии — бесплатно')
-            .discounts__list-container 
-                +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
-                +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
-                +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
-                +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
-                +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
-                +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
-                +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
-                +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
-                +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
-            button.button.button__subded Загрузить еще
-            .pagination-container 
-                .button-pagination.prev
-                    include ../../../public/images/uiIcon/arrowPrev.svg
-                .pagination-number 1
-                .pagination-number 2
-                .pagination-number 3
-                .pagination-number 4
-                .pagination-number 5
-                .button-pagination.next  
-                    include ../../../public/images/uiIcon/arrowPrev.svg         
-    include ../../components/bottomForm/bottomForm.pug 
-        
+                a.page-back(href='#')
+                    +useIcon('arrow')
+                    span Назад
+                h1.h1 Акции и скидки
+            .discounts__content
+                ul.discounts__list
+                    li.discounts__item
+                        +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
+                    li.discounts__item
+                        +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
+                    li.discounts__item
+                        +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
+                    li.discounts__item
+                        +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
+                    li.discounts__item
+                        +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
+                    li.discounts__item
+                        +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
+                    li.discounts__item
+                        +discountCard("Скидка 5% за подписку на рассылку", "/public/images/discountSlider/swiperDiscount.png")
+                    li.discounts__item
+                        +discountCard("Для ребенка до 12 лет — бесплатно", "/public/images/discountSlider/swiperDiscount2.png")
+                    li.discounts__item
+                        +discountCard("Приведи друга — получи бонус", "/public/images/discountSlider/swiperDiscount3.png")
+                .load-more
+                    button.button.button__subded Посмотреть ещё
+
+                ul.pagination-container.mt-40-24
+                    li.button-pagination.prev
+                        +useIcon('arrow-pag')
+                    li.pagination-number 1
+                    li.pagination-number 2
+                    li.pagination-number 3
+                    li.pagination-number 4
+                    li.pagination-number 5
+                    li.button-pagination.next
+                        +useIcon('arrow-pag')
+        include ../../components/bottomForm/bottomForm.pug

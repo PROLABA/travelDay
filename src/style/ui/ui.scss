@@ -398,7 +398,8 @@
         }
     }
 }
-.arrow-back {
+.arrow-back,
+.page-back {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -410,6 +411,14 @@
     svg {
         width: 28px;
         height: 28px;
+    }
+}
+.page-back {
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $gray500;
+        stroke: $gray500;
     }
 }
 
