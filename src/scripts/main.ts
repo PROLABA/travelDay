@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sliderCard();
     mobileSearchAction();
     faqAccordion();
-    if (document.querySelector('.contacts-blocks')) {
+    if (document.querySelector('.contacts_form')) {
         new ContactForm();
     }
     if (document.querySelector('.current-promos__swiper')) {
