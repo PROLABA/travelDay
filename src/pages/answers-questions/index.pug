@@ -1,6 +1,5 @@
 extends ../../layout/index.pug
 include ../../mixin/faqAccordeon.pug
-include ../../mixin/breadcrumbs.pug
 include ../../mixin/useIcon.pug
 
 block content
@@ -66,7 +65,7 @@ block content
             .contacts-blocks__item.mt-80-40
                 .form-container
                     form.form.contacts_form(novalidate)
-                        h2.form__title.h3 Оставить заявку
+                        h2.form__title.h3 Остались вопросы?
                         .form__subtitle Оставьте ваш вопрос, мы свяжемся вами в течение рабочего дня
                         .form__content
                             .form__input
@@ -88,6 +87,4 @@ block content
                             +useIcon('success-contact-form')
                             h3.h3 Заявка отправлена!
                             .notification__text Мы свяжемся вами в течение рабочего дня
-
-        //- include ../../components/contacts/index.pug
     include ../../components/bottomForm/bottomForm.pug
