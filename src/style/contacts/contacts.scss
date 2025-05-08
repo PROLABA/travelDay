@@ -76,6 +76,7 @@
 .form {
     &-container {
         height: 100%;
+        width: 100%;
         .error {
             border: 1px solid $pink !important;
         }
@@ -103,23 +104,23 @@
         button {
             min-width: 12.5rem;
         }
-        .form__policy {
-            color: $textBaseGray;
-            font-weight: 400;
-            @include adaptive-font(14, 13);
-            line-height: 120%;
-            a {
-                color: rgba(127, 86, 217, 1);
-            }
-        }
         @media (max-width: $s1000) {
             flex-direction: column;
             button {
                 width: 100%;
             }
-            .form__policy {
-                text-align: center;
-            }
+        }
+    }
+    &__policy {
+        color: $textBaseGray;
+        font-weight: 400;
+        @include adaptive-font(14, 13);
+        line-height: 120%;
+        a {
+            color: rgba(127, 86, 217, 1);
+        }
+        @include useMediaSize(768px) {
+            text-align: center;
         }
     }
     &__content {
