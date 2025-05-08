@@ -5,7 +5,6 @@ export class ContactForm {
     private messageInput: HTMLTextAreaElement;
     private notification: HTMLElement;
     private notificationContent: HTMLElement;
-    private formContainer: HTMLElement;
     private messageInputClass: HTMLElement;
 
     constructor() {
@@ -16,7 +15,7 @@ export class ContactForm {
         this.messageInputClass = document.querySelector('.form__textarea') as HTMLElement;
         this.notification = document.querySelector('.notification') as HTMLElement;
         this.notificationContent = document.querySelector('.notification__content') as HTMLElement;
-        this.formContainer = document.querySelector('.contacts_form') as HTMLElement;
+        // this.formContainer = document.querySelector('.contacts_form') as HTMLElement;
 
         this.init();
     }
@@ -33,7 +32,7 @@ export class ContactForm {
         const parent = input.parentElement;
         if (!parent) return;
         
-        const label = parent.querySelector('.form__label');
+        const label = parent.querySelector('.form__label') as HTMLElement;
         if (label) {
             label.style.display = input.value.trim() ? 'none' : 'block';
         }
@@ -88,7 +87,7 @@ export class ContactForm {
     }
 
     private showNotification(): void {
-        this.formContainer.style.display = 'none';
+        this.form.style.display = 'none';
         this.notification.style.display = 'flex';
         this.notificationContent.style.display = 'flex';
     }
@@ -98,7 +97,7 @@ export class ContactForm {
         document.querySelectorAll('.form__label').forEach(label => {
             (label as HTMLElement).style.display = 'block';
         });
-        this.formContainer.style.display = 'block';
+        this.form.style.display = 'block';
         this.notification.style.display = 'none';
         this.emailInput.classList.remove('error');
         this.messageInput.classList.remove('error');
