@@ -6,7 +6,7 @@ mixin faq-accordion(items, sectionId)
         data-faq-item=sectionId
       )
         .faq__question(data-faq-question=sectionId)
-          .h4.faq__question-text= item.question
+          h4.h4.faq__question-text= item.question
           .faq__toggle
             svg.faq__icon.faq__icon-plus(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
               path(d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round")

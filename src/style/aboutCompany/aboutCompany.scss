@@ -1,79 +1,32 @@
-.company-banner {
-    background-image: url(../../../public/images/aboutCompanyBanner/KazanSobor.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 352px;
-    margin: 1.5rem 0 5rem;
-    
-    border-radius: 32px;
-    @media (max-width: 62.5rem) {
-      border-radius: 20px;
-      min-height: 250px;
-    }
-    @media(max-width: 600px) {
-      min-height: 160px;
-    }
-  
-    .h1 {
-      color: #fff;
-      max-width: 36.6875rem;
-      padding: 15% 0 0 4%;
-      
-      @media (max-width: 36rem) {
-        max-width: 90%;
-        padding-top: 20%;
-      }
-      @media(max-width: 600px) {
-        min-height: 16px;
-        max-width: 60%;
-      }
-    }
-}
+.video {
+    &-container {
+        position: relative;
+        width: 740px;
+        height: 447px;
+        border-radius: 40px;
+        overflow: hidden;
+        margin: 0 auto;
 
-.about-company {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-
-    .body-m-1-pharagraph {
-      margin-bottom: .75rem;
-      margin-top: 1rem;
-  
-  }
-
-    .video-container {
-      position: relative;
-      width: 740px;
-      height: 447px;
-      border-radius: 40px;
-      overflow: hidden;
-      margin: 2rem 0;
-
-      @media(max-width: 768px) {
-        align-self: center;
-        width: 460px;
-        height: 270px;
-        border-radius: 20px;
-      }
-      
-      @media (max-width: 500px) {
-        width: 343px;
-        height: 180px;
-      }
-    
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: none;
-        
-        &.active {
-          display: block;
+        @media (max-width: 768px) {
+            align-self: center;
+            aspect-ratio: 1.91/1;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
         }
-      }
-    
-      .video-poster {
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+    &-poster {
         position: absolute;
         top: 0;
         left: 0;
@@ -85,131 +38,87 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         .play-button {
-          width: 80px;
-          height: 80px;
-          background-color: rgba($violet, 0.7);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.3s ease;
-          
-          @media (max-width: 768px) {
-            width: 48px;
-            height: 48px;
-          }
-
-          
-    
-          &:hover {
-            background-color: rgba($violet, 0.9);
+            width: 80px;
+            height: 80px;
+            background-color: rgba($violet, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
-          }
-        }
-      }
-    }
-  }
 
-.company-info {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 8.3125rem;
-  position: relative; // Добавляем относительное позиционирование для контейнера
+            @media (max-width: 768px) {
+                width: 48px;
+                height: 48px;
+            }
 
-  @media(max-width: 80.25rem) {
-    grid-template-columns: 1fr;
-  } 
-
-  .contact {
-    position: sticky;
-    top: 5.625rem; // Отступ от верха, можно регулировать
-    align-self: start; // Важно для правильного выравнивания
-    height: fit-content;
-    max-height: calc(100vh - 8.75rem); // Ограничиваем высоту
-    overflow-y: auto; // Добавляем скролл при необходимости
-
-    @media (max-width: 80.25rem) {
-      position: static;
-      order: 2; // Переносим контакты вниз на мобильных
-      margin-top: 2.5rem;
-    }
-  }
-
-  .contacts {
-    padding-top: 120px;
-    &-blocks {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      // grid-template-rows: repeat(2, 1fr);
-      gap: 24px;
-      &__item {
-        min-width: 412px;
-        padding: 28px;
-        background-color: rgba(245, 245, 245, 1);
-        border-radius: 32px;
-        &:last-child {
-          grid-column: span 2 / span 2;
-          grid-row-start: 2;
+            &:hover {
+                background-color: rgba($violet, 0.9);
+                transition: all 0.3s ease;
+            }
         }
-        .h3 {
-          margin-top: 0;
-        }
-      }
-      &__title {
-        @include adaptive-font(28, 22);
-        font-weight: 600;
-        line-height: 120%;
-        letter-spacing: -0.01em;
-      }
-      &__subtitle {
-        margin-top: 8px;
-        @include adaptive-font(16, 13);
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 120%;
-        letter-spacing: -0.01em;
-        color: $gray700;
-      }
-      &__link {
-        display: block;
-        width: fit-content;
-        letter-spacing: -0.01em;
-        margin-top: 16px;
-        &:link,
-        &:visited {
-          color: $violet;
-        }
-      }
-      &__description {
-        letter-spacing: -0.02em;
-        color: $gray500;
-        margin-top: 4px;
-        @media (max-width: $s850) {
-          color: $gray700;
-        }
-      }
-      &__links {
-        display: flex;
-        gap: 12px;
-        margin-top: 24px;
-        svg {
-          width: 18px;
-          height: 18px;
-        }
-      }
-      &__social-link {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        padding: 18px 20px;
-        border-radius: 16px;
-        background-color: $white;
-      }
-      .notification {
-        display: none;
-      }
     }
 }
+
+.company-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+    h5 {
+        font-weight: 600;
+        @include adaptive-font(36, 22);
+        line-height: 120%;
+    }
+    &__infos {
+        max-width: 740px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        p {
+            color: $gray700;
+        }
+        .block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        @include useMediaSize(768px) {
+            gap: 32px;
+        }
+    }
+
+    @media (max-width: 1224px) {
+        flex-direction: column;
+        &__infos {
+            max-width: 100%;
+        }
+    }
+
+    .cart-aside {
+        position: static;
+    }
+
+    .contact {
+        position: sticky;
+        top: 120px;
+        overflow-y: auto;
+        max-width: 412px;
+        height: fit-content;
+        &-blocks {
+            &__title {
+                @include adaptive-font(28, 22);
+                font-weight: 600;
+                line-height: 120%;
+                letter-spacing: -0.01em;
+            }
+        }
+
+        @media (max-width: 80.25rem) {
+            position: static;
+            max-width: 100%;
+        }
+    }
 }
