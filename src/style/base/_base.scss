@@ -1,0 +1,69 @@
+
+body {
+    font-family: 'Geologica', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    overflow-x: clip;
+    min-width: $s340;
+    -webkit-font-smoothing: none;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    overflow-x: clip;
+    scrollbar-gutter: stable;
+
+    &::-webkit-scrollbar {
+        width: 0.625rem;
+        height: 0.625rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $violet; // Цвет ползунка
+        border-radius: 0.625rem; // Радиус углов ползунка
+        box-shadow: inset 0 0 0.375rem violet; // Тень внутри ползунка
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $violet; // Цвет ползунка при наведении
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $gray100; // Цвет трека скролбара
+        border-radius: 0.625rem; // Радиус углов трека
+        box-shadow: inset 0 0 0.375rem white; // Тень внутри трека
+    }
+}
+
+.container {
+    max-width: 1316px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+
+    padding: 0 16px;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+.flex-grow {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+a,
+a:link,
+a:visited {
+    // зачем так писать... **???????*?*??
+    // пока пусть стоит из за того что изначально в проекте
+    // если поменять, то везде надо задать, что дает кратное увеличение времени...
+    color: rgba(41, 41, 41, 1);
+}
