@@ -25,6 +25,7 @@ import initDropdowns from './modules/dropdowns';
 import { formAjaxNewsletter } from './modules/formAjaxNewsletter';
 import { RangeSlider } from './modules/rangeSlider';
 import { initShowMoreList } from './modules/showMoreList';
+import initCatalogAside from './modules/catalogAside';
 
 document.addEventListener('DOMContentLoaded', () => {
     searchAction();
@@ -78,4 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     initShowMoreList();
+    initCatalogAside();
 });

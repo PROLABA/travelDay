@@ -146,7 +146,7 @@ block content
                                 )
                                     input.datepicker-range(type='text')
                         li
-                            .filter__item.js-tab-btn(data-tab='filter-aside')
+                            .filter__item.js-aside-btn
                                 i.icon.icon--size-20
                                     +useIcon('filter')
                                 span.filter__label--text Все фильтры
@@ -169,11 +169,11 @@ block content
                                     a.dropdown__list-item(href='javascript:void(0)') Дороже
                     .filter__info
                         span.text-gray Доступно 316 экскурсий
-            aside.filter__aside.js-tab-content(data-tab-content='filter-aside')
+            aside.filter__aside.js-aside-menu
                 form.filter__aside-content
                     .filter__aside-relative
                         .filter__aside-header
-                            a.js-tab-close.c-flex.c-flex-center.gap-8(href='javascript:void(0)')
+                            a.js-aside-close.c-flex.c-flex-center.gap-8(href='javascript:void(0)')
                                 +useIcon('arrow-circle')
                                 span.h3 Фильтры
                         .filter__aside-body.mt-32
@@ -347,15 +347,15 @@ block content
         section.catalog__section
             .container
                 .recommend-content.catalog__grid
-                    +card(true, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽")
-                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], true, "4 200 ₽","4 400 ₽")
-                    +comboTurs("Выгоднее на 2000 ₽", "Пакет экскурсий: на школьные каникулы этой осенью", ["/public/images/comboTours/comboTurs1.png","/public/images/comboTours/comboTurs2.png","/public/images/comboTours/comboTurs3.png"], ["Экскурсия по Москве на красном двухэтажном автобусе с гидом на всех языках мира", "Выставка современной живописи",'Экскурсия по Москве на красном двухэтажном автобусе'], true, "4 200 ₽",'4 400 ₽')
-                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
-                    +card(false, "Самая популярная", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
-                    +card(false, "Выбор посетителей", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
-                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
-                    +card(false, "Новое", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
-                    +card(false, "Акция", ["/public/images/cardSlider/1spb.png", "/public/images/cardSlider/2spb.png", "/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png","/public/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(true, "Акция", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["вариант 1", "вариант 2"], true, "4 200 ₽", "4 400 ₽")
+                    +card(false, "Акция", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], true, "4 200 ₽","4 400 ₽")
+                    +comboTurs("Выгоднее на 2000 ₽", "Пакет экскурсий: на школьные каникулы этой осенью", ["/images/comboTours/comboTurs1.png","/images/comboTours/comboTurs2.png","/images/comboTours/comboTurs3.png"], ["Экскурсия по Москве на красном двухэтажном автобусе с гидом на всех языках мира", "Выставка современной живописи",'Экскурсия по Москве на красном двухэтажном автобусе'], true, "4 200 ₽",'4 400 ₽')
+                    +card(false, "Акция", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Самая популярная", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Выбор посетителей", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Акция", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Новое", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
+                    +card(false, "Акция", ["/images/cardSlider/1spb.png", "/images/cardSlider/2spb.png", "/images/cardSlider/2spb.png","/images/cardSlider/2spb.png","/images/cardSlider/2spb.png"], ["Групповая", "Музей"], "24 ч / 48 ч", "Экскурсия по Казани на красном двухэтажном автобусе", ["Сегодня в 16:00", "Сегодня в 17:00"], false, "4 200 ₽",)
                 .get-more-btn
                     button.button.button__subded Посмотреть ещё
                 ul.pagination-container.mt-32

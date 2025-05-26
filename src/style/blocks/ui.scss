@@ -262,25 +262,24 @@
     font-weight: 600;
     line-height: 120%;
     @include adaptive-font(26, 22);
-    vertical-align: middle;
 }
 .body-l-3 {
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 120%;
-    vertical-align: middle;
+    
 }
 .body-m-1 {
     font-weight: 400;
     line-height: 120%;
     @include adaptive-font(16, 15);
-    vertical-align: middle;
+    
 }
 .body-m-1-pharagraph {
     font-weight: 300;
     @include adaptive-font(16, 15);
     line-height: 150%;
-    vertical-align: middle;
+    
 }
 .body-m-3 {
     font-weight: 600;
@@ -294,31 +293,31 @@
     font-weight: 400;
     @include adaptive-font(14, 13);
     line-height: 120%;
-    vertical-align: middle;
+    
 }
 .body-s-2 {
     font-weight: 500;
     @include adaptive-font(14, 13);
     line-height: 120%;
-    vertical-align: middle;
+    
 }
 .body-s-3 {
     font-weight: 600;
     font-size: 13px;
     line-height: 110.00000000000001%;
-    vertical-align: middle;
+    
 }
 .body-caption-s-1 {
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
-    vertical-align: middle;
+    
 }
 .body-caption-m-1 {
     font-size: 14px;
     @include adaptive-font(14, 13);
     line-height: 120%;
-    vertical-align: middle;
+    
 }
 .icon {
     svg {
@@ -339,7 +338,7 @@
     font-size: 16px;
     line-height: 120%;
 
-    vertical-align: middle;
+    
 }
 
 .tabs-items {

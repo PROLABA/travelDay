@@ -72,7 +72,7 @@
                 font-weight: 300;
                 @include adaptive-font(16, 15);
                 line-height: 150%;
-                vertical-align: middle;
+                
                 color: #666666;
             }
             h3 {
@@ -86,7 +86,7 @@
                 font-weight: 300;
                 @include adaptive-font(16, 15);
                 line-height: 150%;
-                vertical-align: middle;
+                
                 color: #666666;
 
                 margin-top: 8px;

@@ -30,7 +30,7 @@ export const formAjaxNewsletter = () => {
                 if (formInner) (formInner as HTMLElement).style.display = 'none';
 
                 const img = document.querySelector('.bottom-form__container-right-img img');
-                if (img) (img as HTMLImageElement).src = '/public/images/bottomForm/bottomForm-success.png';
+                if (img) (img as HTMLImageElement).src = '/images/bottomForm/bottomForm-success.png';
 
                 const title = document.querySelector('.bottom-form__container-left-title .h2');
                 if (title) title.textContent = 'На вашу почту отправлена ссылка для подтверждения';

@@ -56,7 +56,7 @@
                     font-weight: 300;
                     @include adaptive-font(16, 15);
                     line-height: 150%;
-                    vertical-align: middle;
+                    
                     color: #666666;
                     &:first-child {
                         margin-top: 0;
@@ -65,7 +65,7 @@
                         font-weight: 300;
                         @include adaptive-font(16, 15);
                         line-height: 150%;
-                        vertical-align: middle;
+                        
                         color: #666666;
                     }
                 }
