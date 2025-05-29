@@ -358,6 +358,15 @@
                 position: relative;
                 &.error {
                     border-color: $pink;
+                    margin-bottom: 26px;
+                    &::after {
+                        content: 'Выберите места';
+                        position: absolute;
+                        left: 0;
+                        bottom: -22px;
+                        color: #FF5277;
+                        font-size: clamp(0.8125rem, 0.7578rem + 0.1563vw, 0.875rem);
+                    }
                 }
                 &:first-child {
                     margin-top: 0;

@@ -218,6 +218,7 @@
     width: fit-content;
     &--down {
         .icon {
+            stroke: rgb(166, 166, 166);
             transform: rotate(-90deg);
         }
     }
