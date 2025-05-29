@@ -109,7 +109,11 @@
                     li.cart-blank__main-item
                         .c-flex.c-flex-column.gap-4
                             span Взрослый
-                            a(href='#', style='color: #7f56d9') Кто относится?
+                            a(
+                                href='javascript:void(0)',
+                                style='color: #7f56d9',
+                                data-tooltip='Студенты, школьники, лица старше 60, ветераны СВО, ветераны ВОВ'
+                            ) Кто относится?
                         .cart-blank__count
                             .card__price
                                 span.card__current-price.body-xl-3 1 400 ₽
