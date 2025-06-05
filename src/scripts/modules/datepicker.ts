@@ -16,13 +16,19 @@ const initCustomDatepicker = () => {
     const dayNames = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
     const dayNamesMin = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 
-    const testDays = ['2025-04-29', '2025-04-30', '2025-05-01', '2025-10-02'];
+    const testDays = ['2025-06-05', '2025-06-06', '2025-06-07', '2025-06-08'];
     $(function () {
         const $datepicker = $('.datepicker-range');
         const isMobile = window.innerWidth < 768;
 
         // Проверка атрибута data-range
-        const isRangeMode = $datepicker.closest('[data-range]')?.data('range') === true;
+        // const isRangeMode = $datepicker.closest('[data-range]')?.data('range') === true;
+        // console.dir($datepicker.closest('[data-range]'));
+        // console.dir(isRangeMode);
+
+        const $rangeParents = $datepicker.parents('[data-range]');
+
+        const isRangeMode = $rangeParents.toArray().some(el => $(el).data('range') === true);
 
         initDesktopDatepicker();
 
@@ -43,7 +49,6 @@ const initCustomDatepicker = () => {
                         if (!isRangeMode) {
                             const { currentYear, currentMonth, currentDay } = ins;
                             const selectedDate = new Date(currentYear, currentMonth, currentDay);
-                            console.dir(selectedDate);
 
                             $datepicker.daterangepicker('setRange', { start: selectedDate });
                             setTimeout(() => {
